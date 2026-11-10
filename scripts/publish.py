@@ -121,6 +121,9 @@ runtime = json.loads((out/'agent/SwtorRecap.Agent.runtimeconfig.json').read_text
 versions = (ROOT/'src/SwtorRecap.Core/Domain.cs').read_text()
 files = {path.relative_to(out).as_posix():hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted(out.rglob('*')) if path.is_file()}
 manifest = dict(applicationVersion=version, sourceCommit=commit, uncommittedImplementation=bool(subprocess.check_output(['git','status','--porcelain'], text=True).strip()), sdk=sdk, runtime=runtime, schema=1, parser=re.search(r'Parser = "([^"]+)"',versions)[1], metrics=re.search(r'Metrics = "([^"]+)"',versions)[1], catalog=re.search(r'Catalog = "([^"]+)"',versions)[1], rid=args.rid, signed=False, sha256=files)
+if os.environ.get('GITHUB_ACTIONS') == 'true' and manifest['uncommittedImplementation']:
+    subprocess.run(['git','status','--short'], check=True)
+    raise SystemExit('The build changed tracked source or added untracked files. Review before packaging.')
 validation = ROOT/'.artifacts/latest-validation.json'
 if validation.exists():
     checks = json.loads(validation.read_text())

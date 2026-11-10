@@ -16,6 +16,7 @@ public static class RecapWindowProbe {
   [StructLayout(LayoutKind.Sequential)] public struct Rect { public int Left,Top,Right,Bottom; }
   [DllImport("user32.dll")] public static extern bool GetWindowRect(IntPtr h, out Rect r);
   [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr h);
+  [DllImport("user32.dll")] public static extern bool SystemParametersInfo(uint action, uint parameter, out Rect rect, uint flags);
 }
 '@
 Add-Type -AssemblyName System.Drawing
@@ -70,6 +71,10 @@ try {
             }
         } while ([DateTime]::UtcNow -lt $deadline)
         Require $opened 'The loading window did not open the dashboard'
+        $workArea = [RecapWindowProbe+Rect]::new()
+        Require ([RecapWindowProbe]::SystemParametersInfo(0x30,0,[ref]$workArea,0)) 'Could not read desktop work area'
+        Require ($rect.Left -ge $workArea.Left -and $rect.Top -ge $workArea.Top -and $rect.Right -le $workArea.Right -and $rect.Bottom -le $workArea.Bottom) 'Dashboard extends beyond the usable desktop'
+        $report.windowFitsDesktop = $true
         $snapshot = Request 'Snapshot'
         Require ($snapshot.payload.parserVersion -eq '1.1.0') 'Wrong tracker version'
         Require ($null -eq $snapshot.payload.current) 'An idle app must not claim an active recording'

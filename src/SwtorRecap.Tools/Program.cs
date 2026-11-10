@@ -22,7 +22,7 @@ internal static class Program
             if(args.Length>=2&&args[0]=="catalog"&&args[1]=="validate")
             {
                 catalog.Validate();var report=new{catalog.Document.Version,activities=catalog.Document.Activities.Length,coverage=catalog.Document.Activities.Select(a=>new{activity=a.Id,a.Type,a.CompleteObjectives,encounters=a.Encounters.Select(e=>new{e.Id,e.Status,e.Rule,e.Final,positive=e.PositiveFixtures,negative=e.NegativeFixtures,recognizedIds=e.Roles.SelectMany(r=>r.TemplateIds),reason=e.Status=="candidate"?"Identifiers only; terminal evidence not validated.":e.Status=="logic-tested"?"Synthetic invariant coverage; real encounter validation pending.":"Fixture-backed scoped rule."})})};
-                var json=JsonSerializer.Serialize(report,new JsonSerializerOptions(Json.Options){WriteIndented=true});Console.WriteLine(json);if(Option("--output") is { } output)File.WriteAllText(output,json+"\n");return 0;
+                var json=JsonSerializer.Serialize(report,new JsonSerializerOptions(Json.Options){WriteIndented=true,NewLine="\n"});Console.WriteLine(json);if(Option("--output") is { } output)File.WriteAllText(output,json+"\n");return 0;
             }
             var root=DataPaths.Isolated(Option("--data-dir"));using var guard=new WriterGuard(root);var store=new RecapStore(root,"UTC");
             if(args.Length>=2&&args[0]=="database"&&args[1]=="verify"){store.Verify();Console.WriteLine(Json.Write(new{ok=true,store.SqliteVersion,store.SqliteSourceId,revision=store.Revision}));return 0;}

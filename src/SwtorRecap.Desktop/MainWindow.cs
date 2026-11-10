@@ -40,6 +40,7 @@ public sealed class MainWindow : Window
     {
         _client=client;_preview=preview;_snapshot=initialSnapshot;Title="SWTOR Recap";Width=1080;Height=780;MinWidth=740;MinHeight=540;
         AppTheme.Apply(this);
+        AppTheme.FitInitialWindow(this);
         Icon=new WindowIcon(AssetLoader.Open(new Uri("avares://SwtorRecap/Assets/app.ico")));
         _reconnect=Action("Reconnect to tracker","tracker-reconnect",async()=>{(_client as ITrackerReconnect)?.PermitAgentLaunch();await RefreshSnapshot();});_reconnect.IsVisible=false;
         AutomationProperties.SetAutomationId(this,"recap-window");
