@@ -18,6 +18,7 @@ public sealed class StartupWindow : Window
     private readonly ProgressBar _progress = new() { IsIndeterminate = true, Height = 3, Foreground = AppTheme.Accent };
     private readonly Button _retry = new() { Content = "Try again", IsVisible = false, HorizontalAlignment = HorizontalAlignment.Center };
     private bool _busy;
+    private bool _versionMismatch;
     public StartupWindow(ITrackerClient client, Action<TrackerSnapshot> ready)
     {
         _client = client; _ready = ready;
@@ -31,7 +32,17 @@ public sealed class StartupWindow : Window
         panel.Children.Add(new TextBlock { Text = "SWTOR Recap", FontSize = 24, FontWeight = FontWeight.SemiBold, HorizontalAlignment = HorizontalAlignment.Center });
         panel.Children.Add(_message); panel.Children.Add(_progress); panel.Children.Add(_retry); Content = panel;
         Opened += async (_, _) => await Connect();
-        _retry.Click += async (_, _) => { (_client as ITrackerReconnect)?.PermitAgentLaunch(); await Connect(); };
+        _retry.Click += async (_, _) =>
+        {
+            if(_versionMismatch&&_client is ITrackerVersionRecovery recovery)
+            {
+                _retry.IsEnabled=false;
+                try{await recovery.RestartMatchingAgentAsync(_closed.Token);_versionMismatch=false;}
+                catch(Exception ex){_message.Text=ex.Message;return;}
+                finally{_retry.IsEnabled=true;}
+            }
+            (_client as ITrackerReconnect)?.PermitAgentLaunch();await Connect();
+        };
         Closed += (_, _) => _closed.Cancel();
     }
     private async Task Connect()
@@ -47,6 +58,8 @@ public sealed class StartupWindow : Window
         catch (OperationCanceledException) { }
         catch (Exception ex)
         {
+            _versionMismatch=ex is TrackerVersionException;
+            _retry.Content=_versionMismatch?"Restart matching tracker":"Try again";
             _message.Text = "Could not open the tracker. " + ex.Message;
             _progress.IsVisible = false; _retry.IsVisible = true;
             Height = 420;

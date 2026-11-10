@@ -58,7 +58,7 @@ public sealed class TrackerService : IAsyncDisposable
                 {
                     "Snapshot"=>(object)Snapshot(),
                     "History"=>Store.History(Read<QueryFilter>(request),Catalog),
-                    "Detail"=>Store.Detail(Read<string>(request),Catalog),
+                    "Detail"=>request.Parameters.ValueKind==JsonValueKind.String?Store.Detail(Read<string>(request),Catalog):Detail(Read<DetailRequest>(request)),
                     "Recap"=>Store.Recap(Read<QueryFilter>(request),Catalog),
                     "Coverage"=>Catalog.Document,
                     "Jobs"=>Store.Jobs(),
@@ -92,11 +92,13 @@ public sealed class TrackerService : IAsyncDisposable
         for(var attempt=0;attempt<4;attempt++)
         {
             var revision=Store.Revision;var current=Coordinator is not null&&!Coordinator.Active?null:Store.Current(Catalog);var settings=Store.Settings;var jobs=Store.Jobs();
-            if(Store.Revision==revision)return new(revision,LastError is null?Coordinator?.State??"Preview":"Recovering",LastError??Coordinator?.Message??"Isolated preview • synthetic and licensed fixture history",settings,current,Store.SqliteVersion,Versions.Parser,Versions.Catalog,_startup.IsEnabled==settings.StartWithWindows,jobs,settings.LogFolder??Coordinator?.DefaultLogFolder,Store.Root);
+            var character=current is null?null:Store.CurrentCharacter(current.Id);
+            if(Store.Revision==revision)return new(revision,LastError is null?Coordinator?.State??"Preview":"Recovering",LastError??Coordinator?.Message??"Isolated preview • synthetic and licensed fixture history",settings,current,Store.SqliteVersion,Versions.Parser,Versions.Catalog,_startup.IsEnabled==settings.StartWithWindows,jobs,settings.LogFolder??Coordinator?.DefaultLogFolder,Store.Root,Versions.App,character);
         }
         throw new IOException("History is changing; retry the snapshot.");
     }
     private static T Read<T>(IpcRequest r)=>r.Parameters.Deserialize<T>(Json.Options)??throw new ArgumentException("Missing command parameters.");
+    private HistoryDetail Detail(DetailRequest request)=>Store.Detail(request.Id,Catalog,request.CharacterId);
     private async Task<object> MutateAsync(IpcRequest r,CancellationToken token)
     {
         switch(r.Command)
@@ -138,6 +140,13 @@ public sealed class TrackerService : IAsyncDisposable
                 return new MutationResult(Store.Revision,"Cancellation requested.");
             case "Backup":
                 var backup=Path.GetFullPath(Read<string>(r));Store.Backup(backup);return new MutationResult(Store.Revision,"Backup verified.",Path:backup);
+            case "PrepareUpdate":
+                Coordinator?.Tick(true);
+                if(Coordinator?.Active==true)throw new InvalidOperationException("Close SWTOR before installing an update.");
+                if(HasJobs)throw new InvalidOperationException("Finish or cancel the import before installing an update.");
+                var updateBackup=Path.Combine(Store.Root,"backups","before-update-"+DateTime.UtcNow.ToString("yyyyMMdd-HHmmss")+"-"+Guid.NewGuid().ToString("N")+".db");
+                Directory.CreateDirectory(Path.GetDirectoryName(updateBackup)!);Store.Backup(updateBackup);
+                return new MutationResult(Store.Revision,"Recovery backup verified.",Path:updateBackup);
             case "Restore":
                 if(Coordinator?.Active==true)throw new InvalidOperationException("Close SWTOR before replacing history.");
                 if(HasJobs)throw new InvalidOperationException("Cancel or finish imports before restoring history.");

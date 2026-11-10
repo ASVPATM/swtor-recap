@@ -1,5 +1,5 @@
 {
-  "version": "2026.11.09.1",
+  "version": "2026.11.09.2",
   "activities": 54,
   "coverage": [
     {
@@ -17,7 +17,8 @@
           "recognizedIds": [
             "4128382694457344"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "syndic_zenta",
@@ -29,7 +30,8 @@
           "recognizedIds": [
             "4135314771673088"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "valss",
@@ -41,7 +43,8 @@
           "recognizedIds": [
             "4132209510318080"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "strike_team_walker",
@@ -53,7 +56,8 @@
           "recognizedIds": [
             "4137311931465728"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "temple_cat",
@@ -65,7 +69,8 @@
           "recognizedIds": [
             "4129460731248640"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -84,7 +89,8 @@
           "recognizedIds": [
             "3331296893861888"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "lieutenant_kreshin",
@@ -97,7 +103,8 @@
             "3465690715521024",
             "3328904597078016"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "lord_goh",
@@ -110,7 +117,8 @@
             "3465699305455616",
             "3325872350167040"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "republic_commander",
@@ -123,7 +131,8 @@
             "3485688083251200",
             "3493169916280832"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "major_imos",
@@ -136,7 +145,8 @@
             "3465471672188928",
             "3327405653491712"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "master_liam_dentiri",
@@ -149,7 +159,8 @@
             "3465536096698368",
             "3325902414938112"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "master_oric_traless",
@@ -162,7 +173,8 @@
             "3465579046371328",
             "3327796495515648"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "imperial_commander",
@@ -175,6 +187,7 @@
             "3485696673185792",
             "3493174211248128"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         }
       ]
@@ -195,7 +208,8 @@
             "1172496007036928",
             "3158072272879616"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "vodal_beast",
@@ -208,7 +222,8 @@
             "2263129937412096",
             "3158119517519872"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "vodal_prophet",
@@ -221,7 +236,8 @@
             "1172951273570304",
             "3158123812487168"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "ancient_abomination",
@@ -233,7 +249,8 @@
           "recognizedIds": [
             "3247459132243968"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -253,7 +270,8 @@
             "2511477831368704",
             "1675608476090368"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "drinda_velasu",
@@ -268,7 +286,8 @@
             "770942334664704",
             "2511490716270592"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "crystal_droids",
@@ -283,6 +302,7 @@
             "1675672900599808",
             "2511456356532224"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -296,7 +316,8 @@
             "770946629632000",
             "2511486421303296"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "commander_folex",
@@ -309,6 +330,7 @@
             "2511439176663040",
             "1675861879160832"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -324,7 +346,8 @@
             "2075646025007104",
             "2511464946466816"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "guid_patriarch",
@@ -337,7 +360,8 @@
             "1618558425497600",
             "2511482126336000"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -359,7 +383,8 @@
             "3369144145674240",
             "3533564083699712"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "obai_vodd",
@@ -374,7 +399,8 @@
             "3369152735608832",
             "3533585558536192"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "shield_walker",
@@ -387,7 +413,8 @@
             "3369157030576128",
             "3533594148470784"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "mokan",
@@ -399,7 +426,8 @@
           "recognizedIds": [
             "3417131815272448"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -419,7 +447,8 @@
             "2509699714908160",
             "430896888938496"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "sergeant_boran",
@@ -432,7 +461,8 @@
             "2509772729352192",
             "425970561449984"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "commander_ghulil",
@@ -445,7 +475,8 @@
             "2509686830006272",
             "364857471795200"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "yadira_ban",
@@ -458,7 +489,8 @@
             "365755119960064",
             "2509777024319488"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "gxr_7_command_droid",
@@ -471,7 +503,8 @@
             "1426904099848192",
             "2509755549483008"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -491,7 +524,8 @@
             "3400982738239488",
             "3507004005941248"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "valk_jos",
@@ -506,7 +540,8 @@
             "3507029775745024",
             "3384193711079424"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "shae",
@@ -519,74 +554,99 @@
             "3507051250581504",
             "3407807441272832"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
     {
       "activity": "boarding_party",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
       "encounters": [
         {
           "id": "hxi_54_juggernaut",
-          "status": "candidate",
+          "status": "logic-tested",
           "rule": "death_all",
           "final": false,
-          "positive": [],
-          "negative": [],
+          "positive": [
+            "boarding-group"
+          ],
+          "negative": [
+            "boarding-wipe"
+          ],
           "recognizedIds": [
             "745340034613248",
             "2514497193377792"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "major_alvena",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
-          "positive": [],
-          "negative": [],
+          "positive": [
+            "boarding-group"
+          ],
+          "negative": [
+            "boarding-wipe"
+          ],
           "recognizedIds": [
             "1004464001515520",
             "2514505783312384"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "sakan_donair",
-          "status": "candidate",
+          "status": "logic-tested",
           "rule": "death_all",
           "final": false,
-          "positive": [],
-          "negative": [],
+          "positive": [
+            "boarding-group"
+          ],
+          "negative": [
+            "boarding-wipe"
+          ],
           "recognizedIds": [
             "2514522963181568",
             "739816706670592"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "lieutenant_menerus",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
-          "positive": [],
-          "negative": [],
+          "positive": [
+            "boarding-group"
+          ],
+          "negative": [
+            "boarding-wipe"
+          ],
           "recognizedIds": [
             "1005417484255232",
             "2514501488345088"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "storm_squad",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": true,
-          "positive": [],
-          "negative": [],
+          "positive": [
+            "boarding-group"
+          ],
+          "negative": [
+            "boarding-wipe"
+          ],
           "recognizedIds": [
             "957850721452032",
             "2514535848083456",
@@ -595,20 +655,26 @@
             "2514527258148864",
             "957597318381568"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "chief_engineer_kels",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
-          "positive": [],
-          "negative": [],
+          "positive": [
+            "boarding-group"
+          ],
+          "negative": [
+            "boarding-wipe"
+          ],
           "recognizedIds": [
             "1004111814197248",
             "2514488603443200"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -630,7 +696,8 @@
             "3210668442386432",
             "2504236516507648"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "captain_grimyk",
@@ -643,7 +710,8 @@
             "2503961638600704",
             "3210677032321024"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "general_ortol",
@@ -656,7 +724,8 @@
             "2506547208912896",
             "3210659852451840"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "garold_the_dark_one",
@@ -668,7 +737,8 @@
           "recognizedIds": [
             "3247463427211264"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -688,6 +758,7 @@
             "2530019205185536",
             "1209574459703296"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         }
       ]
@@ -708,7 +779,8 @@
             "4111507767951360",
             "4111512062918656"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "vixian_mauler",
@@ -720,7 +792,8 @@
           "recognizedIds": [
             "4112173487882240"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "umbaran_spider_tank",
@@ -732,7 +805,8 @@
           "recognizedIds": [
             "4112779078270976"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "alpha_slybex",
@@ -744,7 +818,8 @@
           "recognizedIds": [
             "4121025415479296"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -764,7 +839,8 @@
             "3247278743617536",
             "3279289134874624"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "duneclaw",
@@ -777,7 +853,8 @@
             "3247274448650240",
             "3279293429841920"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "vigilant",
@@ -790,7 +867,8 @@
             "3279310609711104",
             "3247240088911872"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -811,7 +889,8 @@
             "3245981663494144",
             "3279297724809216"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "zokar",
@@ -824,7 +903,8 @@
             "3245985958461440",
             "3279302019776512"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "rasmus",
@@ -837,7 +917,8 @@
             "3247210024140800",
             "3279306314743808"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -857,7 +938,8 @@
             "2512014702280704",
             "1626340906237952"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "assassin_droids",
@@ -874,7 +956,8 @@
             "2511963162673152",
             "746757373820928"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "interrogator",
@@ -887,7 +970,8 @@
             "2512053356986368",
             "1627981583745024"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "bulwark",
@@ -900,7 +984,8 @@
             "2511984637509632",
             "751348693860352"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "assembler",
@@ -913,6 +998,7 @@
             "2511976047575040",
             "1628604354002944"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -929,7 +1015,8 @@
             "892073297313792",
             "2512083421757440"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "replicator",
@@ -942,6 +1029,7 @@
             "1629334498443264",
             "2512109191561216"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         }
       ]
@@ -962,7 +1050,8 @@
             "2510773456732160",
             "649467774631936"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "ironfist",
@@ -975,7 +1064,8 @@
             "649484954501120",
             "2510769161764864"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "iss_7_guardian_battledroid",
@@ -988,7 +1078,8 @@
             "653359015002112",
             "2510777751699456"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "vokk",
@@ -1001,7 +1092,8 @@
             "649472069599232",
             "2510790636601344"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "iss_994_power_droid",
@@ -1013,7 +1105,8 @@
           "recognizedIds": [
             "1461006140178432"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -1033,6 +1126,7 @@
             "1690314444111872",
             "2511761299210240"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1046,7 +1140,8 @@
             "2511709759602688",
             "770959514533888"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "prototypes_a14_b16",
@@ -1061,6 +1156,7 @@
             "1790206793482240",
             "2511726939471872"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1074,7 +1170,8 @@
             "770955219566592",
             "2511701169668096"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "chondrus_berani",
@@ -1087,6 +1184,7 @@
             "2511675399864320",
             "1690331623981056"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1100,7 +1198,8 @@
             "770963809501184",
             "2511688284766208"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "sith_entity",
@@ -1112,7 +1211,8 @@
           "recognizedIds": [
             "2511744119341056"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -1132,7 +1232,8 @@
             "747710856560640",
             "2514742006513664"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "hk_47",
@@ -1145,7 +1246,8 @@
             "2514754891415552",
             "739833886539776"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "n4_10_exterminator",
@@ -1158,6 +1260,7 @@
             "2514729121611776",
             "1169322026205184"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1171,6 +1274,7 @@
             "2514780661219328",
             "739846771441664"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1184,7 +1288,8 @@
             "1148233736781824",
             "2514724826644480"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -1208,7 +1313,8 @@
             "3152170987814912",
             "2276525940408320"
           ],
-          "reason": "Synthetic invariant coverage; real encounter validation pending."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "vorgan_the_volcano",
@@ -1229,7 +1335,8 @@
             "3152158102913024",
             "2286241156431872"
           ],
-          "reason": "Synthetic invariant coverage; real encounter validation pending."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "battlelord_kreshan",
@@ -1246,7 +1353,8 @@
             "3172554902601728",
             "3184361767698432"
           ],
-          "reason": "Synthetic invariant coverage; real encounter validation pending."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "asteroid_beast",
@@ -1258,7 +1366,8 @@
           "recognizedIds": [
             "3251019660132352"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -1278,7 +1387,8 @@
             "2765357643202560",
             "2741129732685824"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "rakghoul_super_soldiers",
@@ -1295,7 +1405,8 @@
             "2762265266749440",
             "2762123532828672"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "kr_82_expulser",
@@ -1308,7 +1419,8 @@
             "2765349053267968",
             "2765353348235264"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "midnight_rakghoul",
@@ -1320,7 +1432,8 @@
           "recognizedIds": [
             "3341029289754624"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -1340,7 +1453,8 @@
             "3333474442280960",
             "3468899056091136"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "i5_t1",
@@ -1353,7 +1467,8 @@
             "3468894761123840",
             "3334535299203072"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "darth_soverus",
@@ -1366,7 +1481,8 @@
             "3468911940993024",
             "3331378498240512"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "korriban_imperial_commander",
@@ -1379,6 +1495,7 @@
             "3484816204890112",
             "3493187096150016"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1392,7 +1509,8 @@
             "3468753027203072",
             "3333461557379072"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "r_9xr",
@@ -1405,7 +1523,8 @@
             "3468748732235776",
             "3329905324457984"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "commander_jensyn",
@@ -1418,7 +1537,8 @@
             "3468757322170368",
             "3331339843534848"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "korriban_republic_commander",
@@ -1431,6 +1551,7 @@
             "3484803319988224",
             "3493182801182720"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         }
       ]
@@ -1450,6 +1571,7 @@
           "recognizedIds": [
             "3316187198914560"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1462,6 +1584,7 @@
           "recognizedIds": [
             "3316170019045376"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1474,6 +1597,7 @@
           "recognizedIds": [
             "3316174314012672"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1486,6 +1610,7 @@
           "recognizedIds": [
             "3316200083816448"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1498,6 +1623,7 @@
           "recognizedIds": [
             "3316182903947264"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         }
       ]
@@ -1520,7 +1646,8 @@
             "3491898605961216",
             "3370608729522176"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "rand",
@@ -1533,7 +1660,8 @@
             "3373078335717376",
             "3491885721059328"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "darok_arkous",
@@ -1548,7 +1676,8 @@
             "3370613024489472",
             "3491890016026624"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "infinite_army_prototype",
@@ -1560,7 +1689,8 @@
           "recognizedIds": [
             "3493419024384000"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -1580,7 +1710,8 @@
             "2838853123571712",
             "2898153737027584"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "lr_5_sentinel_droid",
@@ -1593,7 +1724,8 @@
             "2815832098865152",
             "2808620848775168"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "project_sav_rak",
@@ -1606,7 +1738,8 @@
             "2802144038092800",
             "2819585900281856"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "doctor_lorrick",
@@ -1621,6 +1754,7 @@
             "2809320928444416",
             "2819959562436608"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1634,7 +1768,8 @@
             "2835799401824256",
             "2802509110312960"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -1653,7 +1788,8 @@
           "recognizedIds": [
             "2513608135147520"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "lord_kancras",
@@ -1665,6 +1801,7 @@
           "recognizedIds": [
             "2513668264689664"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1677,6 +1814,7 @@
           "recognizedIds": [
             "2513672559656960"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1689,7 +1827,8 @@
           "recognizedIds": [
             "2536938397499392"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "ancient_maelstrom_flayer",
@@ -1701,7 +1840,8 @@
           "recognizedIds": [
             "2513784228806656"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -1721,7 +1861,8 @@
             "3505251659284480",
             "3350332188917760"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "ortuno",
@@ -1734,7 +1875,8 @@
             "3350327893950464",
             "3505260249219072"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "stivastin",
@@ -1747,7 +1889,8 @@
             "3362925033029632",
             "3505268839153664"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "bonus_droid",
@@ -1760,7 +1903,8 @@
             "3506922401562624",
             "3506896631758848"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -1782,7 +1926,8 @@
             "3158424460197888",
             "2438158444658688"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "imperial_boarding_party",
@@ -1801,6 +1946,7 @@
             "3158394395426816",
             "2442466296856576"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1820,6 +1966,7 @@
             "2442474886791168",
             "3158411575296000"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1833,7 +1980,8 @@
             "3172567787503616",
             "1276069143379968"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "gil",
@@ -1845,6 +1993,7 @@
           "recognizedIds": [
             "3250538623795200"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         }
       ]
@@ -1864,7 +2013,8 @@
           "recognizedIds": [
             "4157176155209728"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "guardian_droid",
@@ -1876,7 +2026,8 @@
           "recognizedIds": [
             "4152640669745152"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "gemini",
@@ -1888,7 +2039,8 @@
           "recognizedIds": [
             "4158834012585984"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "vin_zil",
@@ -1901,7 +2053,8 @@
             "4158872667291648",
             "4159276394217472"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "hands_zildrog",
@@ -1914,6 +2067,7 @@
             "4172294440091648",
             "4172298735058944"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         }
       ]
@@ -1935,6 +2089,7 @@
             "4275957770747904",
             "4275957770747904"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1948,7 +2103,8 @@
             "4258021987319808",
             "4363188556529664"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "darth_malgus",
@@ -1960,6 +2116,7 @@
           "recognizedIds": [
             "4257502296276992"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1974,6 +2131,7 @@
             "4257506591244288",
             "4276941318258688"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -1987,6 +2145,7 @@
             "4363141311889408",
             "4257467936538624"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2002,6 +2161,7 @@
             "4257455051636736",
             "4363171376660480"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2015,6 +2175,7 @@
             "4257463641571328",
             "4363175671627776"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2027,7 +2188,8 @@
           "recognizedIds": [
             "4258185196077056"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -2046,7 +2208,8 @@
           "recognizedIds": [
             "2482594176303104"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "sv_3_eradicator",
@@ -2058,7 +2221,8 @@
           "recognizedIds": [
             "2482692960550912"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "darth_ikoral",
@@ -2070,7 +2234,8 @@
           "recognizedIds": [
             "1478800189685760"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -2089,7 +2254,8 @@
           "recognizedIds": [
             "4468097427701760"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "regnant",
@@ -2101,7 +2267,8 @@
           "recognizedIds": [
             "4469132514820096"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "nul_darth_malgus",
@@ -2113,6 +2280,7 @@
           "recognizedIds": [
             "4468509744562176"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2127,6 +2295,7 @@
             "4563943917879296",
             "4563948212846592"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         }
       ]
@@ -2146,6 +2315,7 @@
           "recognizedIds": [
             "4445312626196480"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2160,6 +2330,7 @@
             "4445295446327296",
             "4445299741294592"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2172,6 +2343,7 @@
           "recognizedIds": [
             "4445304036261888"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2186,6 +2358,7 @@
             "4445282561425408",
             "4445286856392704"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2198,6 +2371,7 @@
           "recognizedIds": [
             "4445308331229184"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2210,6 +2384,7 @@
           "recognizedIds": [
             "4445316921163776"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         }
       ]
@@ -2231,6 +2406,7 @@
             "4702735786049536",
             "4702748670951424"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2248,6 +2424,7 @@
             "4705574759432192",
             "4705591939301376"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2262,6 +2439,7 @@
             "4705557579563008",
             "4705561874530304"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2276,6 +2454,7 @@
             "4702765850820608",
             "4702770145787904"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         }
       ]
@@ -2295,6 +2474,7 @@
           "recognizedIds": [
             "4419697441243136"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2307,6 +2487,7 @@
           "recognizedIds": [
             "4419710326145024"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2319,6 +2500,7 @@
           "recognizedIds": [
             "4419714621112320"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2332,7 +2514,8 @@
             "4419718916079616",
             "4437744893820928"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "goldie",
@@ -2344,6 +2527,7 @@
           "recognizedIds": [
             "4434373344493568"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         }
       ]
@@ -2364,6 +2548,7 @@
             "2513870128152576",
             "2513865833185280"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2376,6 +2561,7 @@
           "recognizedIds": [
             "2513861538217984"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2388,7 +2574,8 @@
           "recognizedIds": [
             "2531994890141696"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "lord_hasper",
@@ -2400,6 +2587,7 @@
           "recognizedIds": [
             "2513857243250688"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2413,6 +2601,7 @@
             "2513887308021760",
             "2513840063381504"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2425,6 +2614,7 @@
           "recognizedIds": [
             "2513805703643136"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         }
       ]
@@ -2444,6 +2634,7 @@
           "recognizedIds": [
             "4922389003501568"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2456,6 +2647,7 @@
           "recognizedIds": [
             "4932512241418240"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2468,6 +2660,7 @@
           "recognizedIds": [
             "4946380690817024"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         }
       ]
@@ -2489,7 +2682,8 @@
             "4246176467517440",
             "4382185196879872"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "holding_pens",
@@ -2502,6 +2696,7 @@
             "4389417921806336",
             "4245686841245696"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2514,6 +2709,7 @@
           "recognizedIds": [
             "4338552624119808"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2530,6 +2726,7 @@
             "4245987488956416",
             "4381150109761536"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2544,6 +2741,7 @@
             "4281661487316992",
             "4330237567434752"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2557,7 +2755,8 @@
             "4282872668094464",
             "4350020186800128"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -2579,7 +2778,8 @@
             "2034611907461120",
             "2034573252755456"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "gharj",
@@ -2595,7 +2795,8 @@
             "3725089560330240",
             "2016946706972672"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "pylons",
@@ -2605,6 +2806,7 @@
           "positive": [],
           "negative": [],
           "recognizedIds": [],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2620,6 +2822,7 @@
             "2289690015170560",
             "2289887583666176"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -2639,7 +2842,8 @@
             "2289823159156736",
             "2290085152161792"
           ],
-          "reason": "Synthetic invariant coverage; real encounter validation pending."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -2669,7 +2873,8 @@
             "2860766046715904",
             "2861384522006528"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "firebrand_stormcaller",
@@ -2688,7 +2893,8 @@
             "2876485627019264",
             "2808831302172672"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "colonel_vorgath",
@@ -2703,7 +2909,8 @@
             "2854229106491392",
             "2848692893646848"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "warlord_kephess",
@@ -2722,7 +2929,8 @@
             "2876532871659520",
             "2876593001201664"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -2744,7 +2952,8 @@
             "4078419339902976",
             "4078415044935680"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "a\u0026e_k",
@@ -2758,7 +2967,8 @@
             "4101564918661120",
             "4088538282852352"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "nahut_k",
@@ -2773,7 +2983,8 @@
             "4122953855795200",
             "4122958150762496"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "SCYVA_K",
@@ -2786,7 +2997,8 @@
             "4108140513591296",
             "4126527268585472"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "IZAX_K",
@@ -2802,7 +3014,8 @@
             "4163133274849280",
             "4163137569816576"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -2824,7 +3037,8 @@
             "4204772982784000",
             "4204764392849408"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -2846,7 +3060,8 @@
             "2624508485697536",
             "2624474125959168"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "jarg_sorno",
@@ -2869,7 +3084,8 @@
             "2760521510027264",
             "2760487150288896"
           ],
-          "reason": "Synthetic invariant coverage; real encounter validation pending."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "foreman_crusher",
@@ -2884,7 +3100,8 @@
             "2760693308719104",
             "2760637474144256"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "g4b3",
@@ -2899,7 +3116,8 @@
             "2760375481139200",
             "2748401112317952"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "karagga",
@@ -2918,7 +3136,8 @@
             "2761208704794624",
             "2761191524925440"
           ],
-          "reason": "Synthetic invariant coverage; real encounter validation pending."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -2940,7 +3159,8 @@
             "3570947479044096",
             "3570956068978688"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -2963,7 +3183,8 @@
             "4824927605620736",
             "4847325860069376"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -2983,7 +3204,8 @@
             "4494653210492928",
             "4467247024177152"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "watchdog",
@@ -2996,7 +3218,8 @@
             "4466177577320448",
             "4494700455133184"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "kanoth",
@@ -3009,7 +3232,8 @@
             "4494876548792320",
             "4466190462222336"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "hallway",
@@ -3019,6 +3243,7 @@
           "positive": [],
           "negative": [],
           "recognizedIds": [],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -3033,7 +3258,8 @@
             "4466199052156928",
             "4488524292161536"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -3055,7 +3281,8 @@
             "3153575442120704",
             "3153558262251520"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "titan6",
@@ -3070,7 +3297,8 @@
             "3152467340558336",
             "3152458750623744"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "hateful_entity",
@@ -3082,7 +3310,8 @@
           "recognizedIds": [
             "3264737785675776"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "thrasher",
@@ -3097,7 +3326,8 @@
             "3154571874533376",
             "3154563284598784"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "operations_chief",
@@ -3112,7 +3342,8 @@
             "3157556876804096",
             "3157548286869504"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "olok",
@@ -3127,7 +3358,8 @@
             "3154679248715776",
             "3154662068846592"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "cartel_warlords",
@@ -3149,7 +3381,8 @@
             "3054404647256064",
             "3032766602018816"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "Styrak_k",
@@ -3167,7 +3400,8 @@
             "3147154466013184",
             "3225679353085952"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -3189,7 +3423,8 @@
             "3469285603147776",
             "3469277013213184"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "sword_squadron",
@@ -3205,7 +3440,8 @@
             "3447784996864000",
             "3447789291831296"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "underlurker",
@@ -3220,7 +3456,8 @@
             "3462263331618816",
             "3462271921553408"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "revanite_commanders",
@@ -3234,7 +3471,8 @@
             "3456890327531520",
             "3456898917466112"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "revan",
@@ -3248,7 +3486,8 @@
             "3444310368321536",
             "3447583133401088"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -3270,7 +3509,8 @@
             "2938874321960960",
             "3010424182145024"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "dread_guard",
@@ -3296,7 +3536,8 @@
             "2831418535182336",
             "2938006738567168"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "op_ix",
@@ -3318,7 +3559,8 @@
             "2994867810598912",
             "2994872105566208"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "kephess_the_undying",
@@ -3334,7 +3576,8 @@
             "3013134306508800",
             "2831409945247744"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "the_terror_from_beyond",
@@ -3365,6 +3608,7 @@
             "2938895796797440",
             "2938891501830144"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         },
         {
@@ -3377,7 +3621,8 @@
           "recognizedIds": [
             "3057806261354496"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -3399,7 +3644,8 @@
             "3303031714086912",
             "3303040304021504"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "draxus",
@@ -3414,7 +3660,8 @@
             "3303392491339776",
             "3303405376241664"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "grobthok",
@@ -3429,7 +3676,8 @@
             "3273929015689216",
             "3302563562651648"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "corruptor_zero",
@@ -3444,7 +3692,8 @@
             "3303534225260544",
             "3303551405129728"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "brontes",
@@ -3461,7 +3710,8 @@
             "3275625527771136",
             "3277721471811584"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -3485,6 +3735,7 @@
             "3273941900591104",
             "3291675820556288"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Fixture-backed scoped rule."
         },
         {
@@ -3500,7 +3751,8 @@
             "3303413966176256",
             "3303418261143552"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "calphayus",
@@ -3514,7 +3766,8 @@
             "3273946195558400",
             "3284954196738048"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "raptus",
@@ -3529,7 +3782,8 @@
             "3303559995064320",
             "3302902865068032"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "dread_council",
@@ -3545,7 +3799,8 @@
             "3273993440198656",
             "3274019210002432"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "bestia_unverified",
@@ -3559,6 +3814,7 @@
             "3303585764868096",
             "3303590059835392"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         }
       ]
@@ -3581,7 +3837,8 @@
             "3319090596806656",
             "3328376316100608"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -3603,7 +3860,8 @@
             "3458122983145472",
             "3458110098243584"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "bulo",
@@ -3618,7 +3876,8 @@
             "3468697192628224",
             "3468705782562816"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "torque",
@@ -3633,7 +3892,8 @@
             "3468718667464704",
             "3468710077530112"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "master_blaster",
@@ -3650,7 +3910,8 @@
             "3458148752949248",
             "3391100018491392"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "coratanni",
@@ -3666,6 +3927,7 @@
             "3397039958261760",
             "3374109127868416"
           ],
+          "countsExplicitDeaths": false,
           "reason": "Identifiers only; terminal evidence not validated."
         }
       ]
@@ -3688,7 +3950,8 @@
             "3232800408862720",
             "3232817588731904"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -3710,7 +3973,8 @@
             "3213919732629504",
             "3153545377349632"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -3730,7 +3994,8 @@
             "4906905646399488",
             "4906549164113920"
           ],
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     }

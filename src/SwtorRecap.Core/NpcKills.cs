@@ -22,7 +22,7 @@ public sealed partial class CombatReducer
         if (e.Source.Key == s.Owner && e.Kind == EventKind.ExitCombat) s.NpcCombatActive = false;
         if (e.Target.Key == s.Owner && e.Kind == EventKind.Death) s.NpcCombatActive = false;
         var target = e.Target;
-        if (target.Kind != ActorKind.Npc || catalog.IsBossOrTraining(target.TemplateId)) return;
+        if (target.Kind != ActorKind.Npc || catalog.IsTraining(target.TemplateId)) return;
         if (e.Kind == EventKind.Revived) { s.Npcs.Remove(target.Key); return; }
         if (!s.Npcs.TryGetValue(target.Key, out var npc))
         {

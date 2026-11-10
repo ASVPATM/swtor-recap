@@ -26,12 +26,17 @@ public sealed class NpcKillTests
     [Theory][InlineData("@Other#202")][InlineData("@Other#202/Companion {888}:2")]
     public void PlayerAndCompanionTargetsAreExcluded(string target)
     {Assert.Empty(Kills(Reduce(Hit(100,100,target),Die(target))));}
-    [Fact]public void CatalogBossesAreExcludedEvenWithoutAreaOrSupportedRule()
+    [Fact]public void BossTargetsCountIndividuallyButTrainingDummiesDoNot()
     {
         var catalog=Catalog.LoadDefault();
-        foreach(var role in catalog.Document.Activities.SelectMany(a=>a.Encounters.SelectMany(e=>e.Roles.Where(r=>r.Required||a.Type=="training"))))
-            foreach(var template in role.TemplateIds)
-                Assert.Empty(Kills(Reduce(Hit(100,100,$"Boss {{{template}}}:1"),Die($"Boss {{{template}}}:1"))));
+        foreach(var activity in catalog.Document.Activities)
+            foreach(var template in activity.Encounters.SelectMany(e=>e.Roles.SelectMany(r=>r.TemplateIds)).Distinct())
+                Assert.Equal(catalog.IsTraining(template)?0:1,Kills(Reduce(Hit(60,60,$"Boss {{{template}}}:1"),Die($"Boss {{{template}}}:1"))).Length);
+    }
+    [Fact]public void DyingBeforeGroupFinishesPreservesIndividualKillContribution()
+    {
+        Assert.Single(Kills(Reduce(Hit(60,60),E(Other,Local,EffectIds.Death),E(Local,"",EffectIds.Exit),Die())));
+        Assert.Empty(Kills(Reduce(Hit(50,50),E(Other,Local,EffectIds.Death),E(Local,"",EffectIds.Exit),Die())));
     }
     [Fact]public void DeathIsRequiredAndRepeatedDeathIsNotAnotherKill()
     {Assert.Empty(Kills(Reduce(Hit(100,100,health:"|(0/100)"),E(Local,"",EffectIds.Exit))));Assert.Single(Kills(Reduce(Hit(60,60),Die(),Die())));}

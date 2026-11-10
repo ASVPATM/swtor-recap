@@ -1,5 +1,5 @@
 # Runs only on a disposable GitHub Windows runner. Never installs on a user's PC.
-param([string]$PackageDir = 'artifacts/SwtorRecap-win-x64', [string]$Installer = 'artifacts/SwtorRecap-0.2.0-Setup.exe')
+param([string]$PackageDir = 'artifacts/SwtorRecap-win-x64', [string]$Installer = 'artifacts/SwtorRecap-0.3.0-Setup.exe')
 $ErrorActionPreference = 'Stop'
 if ($env:GITHUB_ACTIONS -ne 'true' -or !$IsWindows) { throw 'Use a disposable Windows GitHub Actions runner.' }
 $package = (Resolve-Path $PackageDir).Path
@@ -76,7 +76,7 @@ try {
         Require ($rect.Left -ge $workArea.Left -and $rect.Top -ge $workArea.Top -and $rect.Right -le $workArea.Right -and $rect.Bottom -le $workArea.Bottom) 'Dashboard extends beyond the usable desktop'
         $report.windowFitsDesktop = $true
         $snapshot = Request 'Snapshot'
-        Require ($snapshot.payload.parserVersion -eq '1.1.0') 'Wrong tracker version'
+        Require ($snapshot.payload.appVersion -eq '0.3.0') 'Wrong tracker application version'
         Require ($null -eq $snapshot.payload.current) 'An idle app must not claim an active recording'
         Require (!$snapshot.payload.settings.startWithWindows) 'Isolated launch changed startup preference'
         $report[($variant.name+'Launch')] = $true

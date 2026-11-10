@@ -82,6 +82,14 @@ ordinary=[area("137438989504"),line(P,"",ENTER),
           damage(npc("999",6,0),100),line(P,"",EXIT)]
 add("ordinary-kills",ordinary,expected(1191,340,kills=2),"Hand sums: raw 51+50+900+30+30+30+100=1191; effective 51+50+49+30+30+30+100=340. Only spawns 1 and 5 exceed half of max HP and have a death. Exactly half, overkill, companion damage, duplicate death, and zero HP without death do not add kills.")
 
+boarding=[area("833571547775680"),line(P,"",ENTER)]
+for template in ["745340034613248","1004464001515520","739816706670592","1005417484255232","957850721452032","957597318381568","739825296605184"]:
+    boarding += [damage(npc(template)),death(npc(template,hp=0))]
+boarding += [death(npc("739825296605184",hp=0)),line(P,"",EXIT)]
+add("boarding-group",boarding,expected(700,bosses=5,flashpoints=1,fullRuns=1,kills=7),"Five encounters, including two minibosses. Storm Squad requires all three deaths and counts once. Other player lands every final blow; local damage proves participation. Duplicate death is ignored.")
+partial=[area("833571547775680"),line(P,"",ENTER),damage(npc("957850721452032")),death(npc("957850721452032",hp=0)),damage(npc("957597318381568")),death(npc("957597318381568",hp=0)),line(P,"",EXIT),line(P,"",ENTER),damage(npc("739825296605184",2)),death(npc("739825296605184",2,0)),line(P,"",EXIT)]
+add("boarding-wipe",partial,expected(300,kills=3),"A partial Storm Squad kill followed by a new combat cannot combine deaths across attempts.")
+
 # Independent, deliberately simple oracle. Known owner and exact field positions are reviewed,
 # not inferred from damage size. This computes amounts only, never encounter expectations.
 data=(FIXTURES/"logs/bestia_complete_pull.txt").read_bytes()
@@ -123,6 +131,14 @@ for activity in catalog["activities"]:
             for role in encounter["roles"]:
                 if role["required"]:role["templateIds"]=["3273941900591104"]
             encounter.update(rule="hp_zero_exit",status="terminal-tested",positiveFixtures=["bestia-real"],negativeFixtures=["bestia-reset-negative"])
+    if activity["id"]=="boarding_party":
+        for encounter in activity["encounters"]:
+            for role in encounter["roles"]: role["required"]=True
+            encounter.update(rule="death_all",status="logic-tested",positiveFixtures=["boarding-group"],negativeFixtures=["boarding-wipe"])
+            encounter["optional"]=encounter["id"]=="chief_engineer_kels"
+        activity["requiredGroups"]=[[v] for v in ["hxi_54_juggernaut","major_alvena","sakan_donair","lieutenant_menerus","storm_squad"]]
+        activity["completeObjectives"]=True
     activity["encounters"].extend(variants)
+catalog["version"]="2026.11.09.2"
 catalog_path.write_text(json.dumps(catalog,indent=2)+"\n")
 print(json.dumps(totals))

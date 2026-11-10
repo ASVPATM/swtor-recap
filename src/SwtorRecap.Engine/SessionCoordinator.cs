@@ -175,5 +175,5 @@ public sealed class SessionCoordinator : IDisposable
         ReleaseHandles();State="Stopped";Message=reason;
     }
     private void ReleaseHandles(){foreach(var handle in _handles.Values)handle.Dispose();_handles.Clear();_watcher?.Dispose();_watcher=null;}
-    public void Dispose(){_exitWatch?.Cancel();_exitWatch?.Dispose();ReleaseHandles();}
+    public void Dispose(){_exitWatch?.Cancel();_exitWatch?.Dispose();_exitWatch=null;ReleaseHandles();}
 }

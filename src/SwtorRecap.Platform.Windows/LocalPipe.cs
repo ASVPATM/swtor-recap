@@ -80,7 +80,7 @@ public static class LocalPipe
 }
 
 [SupportedOSPlatform("windows")]
-public sealed class PipeTrackerClient(string dataRoot,string agentPath,bool isolated=false) : ITrackerClient,ITrackerReconnect
+public sealed class PipeTrackerClient(string dataRoot,string agentPath,bool isolated=false) : ITrackerClient,ITrackerReconnect,ITrackerVersionRecovery
 {
     private string? _epoch;
     private long _revision=-1;
@@ -88,6 +88,22 @@ public sealed class PipeTrackerClient(string dataRoot,string agentPath,bool isol
     private readonly CancellationTokenSource _closed=new();
     private bool _mayLaunch=true;
     public void PermitAgentLaunch()=>_mayLaunch=true;
+    public async Task RestartMatchingAgentAsync(CancellationToken token)
+    {
+        if(new WindowsGameProcesses().Discover().Count>0)throw new InvalidOperationException("Close SWTOR before restarting the tracker.");
+        await _requests.WaitAsync(token);
+        try
+        {
+            try{await Send<MutationResult>("Quit",null,token);}catch(IOException){} // An older tracker can close its pipe before acknowledging Quit.
+            for(var i=0;i<40;i++)
+            {
+                try{using var guard=new WriterGuard(dataRoot);_epoch=null;_revision=-1;_mayLaunch=true;return;}
+                catch(IOException){await Task.Delay(250,token);}
+            }
+            throw new IOException("The previous tracker is still stopping. Try again shortly.");
+        }
+        finally{_requests.Release();}
+    }
     public async Task<T> RequestAsync<T>(string command,object? parameters=null,CancellationToken cancellationToken=default)
     {
         using var lifetime=CancellationTokenSource.CreateLinkedTokenSource(cancellationToken,_closed.Token);cancellationToken=lifetime.Token;
@@ -116,7 +132,9 @@ public sealed class PipeTrackerClient(string dataRoot,string agentPath,bool isol
                 if(_epoch!=response.Revision.HistoryEpoch){_epoch=response.Revision.HistoryEpoch;_revision=-1;}
                 if(response.Revision.DataRevision<_revision)throw new InvalidDataException("Stale history response.");
                 _revision=response.Revision.DataRevision;
-                return response.Payload.Deserialize<T>(Json.Options)??throw new InvalidDataException("Empty response.");
+                var payload=response.Payload.Deserialize<T>(Json.Options)??throw new InvalidDataException("Empty response.");
+                if(payload is TrackerSnapshot snapshot&&snapshot.AppVersion!=Versions.App)throw new TrackerVersionException(snapshot.AppVersion);
+                return payload;
             }
             catch(Exception ex) when(ex is TimeoutException or IOException)
             {

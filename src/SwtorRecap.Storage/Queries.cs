@@ -34,6 +34,7 @@ public sealed partial class RecapStore
         var combat = Scalar<long>(c, intervalSql, tx, args.Append(("$kind", (object?)"combat")).ToArray());
         const string outcomeFilter = "($from IS NULL OR a.reporting_date >= $from AND a.reporting_date < $until) AND ($character IS NULL OR s.character_id=$character) AND ($container IS NULL OR g.container_id=$container) AND g.visible=1";
         var bosses = Scalar<long>(c, "SELECT count(*) FROM encounter_attempts a JOIN source_segments s ON s.id=a.segment_id JOIN source_generations g ON g.id=s.source_id WHERE a.result='won' AND a.qualified=1 AND " + outcomeFilter, tx, args);
+        var unconfirmed = Scalar<long>(c, "SELECT count(*) FROM encounter_attempts a JOIN source_segments s ON s.id=a.segment_id JOIN source_generations g ON g.id=s.source_id WHERE a.result='unconfirmed' AND a.qualified=1 AND " + outcomeFilter, tx, args);
         var clears = new Dictionary<string,long>(); long full = 0;
         using (var cmd = Command(c, "SELECT a.activity_id,count(*),sum(a.full) FROM activity_runs a JOIN source_segments s ON s.id=a.segment_id JOIN source_generations g ON g.id=s.source_id WHERE a.terminal=1 AND " + outcomeFilter + " GROUP BY a.activity_id", tx, args))
         using (var r = cmd.ExecuteReader())
@@ -64,11 +65,11 @@ public sealed partial class RecapStore
                 }
             }
         }
-        return new(amounts, game, combat, bosses, clears.GetValueOrDefault("flashpoint"), clears.GetValueOrDefault("operation"), clears.GetValueOrDefault("lair"), full, deaths, sessions, imports, kills, killsNeedReprocess);
+        return new(amounts, game, combat, bosses, clears.GetValueOrDefault("flashpoint"), clears.GetValueOrDefault("operation"), clears.GetValueOrDefault("lair"), full, deaths, sessions, imports, kills, killsNeedReprocess, unconfirmed);
     }
     public Totals Totals(QueryFilter filter, Catalog catalog)
     { using var c = Open(true); using var tx = c.BeginTransaction(); return TotalsAt(c, tx, filter, catalog); }
-    private HistoryItem ItemAt(SqliteConnection c, SqliteTransaction tx, string id, Catalog catalog)
+    private HistoryItem ItemAt(SqliteConnection c, SqliteTransaction tx, string id, Catalog catalog, QueryFilter? filter = null)
     {
         string kind, state; string? start, end;
         using (var cmd = Command(c, "SELECT kind,state,started_utc,ended_utc FROM containers WHERE id=$id", tx, ("$id", id)))
@@ -86,7 +87,13 @@ public sealed partial class RecapStore
             using var r = cmd.ExecuteReader(); r.Read(); start = NullableString(r,0); end = NullableString(r,1);
         }
         var gaps = Scalar<long>(c, "SELECT count(*) FROM coverage_gaps gap JOIN source_generations g ON g.id=gap.source_id WHERE g.container_id=$id", tx, ("$id", id));
-        return new(id, kind, state, start, end, names.ToArray(), TotalsAt(c, tx, new(ContainerId:id), catalog), checked((int)gaps));
+        return new(id, kind, state, start, end, names.ToArray(), TotalsAt(c, tx, (filter??new()) with {ContainerId=id}, catalog), checked((int)gaps));
+    }
+    public string? CurrentCharacter(string container)
+    {
+        using var c=Open(true);
+        using var cmd=Command(c,"SELECT s.name FROM encounter_evidence e JOIN source_segments s ON s.id=e.segment_id JOIN source_generations g ON g.id=s.source_id WHERE g.container_id=$id AND g.visible=1 AND s.owner IS NOT NULL AND e.kind IN ('area_owner','owner_enter') ORDER BY e.utc_time DESC,g.original_path DESC,e.start_byte DESC LIMIT 1",null,("$id",container));
+        return cmd.ExecuteScalar() as string;
     }
     public HistoryItem? Current(Catalog catalog)
     {
@@ -97,7 +104,7 @@ public sealed partial class RecapStore
     private CharacterSummary[] CharactersAt(SqliteConnection c, SqliteTransaction tx, QueryFilter filter)
     {
         var result = new List<CharacterSummary>(); var args = FilterArgs(filter);
-        using var cmd = Command(c, "SELECT DISTINCT ch.id,ch.name FROM characters ch JOIN source_segments s ON s.character_id=ch.id JOIN source_generations g ON g.id=s.source_id WHERE g.visible=1 AND ($container IS NULL OR g.container_id=$container) ORDER BY ch.name", tx, args);
+        using var cmd = Command(c, "SELECT DISTINCT ch.id,ch.name,ch.server FROM characters ch JOIN source_segments s ON s.character_id=ch.id JOIN source_generations g ON g.id=s.source_id WHERE g.visible=1 AND ($container IS NULL OR g.container_id=$container) ORDER BY ch.name", tx, args);
         using var r = cmd.ExecuteReader();
         while (r.Read())
         {
@@ -107,7 +114,7 @@ public sealed partial class RecapStore
             long damage = Scalar<long>(c, "SELECT COALESCE(sum(damage),0) FROM personal_buckets WHERE " + PersonalFilter, tx, a);
             long healing = Scalar<long>(c, "SELECT COALESCE(sum(healing),0) FROM personal_buckets WHERE " + PersonalFilter, tx, a);
             long combat = Scalar<long>(c, "SELECT COALESCE(sum(i.milliseconds),0) FROM session_intervals i JOIN source_segments s ON s.id=i.segment_id WHERE i.kind='combat' AND i.actor_key=s.owner AND s.character_id=$character AND ($container IS NULL OR i.container_id=$container) AND ($from IS NULL OR reporting_date >= $from AND reporting_date < $until)", tx, a);
-            result.Add(new(id, r.GetString(1), combat, damage, healing));
+            result.Add(new(id, r.GetString(1), combat, damage, healing, NullableString(r,2)));
         }
         return result.OrderByDescending(ch => ch.CombatMilliseconds).ThenBy(ch => ch.Name, StringComparer.Ordinal).ToArray();
     }
@@ -124,17 +131,17 @@ ORDER BY (state='active') DESC,COALESCE(started_utc,(SELECT min(date_anchor) FRO
 LIMIT $limit OFFSET $offset
 """, tx, args.Concat(new (string,object?)[]{ ("$limit",filter.Limit+1),("$offset",filter.Offset) }).ToArray()))
         using (var r = cmd.ExecuteReader()) while (r.Read()) ids.Add(r.GetString(0));
-        return new(GetRevision(c,tx), ids.Take(filter.Limit).Select(id => ItemAt(c,tx,id,catalog)).ToArray(), ids.Count > filter.Limit, CharactersAt(c,tx,new()));
+        return new(GetRevision(c,tx), ids.Take(filter.Limit).Select(id => ItemAt(c,tx,id,catalog,filter)).ToArray(), ids.Count > filter.Limit, CharactersAt(c,tx,new()));
     }
-    public HistoryDetail Detail(string id, Catalog catalog)
+    public HistoryDetail Detail(string id, Catalog catalog, string? characterId = null)
     {
         using var c = Open(true); using var tx = c.BeginTransaction(); var outcomes = new List<OutcomeSummary>();
-        using (var cmd = Command(c, "SELECT a.payload,r.terminal,r.full FROM encounter_attempts a JOIN source_generations g ON g.id=a.source_id LEFT JOIN activity_runs r ON r.id=a.run_id WHERE g.container_id=$id ORDER BY a.reporting_date,a.id LIMIT 1000", tx, ("$id", id)))
+        using (var cmd = Command(c, "SELECT a.payload,r.terminal,r.full,s.name FROM encounter_attempts a JOIN source_segments s ON s.id=a.segment_id JOIN source_generations g ON g.id=a.source_id LEFT JOIN activity_runs r ON r.id=a.run_id WHERE g.container_id=$id AND g.visible=1 AND ($character IS NULL OR s.character_id=$character) ORDER BY a.reporting_date,a.id LIMIT 1000", tx, ("$id", id), ("$character",characterId)))
         using (var r = cmd.ExecuteReader()) while (r.Read())
         {
             var a = Json.Read<AttemptState>(r.GetString(0)); var activity = catalog.Document.Activities.Single(x => x.Id == a.ActivityId);
             var definition=activity.Encounters.Single(x=>x.Id==a.EncounterId);
-            outcomes.Add(new(a.Id,definition.Name,activity.Name,a.Result,a.Basis,a.Qualified,definition.Final&&!r.IsDBNull(1)&&r.GetBoolean(1),definition.Final&&!r.IsDBNull(2)&&r.GetBoolean(2),a.Date,a.Evidence.ToArray()));
+            outcomes.Add(new(a.Id,definition.Name,activity.Name,a.Result,a.Basis,a.Qualified,definition.Final&&!r.IsDBNull(1)&&r.GetBoolean(1),definition.Final&&!r.IsDBNull(2)&&r.GetBoolean(2),a.Date,a.Evidence.ToArray(),NullableString(r,3)));
         }
         var sources = new List<SourceSummary>();
         using (var cmd = Command(c, "SELECT id,original_path,next_offset,last_length,accepted,rejected,integrity,(SELECT name FROM source_segments WHERE source_id=g.id ORDER BY start_byte DESC LIMIT 1),date_anchor FROM source_generations g WHERE container_id=$id", tx, ("$id",id)))
@@ -158,11 +165,11 @@ WHERE s.source_id=$source AND s.owner IS NULL ORDER BY 2 LIMIT 64
         using (var cmd = Command(c, """
 SELECT json_extract(a.payload,'$.name'),json_extract(a.payload,'$.templateId'),count(*)
 FROM encounter_evidence a JOIN source_segments s ON s.id=a.segment_id JOIN source_generations g ON g.id=s.source_id
-WHERE g.container_id=$id AND g.visible=1 AND a.kind='npc_kill' AND json_extract(a.payload,'$.owner')=s.owner
+WHERE g.container_id=$id AND g.visible=1 AND ($character IS NULL OR s.character_id=$character) AND a.kind='npc_kill' AND json_extract(a.payload,'$.owner')=s.owner
 GROUP BY json_extract(a.payload,'$.templateId'),json_extract(a.payload,'$.name') ORDER BY count(*) DESC,1 LIMIT 1000
-""", tx, ("$id", id)))
+""", tx, ("$id", id),("$character",characterId)))
         using (var r = cmd.ExecuteReader()) while (r.Read()) kills.Add(new(r.GetString(0),r.GetString(1),r.GetInt64(2)));
-        return new(GetRevision(c,tx),ItemAt(c,tx,id,catalog),outcomes.ToArray(),sources.ToArray(),gaps.ToArray(),kills.ToArray());
+        return new(GetRevision(c,tx),ItemAt(c,tx,id,catalog,new(CharacterId:characterId)),outcomes.ToArray(),sources.ToArray(),gaps.ToArray(),kills.ToArray(),CharactersAt(c,tx,new(ContainerId:id)),characterId);
     }
     public RecapSnapshot Recap(QueryFilter filter, Catalog catalog, DateTimeOffset? now = null)
     {
@@ -189,7 +196,7 @@ GROUP BY json_extract(a.payload,'$.templateId'),json_extract(a.payload,'$.name')
         if(Scalar<long>(c,"SELECT count(*) FROM personal_buckets WHERE reporting_date IS NULL",tx)>0) coverage.Add("Undated or ambiguous amounts remain in History and are excluded from calendar totals.");
         if(Scalar<long>(c,"SELECT count(*) FROM session_intervals WHERE reporting_date IS NULL",tx)>0) coverage.Add("Some observed time cannot be assigned to a calendar date; it remains in recording details.");
         if(Scalar<long>(c,"SELECT count(*) FROM containers WHERE kind='import'",tx)>0) coverage.Add("Imported captures do not establish game-open time or observed sessions.");
-        coverage.Add("Only recorded history is included. Candidate catalog variants do not establish clears.");
+        coverage.Add("Only recorded history is included. Known death targets use shared counting rules; unsupported scripted endings remain unconfirmed.");
         var local=TimeZoneInfo.ConvertTime(now??DateTimeOffset.UtcNow,TimeZoneInfo.FindSystemTimeZoneById(settings.ReportingZone));
         var open=filter.Year==local.Year&&(filter.Month is null||filter.Month==local.Month);
         using var longest=Command(c,"SELECT i.container_id FROM session_intervals i WHERE i.kind='game' AND ($from IS NULL OR i.reporting_date >= $from AND i.reporting_date < $until) GROUP BY i.container_id ORDER BY sum(milliseconds) DESC LIMIT 1",tx,args);

@@ -18,7 +18,7 @@ public sealed class Catalog
         foreach (var a in document.Activities)
         foreach (var e in a.Encounters)
         foreach (var role in e.Roles)
-        foreach (var id in role.TemplateIds)
+        foreach (var id in role.TemplateIds.Distinct(StringComparer.Ordinal))
         {
             if (!_templates.TryGetValue(id, out var entries)) _templates[id] = entries = [];
             entries.Add((a, e, role));
@@ -36,10 +36,10 @@ public sealed class Catalog
         var matches = candidates.Where(c => area is null || c.Activity.AreaIds.Contains(area)).ToArray();
         return matches.Length == 1 ? matches[0] : null;
     }
-    // Candidate bosses are still bosses. Do not classify them as ordinary kills
-    // just because their victory rule or current area is not yet supported.
-    public bool IsBossOrTraining(string? template) => template is not null && _templates.TryGetValue(template, out var entries)
-        && entries.Any(e => e.Role.Required || e.Activity.Type == "training");
+    // Identity and victory support are separate: an unverified ending is still a known boss.
+    public bool IsBossOrTraining(string? template) => template is not null && _templates.ContainsKey(template);
+    public bool IsTraining(string? template) => template is not null && _templates.TryGetValue(template,out var entries)
+        && entries.Any(e=>e.Activity.Type=="training");
     public void Validate()
     {
         var seen = new HashSet<string>();

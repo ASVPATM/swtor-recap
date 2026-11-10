@@ -43,6 +43,16 @@ jobs:
         if: runner.os == 'Windows' && github.event_name == 'workflow_dispatch' && inputs.package
         shell: pwsh
         run: ./scripts/test-windows-package.ps1
+      - name: Verify replacement and recovery
+        if: runner.os == 'Windows' && github.event_name == 'workflow_dispatch' && inputs.package
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+        run: |
+          gh release download upgrade-baseline-0.2.0 --pattern SwtorRecap-0.2.0-Setup.exe --dir .artifacts/update-baseline
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          ./scripts/test-windows-update.ps1
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()
         with:

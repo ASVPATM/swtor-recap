@@ -10,7 +10,7 @@ Windows app for SWTOR combat stats, session history, and monthly or yearly recap
 
 | Download | Setup |
 | --- | --- |
-| `SwtorRecap-0.2.0-Setup.exe` | Run the installer, then open **SWTOR Recap** from the Start menu. |
+| `SwtorRecap-0.3.0-Setup.exe` | Run the installer, then open **SWTOR Recap** from the Start menu. |
 | `SwtorRecap-win-x64.zip` | Extract the entire ZIP and open **SwtorRecap.exe**. Keep the files together. |
 
 Windows x64. The .NET runtime is included. No administrator access is needed. The test build is unsigned, so Windows may show a publisher or reputation warning.
@@ -26,7 +26,7 @@ Windows x64. The .NET runtime is included. No administrator access is needed. Th
 | Stat | What counts |
 | --- | --- |
 | Damage and healing | Your character's raw logged output. Healing includes self-heals, periodic effects, and overhealing. Effective amounts appear in recording details. |
-| NPC kills | A recorded death after you dealt **more than 50% of the target's maximum health** in effective damage. The final blow can come from someone else. |
+| NPC kills | A recorded death after you dealt **more than 50% of the target's maximum health** in effective damage. Includes individual boss targets. You may die before the group finishes; the final blow can come from someone else. |
 | Player deaths | Your character's logged deaths. |
 | Combat time | Your logged combat intervals. |
 | Game-open time | Observed time while SWTOR is running, including AFK time; excludes sleep and recording pauses. |
@@ -34,9 +34,15 @@ Windows x64. The .NET runtime is included. No administrator access is needed. Th
 | Activity clears | A supported final-boss defeat. |
 | Full runs | All required supported encounters observed without a recording gap. |
 
-Companion and party damage/healing are excluded from your totals. NPC kills exclude players, companions, catalogued bosses and training dummies; missing health or death evidence does not establish a kill. Bosses absent from the catalog can appear as NPC kills. Quest conversations, rewards, XP, loot, and official game kill credit are not tracked.
+Companion and party damage/healing are excluded from your totals. NPC kills exclude players, companions and training dummies. Missing health or death evidence does not establish a kill. Individual boss kills and boss encounter wins are separate totals. Quest conversations, rewards, XP, loot, and official game kill credit are not tracked.
 
-Boss recognition is limited. Hammer Station has rules for its three required encounters and completion. Most other encounter IDs do not yet establish wins or clears. [Supported rules and limits](docs/GUIDE.md#encounter-coverage)
+Known bosses with explicit death targets use shared counting rules across the catalog. Scripted endings without a verified rule appear as unconfirmed. Full-run coverage is narrower than final-boss clear coverage. [Supported rules and limits](docs/GUIDE.md#encounter-coverage)
+
+## Updates and characters
+
+Use **Settings → Check for updates → Download, install and reopen**. Close SWTOR first. Recap verifies the GitHub download and saves a history backup before installation. Updates use public stable releases; private previews need the supplied installer. Updating a portable copy creates a managed installation with a Start menu shortcut.
+
+Switching characters keeps the same session while SWTOR stays open. Each character's combat stats stay separate. History and Recap show all characters by default; use the character filter for one character. Game-open time belongs to the session, not an individual character.
 
 ## Data
 

@@ -19,6 +19,8 @@ internal static class Program
     [System.Runtime.Versioning.SupportedOSPlatform("windows")]
     private static async Task<int> RunAsync(string[] args)
     {
+        if(args.Length==2&&args[0]=="--apply-update")return await UpdateInstaller.ApplyAsync(args[1]);
+        if(UpdateInstaller.IsRunning())return 0;
         var test=Array.IndexOf(args,"--test-data-dir");
         var root=test>=0?DataPaths.Isolated(test+1<args.Length?args[test+1]:null):DataPaths.Production();
         using var installerMutex=test>=0?null:new Mutex(false,@"Local\SwtorRecap.Tracker");

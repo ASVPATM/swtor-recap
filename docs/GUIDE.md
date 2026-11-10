@@ -4,7 +4,7 @@
 
 Download either file from [Releases](https://github.com/ASVPATM/swtor-recap/releases):
 
-- **Installer:** run `SwtorRecap-0.2.0-Setup.exe`. It installs for your Windows account and adds **SWTOR Recap** to the Start menu. A desktop shortcut is optional. Uninstall through Windows Settings → Apps.
+- **Installer:** run `SwtorRecap-0.3.0-Setup.exe`. It installs for your Windows account and adds **SWTOR Recap** to the Start menu. A desktop shortcut is optional. Uninstall through Windows Settings → Apps.
 - **Portable ZIP:** extract the complete `SwtorRecap-win-x64.zip` into a permanent folder, then open `SwtorRecap.exe`. Keep all files and the `agent` folder together. To remove it, disable startup, quit the tracker, and delete its application folder.
 
 Both options contain the same application and .NET runtime. No administrator access, Java, Python, Git, or separate .NET installation is needed to run them. A loading window appears while the tracker opens your history, then the dashboard opens. No command file is needed.
@@ -28,7 +28,7 @@ Several activities in one continuous game launch belong to one session. Restarti
 2. Disable **Start with Windows** if enabled. Choose **Quit tracker** from the tray, then close the dashboard.
 3. Run the new installer, or extract the new ZIP into a separate folder. Keep the old portable folder until the replacement works. Do not mix DLLs from different versions.
 4. Open **SWTOR Recap** from the Start menu if installed, or the new `SwtorRecap.exe`. Both use your existing `%LOCALAPPDATA%\SwtorRecap` history. Do not delete that data folder.
-5. With SWTOR closed and the original combat logs available, use **Settings → Reprocess saved history → Reprocess saved logs**. This adds NPC kills to old recordings and applies the full-run correction. Check the job result before playing.
+5. With SWTOR closed and the original combat logs available, use **Settings → Reprocess saved history → Reprocess saved logs**. This applies the current kill and encounter rules to older recordings. Check the job result before playing.
 6. Re-enable **Start with Windows** if wanted, then launch SWTOR normally. Remove old application shortcuts to avoid opening the previous version.
 
 New recordings count kills immediately. A `+` beside older kill totals means those recordings still need reprocessing. Reprocessing replaces results; it does not add another copy. Paused ranges stay excluded. If original logs are missing, retain the saved history and import/reprocess only when the files are available.
@@ -38,24 +38,50 @@ New recordings count kills immediately. A `+` beside older kill totals means tho
 - **Damage dealt:** your character's raw logged damage, excluding self-damage, companion damage, and party damage.
 - **Healing done:** your character's raw logged healing, including self-heals, periodic/passive effects attributed to you, and overhealing. Companion and incoming party healing are excluded. Unlogged regeneration and shielding are not estimated.
 - **Effective amounts:** the effective damage/healing values supplied by supported log records. These are separate from raw totals in recording details. Unknown effective values remain unknown.
-- **NPC kills:** an NPC's recorded death after your character deals **strictly more than half of its logged maximum health** in effective damage. For a 100,000-health enemy, 50,000 does not qualify; 50,001 does. The final hit can come from a companion or another player. Overkill does not increase effective damage. Damage across known resets or recording interruptions is not combined. If the enemy heals, the threshold still uses its maximum health, not the total damage dealt by the group.
-- **Kill exclusions:** player/companion targets, catalogued bosses, training dummies, unknown or changing maximum health, and deaths not observed in the log. Zero HP alone is insufficient. Bosses missing from the catalog can appear as NPC kills. This is Recap's contribution rule, not the game's quest or official kill-credit system.
+- **NPC kills:** an NPC's recorded death after your character deals **strictly more than half of its logged maximum health** in effective damage. For a 100,000-health enemy, 50,000 does not qualify; 50,001 does. The final hit can come from a companion or another player, including after you die. Boss targets count individually under the same rule. Overkill does not increase effective damage. Damage across known resets or recording interruptions is not combined. If the enemy heals, the threshold still uses its maximum health, not the total damage dealt by the group.
+- **Kill exclusions:** player/companion targets, training dummies, unknown or changing maximum health, and deaths not observed in the log. Zero HP alone is insufficient. Individual boss kills are separate from encounter wins. This is Recap's contribution rule, not the game's quest or official kill-credit system.
 - **Player deaths:** logged deaths of the identified local character.
 - **Combat time:** the union of your supported combat intervals. Missing boundaries leave partial coverage.
 - **Game-open time:** observed awake time while SWTOR runs, including AFK time. Sleep and recording pauses are excluded. Imports cannot reconstruct past game-open time.
-- **Boss wins:** participation in a supported encounter followed by supported victory evidence. The final blow is not required.
+- **Boss wins:** participation in a supported encounter followed by supported victory evidence. Being alive at the end or landing the final blow is not required. Healing a participant during the fight can establish participation.
 - **Activity clears:** a supported final-encounter win. Conversations, holoterminal objectives, rewards, and quest turn-ins are separate.
 - **Full runs:** all required supported encounters/objectives observed without a recording gap.
 
 These are totals, not DPS/HPS. General combat metrics and NPC kills work independently of the boss catalog. Missing log events can leave kills or encounters uncounted.
 
+## Updates
+
+1. Close SWTOR and finish or cancel imports.
+2. Open **Settings → Check for updates**.
+3. If a newer stable version is available, choose **Download, install and reopen**. Downloading can be cancelled.
+4. Recap verifies the file, saves a verified history backup, closes the tracker, runs the installer, and reopens. Windows may show its normal security prompt.
+5. If older counts need updating, use **Reprocess saved history** with the original logs available.
+
+The updater uses only `ASVPATM/swtor-recap` on GitHub. It checks release versions, refuses drafts/prereleases/downgrades, verifies the asset size and GitHub's SHA-256 digest, restricts download redirects to GitHub asset hosts, and verifies the file again before installation. Logs, history and credentials are never uploaded. Network requests occur only when you check or download.
+
+The current build is unsigned. A GitHub checksum checks download integrity; it is not publisher verification. The updater keeps Windows security checks enabled. Installer failures leave history and the recovery backup in place; reinstall the latest version if application files need repair. There is no automatic database downgrade or destructive restore.
+
+For a portable copy, the updater installs to your Windows user account and adds a Start menu shortcut. The old portable folder stays in place; use the new Start menu shortcut. An existing managed installation keeps its installation directory. A matching startup entry is moved to the installed tracker.
+
+While the repository is private, anonymous update checks report that no public stable release is available. Install the supplied preview manually. No GitHub token is required or stored. After public publication, this same updater uses the stable releases without a configuration change.
+
+## Character switching
+
+Logging into another character does not start a new session while the same SWTOR process is running. Area-entry records identify the character; group roster order and damage rankings do not select the owner. Returning to a previous character adds to that character's totals. Characters use player ID and server identity, so a name alone does not merge them.
+
+Session totals combine your characters. The current-character label follows login/area evidence. History, recording details, and monthly/yearly Recap offer **All characters** or a specific character. Bosses, clears, kills, deaths, damage, healing, and logged combat time follow that filter. Game-open time remains a session measurement because character-selection and loading time cannot be reliably assigned to one character.
+
 ## Encounter coverage
 
-Hammer Station's three required encounters have counting rules. Vorgan and his allies count as one encounter. With complete evidence, one run yields **3 boss wins / 1 clear / 1 full run**; two yield **6 / 2 / 2**. The optional Asteroid Beast has no supported boss-win rule. A wipe does not add a victory.
+The catalog currently contains 175 encounter definitions with explicit death-target rules. These use the same tested counting logic: match the area and NPC IDs, establish local participation, and observe the required targets die in the same attempt. Another player can land every final blow. A recorded death after your own death still counts. Knowing an encounter's name alone does not prove its ending.
 
-Soa and Karagga have terminal-clear rules; Jarg/Sorno has a paired-boss rule. Their current coverage is synthetic. One Bestia variant has a licensed, anonymized real-log fixture for HP-zero plus combat-exit evidence. Other Bestia variants remain candidates. Eternity Vault full-run claims are disabled because puzzle evidence is incomplete.
+Multi-target encounters count once after their required targets are defeated. Individual kills are separate: dealing over 50% of two targets' maximum health in a three-target boss can produce **2 NPC kills and 1 boss encounter win**. Exactly 50% does not qualify. Participation below 50% can still earn the encounter win and clear.
 
-Most other catalog entries identify NPCs but do not establish a win or clear. General damage, healing, deaths, combat time, and eligible NPC kills can still be recorded. No universal boss recognition or measured zero-impact performance claim is made. See `data/catalog/coverage.json` for individual rule status.
+Hammer Station requires its three main encounters for a full run. Boarding Party groups Massey, Alon and Jorland as one final encounter; its full-run roster also includes HXI-54, Major Alvena, Sakan Do'nair and Lieutenant Menerus. A final clear can count even when an earlier boss is skipped or unobserved. The optional Chief Engineer Kels does not block that full-run roster.
+
+One Bestia variant has a fixture-backed HP-zero plus combat-exit rule. Other scripted endings without a verified rule remain **unconfirmed**. Combat exit, disappearance, a timer, or a missing health bar alone is not victory evidence. Unknown NPCs can count as individual kills but cannot establish a named boss encounter or activity clear. Eternity Vault full-run claims remain disabled because puzzle evidence is incomplete.
+
+Shared-rule tests exercise every death-based catalog definition, including missing final targets and lack of local participation. These tests are not a claim that every difficulty has been tested in the live game. See `data/catalog/coverage.json` or **Settings → Catalog support and diagnostics** for rule coverage.
 
 ## Files and backups
 
@@ -70,6 +96,7 @@ Recap images hide character names by default. Combat logs, diagnostics, screensh
 | Problem | Check |
 | --- | --- |
 | Installer says Recap is running | Quit tracker from the tray and close the dashboard. |
+| Dashboard and tracker versions differ | Close SWTOR, then choose **Restart matching tracker** in the loading window. The app refuses to display counters from an older tracker. |
 | Loading fails | Check complete extraction. Use **Try again**. Save the exact error if it repeats. |
 | Ready screen while playing | Confirm `swtor.exe` is running under the same Windows account. |
 | Game detected, no log | Apply SWTOR's logging setting and check the input folder for a recent `combat_*.txt`. Restart SWTOR if needed. |
@@ -91,7 +118,7 @@ python3 scripts/check.py --quick  # Build and Core/Integration tests
 python3 scripts/publish.py        # Self-contained Windows x64 ZIP
 ```
 
-On Windows use `py` in place of `python3`. Install [Inno Setup 6](https://jrsoftware.org/isinfo.php) and run `py scripts/publish.py --installer` to produce both downloads. `scripts/verify_package.py` checks archive hashes, executable headers and icons. The Windows package smoke test runs only on disposable CI runners; it checks install, launch, Start menu shortcut and uninstall.
+On Windows use `py` in place of `python3`. Install [Inno Setup 6](https://jrsoftware.org/isinfo.php) and run `py scripts/publish.py --installer` to produce both downloads. `scripts/verify_package.py` checks archive hashes, executable headers and icons. The Windows package smoke test runs only on disposable CI runners; it checks install, launch, Start menu shortcut, upgrade, checksum rejection, preserved history and uninstall.
 
 Build runs and logs are kept in a separate private repository. The workflow template is `scripts/ci/verify.yml`. Release downloads include SHA-256 checksums, file manifests and dependency notices. Local checks can be run without GitHub.
 

@@ -1,5 +1,5 @@
 {
-  "version": "2026.11.09.1",
+  "version": "2026.11.09.2",
   "activities": [
     {
       "id": "a_traitor_among_the_chiss",
@@ -970,9 +970,13 @@
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
-          "positiveFixtures": [],
-          "negativeFixtures": []
+          "status": "logic-tested",
+          "positiveFixtures": [
+            "boarding-group"
+          ],
+          "negativeFixtures": [
+            "boarding-wipe"
+          ]
         },
         {
           "id": "major_alvena",
@@ -985,16 +989,20 @@
                 "1004464001515520",
                 "2514505783312384"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
-          "positiveFixtures": [],
-          "negativeFixtures": []
+          "status": "logic-tested",
+          "positiveFixtures": [
+            "boarding-group"
+          ],
+          "negativeFixtures": [
+            "boarding-wipe"
+          ]
         },
         {
           "id": "sakan_donair",
@@ -1014,9 +1022,13 @@
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
-          "positiveFixtures": [],
-          "negativeFixtures": []
+          "status": "logic-tested",
+          "positiveFixtures": [
+            "boarding-group"
+          ],
+          "negativeFixtures": [
+            "boarding-wipe"
+          ]
         },
         {
           "id": "lieutenant_menerus",
@@ -1029,16 +1041,20 @@
                 "1005417484255232",
                 "2514501488345088"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
-          "positiveFixtures": [],
-          "negativeFixtures": []
+          "status": "logic-tested",
+          "positiveFixtures": [
+            "boarding-group"
+          ],
+          "negativeFixtures": [
+            "boarding-wipe"
+          ]
         },
         {
           "id": "storm_squad",
@@ -1051,7 +1067,7 @@
                 "957850721452032",
                 "2514535848083456"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-1",
@@ -1060,7 +1076,7 @@
                 "2514531553116160",
                 "739825296605184"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-2",
@@ -1069,16 +1085,20 @@
                 "2514527258148864",
                 "957597318381568"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": true,
           "optional": false,
-          "status": "candidate",
-          "positiveFixtures": [],
-          "negativeFixtures": []
+          "status": "logic-tested",
+          "positiveFixtures": [
+            "boarding-group"
+          ],
+          "negativeFixtures": [
+            "boarding-wipe"
+          ]
         },
         {
           "id": "chief_engineer_kels",
@@ -1091,20 +1111,40 @@
                 "1004111814197248",
                 "2514488603443200"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
-          "status": "candidate",
-          "positiveFixtures": [],
-          "negativeFixtures": []
+          "optional": true,
+          "status": "logic-tested",
+          "positiveFixtures": [
+            "boarding-group"
+          ],
+          "negativeFixtures": [
+            "boarding-wipe"
+          ]
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "hxi_54_juggernaut"
+        ],
+        [
+          "major_alvena"
+        ],
+        [
+          "sakan_donair"
+        ],
+        [
+          "lieutenant_menerus"
+        ],
+        [
+          "storm_squad"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/boarding_party.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"

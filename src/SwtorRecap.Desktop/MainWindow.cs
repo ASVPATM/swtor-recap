@@ -9,6 +9,9 @@ using Avalonia.Platform.Storage;
 using Avalonia.Platform;
 using Avalonia.Threading;
 using SwtorRecap.Core;
+using SwtorRecap.Engine;
+using SwtorRecap.Platform.Windows;
+using System.Diagnostics;
 using System.Globalization;
 
 namespace SwtorRecap.Desktop;
@@ -36,6 +39,8 @@ public sealed class MainWindow : Window
     private StackPanel? _sessionContent;
     private TextBlock? _jobStatus;
     private int _viewRequest;
+    private UpdatePanel? _updates;
+    private HttpClient? _updateHttp;
     public MainWindow(ITrackerClient client,bool preview=false,bool settings=false,TrackerSnapshot? initialSnapshot=null)
     {
         _client=client;_preview=preview;_snapshot=initialSnapshot;Title="SWTOR Recap";Width=1080;Height=780;MinWidth=740;MinHeight=540;
@@ -61,7 +66,7 @@ public sealed class MainWindow : Window
         var scroll=new ScrollViewer{Content=content,HorizontalScrollBarVisibility=ScrollBarVisibility.Disabled};Grid.SetRow(scroll,1);layout.Children.Add(scroll);Content=layout;
         Opened+=async(_,_)=>{if(initialSnapshot is null)await RefreshSnapshot();else _status.Text=initialSnapshot.Message;Navigate(settings?"Settings":"Session");_timer.Start();};
         _timer.Tick+=async(_,_)=>await RefreshSnapshot();
-        Closed+=(_,_)=>{_timer.Stop();_closed.Cancel();};
+        Closed+=(_,_)=>{_timer.Stop();_updates?.Cancel();_closed.Cancel();_updateHttp?.Dispose();};
         KeyDown+=(_,e)=>{if(e.Key==Avalonia.Input.Key.Escape){_notice.Text="";if(_page=="Detail")Navigate("History");}};
     }
     public void Navigate(string page)
@@ -123,10 +128,11 @@ public sealed class MainWindow : Window
         {
             var value=values[i];var label=Text(value.Item1,13);label.Foreground=AppTheme.Muted;var number=Text(value.Item2,29);number.FontWeight=FontWeight.SemiBold;
             var stack=Stack(label,number);stack.Spacing=6;ToolTip.SetTip(stack,MetricDefinitions.All[value.Item3]);
-            if(value.Item3 == "kills"){var note=Text(t.KillsNeedReprocess?"Reprocess saved logs to include older recordings":"Your damage > 50% of maximum health",12);note.Foreground=AppTheme.Muted;stack.Children.Add(note);}
+            if(value.Item3 == "kills"){var note=Text(t.KillsNeedReprocess?"Reprocess saved logs to update older counts":"Includes boss targets · your damage > 50% of max health",12);note.Foreground=AppTheme.Muted;stack.Children.Add(note);}
             if(value.Item3 is "healing" or "clears"){var note=Text(value.Item3=="healing"?"Your raw healing, including self-heals":"Final boss defeated · mission turn-in excluded",12);note.Foreground=AppTheme.Muted;stack.Children.Add(note);}
             Grid.SetColumn(stack,i%2);Grid.SetRow(stack,i/2);grid.Children.Add(stack);
         }
+        if(t.UnconfirmedEncounters>0){var note=Text($"{t.UnconfirmedEncounters:N0} encounter outcomes unconfirmed · see recording details",13);grid.RowDefinitions.Add(new RowDefinition(GridLength.Auto));Grid.SetRow(note,4);Grid.SetColumnSpan(note,2);grid.Children.Add(note);}
         return new Border{Child=grid,Padding=new Thickness(24),CornerRadius=new CornerRadius(12),Background=AppTheme.Surface};
     }
     private void RenderSession()
@@ -141,6 +147,8 @@ public sealed class MainWindow : Window
             idleActions.Children.Add(Action("Recording settings","session-setup",()=>{Navigate("Settings");return Task.CompletedTask;}));_sessionContent.Children.Add(idleActions);return;
         }
         _title.Text="Current session";
+        if(_snapshot.CurrentCharacter is { } active)_sessionContent.Children.Add(Text("Currently playing · "+active,16));
+        if(item.Characters.Length>1)_sessionContent.Children.Add(Text("Session totals include all characters. Filter a character in recording details or Recap.",13));
         _sessionContent.Children.Add(Text(string.Join(" · ",item.Characters.DefaultIfEmpty("Character not identified")),20));
         _sessionContent.Children.Add(Text($"{DisplayDate(item.StartedUtc)}{(_preview?" · Sample recording":"")}",13));
         _sessionContent.Children.Add(Metrics(item.Totals));
@@ -155,7 +163,7 @@ public sealed class MainWindow : Window
         var panel=new StackPanel{Spacing=14};AutomationProperties.SetAutomationId(panel,"history-view");
         var filters=new WrapPanel();
         var year=new TextBox{Text=_historyFilter.Year?.ToString()??"",PlaceholderText="All years",Width=120,Margin=new Thickness(0,0,10,10)};AutomationProperties.SetName(year,"History year");
-        var characters=new ComboBox{ItemsSource=new[]{"All characters"}.Concat(page.Characters.Select(c=>c.Name)).ToArray(),SelectedIndex=Math.Max(0,Array.FindIndex(page.Characters,c=>c.Id==_historyFilter.CharacterId)+1),MinWidth=190};AutomationProperties.SetName(characters,"History character");
+        var characters=new ComboBox{ItemsSource=new[]{"All characters"}.Concat(page.Characters.Select(c=>c.Label)).ToArray(),SelectedIndex=Math.Max(0,Array.FindIndex(page.Characters,c=>c.Id==_historyFilter.CharacterId)+1),MinWidth=190};AutomationProperties.SetName(characters,"History character");
         characters.Margin=new Thickness(0,0,10,10);filters.Children.Add(year);filters.Children.Add(characters);
         filters.Children.Add(Action("Apply filters","history-filter",async()=>{_historyFilter=new(Year:int.TryParse(year.Text,out var y)?y:null,CharacterId:characters.SelectedIndex>0?page.Characters[characters.SelectedIndex-1].Id:null);await RenderHistory();}));panel.Children.Add(filters);
         if(page.Items.Length==0)panel.Children.Add(Text("No recordings match these filters. Import old logs or start SWTOR with combat logging enabled.",17));
@@ -164,25 +172,29 @@ public sealed class MainWindow : Window
             var details=Stack(Text($"{DisplayDate(item.StartedUtc)}  ·  {(item.Kind=="import"?"Imported capture":"Game session")}",16),Text(string.Join(" · ",item.Characters.DefaultIfEmpty("Unresolved owner"))),
                 Text($"Damage { (item.Totals.Amounts is null?"unavailable":Count(item.Totals.Amounts.Damage))}    Healing {(item.Totals.Amounts is null?"unavailable":Count(item.Totals.Amounts.Healing))}    Combat {Duration(item.Totals.CombatMilliseconds)}    NPC kills {item.Totals.Kills:N0}    Bosses {item.Totals.Bosses:N0}{(item.GapCount>0?"    Partial coverage":"")}"));
             var button=new Button{Content=details,Background=AppTheme.Surface,HorizontalAlignment=HorizontalAlignment.Stretch,HorizontalContentAlignment=HorizontalAlignment.Left,Padding=new Thickness(20,18)};
-            button.Click+=async(_,_)=>await Run(()=>RenderDetail(item.Id));panel.Children.Add(button);
+            button.Click+=async(_,_)=>await Run(()=>RenderDetail(item.Id,_historyFilter.CharacterId));panel.Children.Add(button);
         }
         var paging=new StackPanel{Orientation=Orientation.Horizontal,Spacing=10};
         if(_historyFilter.Offset>0)paging.Children.Add(Action("Previous","history-previous",async()=>{_historyFilter=_historyFilter with{Offset=Math.Max(0,_historyFilter.Offset-_historyFilter.Limit)};await RenderHistory();}));
         if(page.HasMore)paging.Children.Add(Action("Next","history-next",async()=>{_historyFilter=_historyFilter with{Offset=_historyFilter.Offset+_historyFilter.Limit};await RenderHistory();}));panel.Children.Add(paging);_body.Content=panel;
     }
-    private async Task RenderDetail(string id)
+    private async Task RenderDetail(string id,string? characterId=null)
     {
-        var request=++_viewRequest;var detail=await _client.RequestAsync<HistoryDetail>("Detail",id,_closed.Token);if(request!=_viewRequest)return;_page="Detail";_title.Text="Recording details";
-        var panel=Stack(Action("Back to history","detail-back",()=>{Navigate("History");return Task.CompletedTask;}),Text(string.Join(" · ",detail.Item.Characters),20),Metrics(detail.Item.Totals));
+        var request=++_viewRequest;var detail=await _client.RequestAsync<HistoryDetail>("Detail",new DetailRequest(id,characterId),_closed.Token);if(request!=_viewRequest)return;_page="Detail";_title.Text="Recording details";
+        var panel=Stack(Action("Back to history","detail-back",()=>{Navigate("History");return Task.CompletedTask;}),Text(string.Join(" · ",detail.Item.Characters),20),Metrics(detail.Item.Totals,characterId is not null));
+        var roster=detail.Characters??[];
+        var character=new ComboBox{ItemsSource=new[]{"All characters"}.Concat(roster.Select(c=>c.Label)).ToArray(),SelectedIndex=Math.Max(0,Array.FindIndex(roster,c=>c.Id==characterId)+1),MinWidth=200};
+        AutomationProperties.SetAutomationId(character,"detail-character");AutomationProperties.SetName(character,"Recording character");
+        character.SelectionChanged+=async(_,_)=>await Run(()=>RenderDetail(id,character.SelectedIndex>0?roster[character.SelectedIndex-1].Id:null));panel.Children.Insert(1,character);
         if(detail.Item.Totals.Amounts is { } amounts)panel.Children.Add(Text($"Effective damage: {amounts.EffectiveDamage:N0} ({amounts.DamageUnknown:N0} events unknown) · Effective healing: {amounts.EffectiveHealing:N0} ({amounts.HealingUnknown:N0} events unknown)"));
-        if(detail.Item.Totals.KillsNeedReprocess)panel.Children.Add(Text("Older recordings need reprocessing to include NPC kills. Use Settings → Reprocess saved history."));
+        if(detail.Item.Totals.KillsNeedReprocess)panel.Children.Add(Text("Older recordings use previous counting rules. Use Settings → Reprocess saved history."));
         var kills=Stack(Text(MetricDefinitions.All["kills"]));
         foreach(var kill in detail.Kills??[])kills.Children.Add(Text($"{kill.Name} · {kill.Count:N0}"));
         if(detail.Kills is not {Length:>0})kills.Children.Add(Text("No qualifying NPC kills recorded."));
         panel.Children.Add(new Expander{Header=$"NPC kills · {detail.Item.Totals.Kills:N0}",Content=kills});
         panel.Children.Add(Text("Activity timeline",20));
         if(detail.Outcomes.Length==0)panel.Children.Add(Text("No supported boss outcome recorded."));
-        foreach(var outcome in detail.Outcomes)panel.Children.Add(Text($"{outcome.Name} · {outcome.Activity} · {outcome.Result.Replace('_',' ')} ({outcome.Basis}){(!outcome.Qualified?" · participation unconfirmed":"")}{(outcome.Terminal?" · terminal clear":"")}{(outcome.Full?" · full run observed":"")}"));
+        foreach(var outcome in detail.Outcomes)panel.Children.Add(Text($"{outcome.Character} · {outcome.Name} · {outcome.Activity} · {outcome.Result.Replace('_',' ')} ({outcome.Basis}){(!outcome.Qualified?" · participation unconfirmed":"")}{(outcome.Terminal?" · terminal clear":"")}{(outcome.Full?" · full run observed":"")}"));
         var evidence=Stack();foreach(var source in detail.Sources)evidence.Children.Add(Text($"{source.Filename} · {source.Offset:N0}/{source.Length:N0} bytes · {source.Accepted:N0} accepted · {source.Rejected:N0} rejected · {source.Integrity}"));
         foreach(var gap in detail.Gaps)evidence.Children.Add(Text($"{gap.Dimension}: {gap.Reason.Replace('_',' ')} · bytes {gap.Start:N0}–{gap.End:N0}"));
         panel.Children.Add(new Expander{Header="Source coverage and evidence",Content=evidence});_body.Content=panel;
@@ -209,7 +221,7 @@ public sealed class MainWindow : Window
         var panel=new StackPanel{Spacing=20};AutomationProperties.SetAutomationId(panel,"recap-view");
         var filters=new WrapPanel();var year=new NumericUpDown{Minimum=1900,Maximum=2200,Value=_year,Width=130};AutomationProperties.SetName(year,"Recap year");
         var month=new ComboBox{ItemsSource=new[]{"Full year"}.Concat(CultureInfo.CurrentCulture.DateTimeFormat.MonthNames.Take(12)).ToArray(),SelectedIndex=_month??0,Width=170};AutomationProperties.SetName(month,"Recap period");
-        var characters=new ComboBox{ItemsSource=new[]{"All characters"}.Concat(history.Characters.Select(c=>c.Name)).ToArray(),SelectedIndex=Math.Max(0,Array.FindIndex(history.Characters,c=>c.Id==_character)+1),MinWidth=170,MaxWidth=280};AutomationProperties.SetAutomationId(characters,"recap-character");AutomationProperties.SetName(characters,"Recap character");
+        var characters=new ComboBox{ItemsSource=new[]{"All characters"}.Concat(history.Characters.Select(c=>c.Label)).ToArray(),SelectedIndex=Math.Max(0,Array.FindIndex(history.Characters,c=>c.Id==_character)+1),MinWidth=170,MaxWidth=280};AutomationProperties.SetAutomationId(characters,"recap-character");AutomationProperties.SetName(characters,"Recap character");
         foreach(var control in new Control[]{year,month,characters}){control.Margin=new Thickness(0,0,10,10);filters.Children.Add(control);}
         filters.Children.Add(Action("View recap","recap-filter",async()=>{_year=(int)(year.Value??DateTime.Now.Year);_month=month.SelectedIndex==0?null:month.SelectedIndex;_character=characters.SelectedIndex>0?history.Characters[characters.SelectedIndex-1].Id:null;await RenderRecap();}));
         filters.Children.Add(Action("Export recap image","recap-export",()=>ExportRecap(recap)));panel.Children.Add(filters);
@@ -237,6 +249,14 @@ public sealed class MainWindow : Window
     {
         var snapshot=_snapshot;if(snapshot is null){_body.Content=Text("Connect to the tracker to load settings.");return;}
         var settings=snapshot.Settings;var panel=new StackPanel{Spacing=18};AutomationProperties.SetAutomationId(panel,"settings-view");
+        if(_updates is null)
+        {
+            IReleaseUpdater? updater=null;
+            if(!_preview&&OperatingSystem.IsWindows())
+            {_updateHttp=ReleaseUpdater.CreateClient();updater=new ReleaseUpdater(Path.Combine(snapshot.DataDirectory!,"updates"),_updateHttp,Versions.App);}
+            _updates=new UpdatePanel(updater,InstallUpdate,()=>_snapshot?.Current is null&&!(_snapshot?.Jobs.Any(j=>j.State is "queued" or "running" or "parsing" or "waiting_for_game")??true),OperatingSystem.IsWindows()&&!_preview&&!UpdateInstaller.IsInstalled);
+        }
+        if(_updates.Parent is Panel prior)prior.Children.Remove(_updates);panel.Children.Add(_updates);
         panel.Children.Add(Text("Recording",22));panel.Children.Add(Text("SWTOR creates the combat logs. Recap reads them without changing them; StarParse can read the same files."));
         panel.Children.Add(Text("Combat logs · read only",13));panel.Children.Add(Text(snapshot.ResolvedLogFolder??"Windows Documents / Star Wars - The Old Republic / CombatLogs",13));
         panel.Children.Add(Text("Saved history and backups",13));panel.Children.Add(Text(snapshot.DataDirectory??"%LOCALAPPDATA%\\SwtorRecap",13));
@@ -276,8 +296,23 @@ public sealed class MainWindow : Window
         panel.Children.Add(new Expander{Header="Reprocess saved history",Content=Stack(Text("Apply parser fixes to previous recordings using their original logs. Close SWTOR first. Existing history is kept if source files are missing."),Text("Reporting timezone",13),reporting,
             Action("Reprocess saved logs","rebuild-history",async()=>{_notice.Text="Reprocessing history…";_notice.Text=(await _client.RequestAsync<MutationResult>("Rebuild",reporting.Text??settings.ReportingZone)).Message;await RefreshSnapshot();}))});
         panel.Children.Add(new Expander{Header="Catalog support and diagnostics",Content=Stack(Text($"Parser {snapshot.ParserVersion} · Catalog {snapshot.CatalogVersion} · SQLite {snapshot.SqliteVersion}"),Action("Show supported content","catalog-coverage",async()=>
-        {var catalog=await _client.RequestAsync<CatalogDocument>("Coverage");var text=string.Join("\n",catalog.Activities.Select(a=>$"{a.Name}: {a.Encounters.Count(e=>e.Status is "terminal-tested" or "full-run-tested")} fixture-verified / {a.Encounters.Length} candidate encounters"));_body.Content=Stack(Action("Back to settings","coverage-back",()=>{Navigate("Settings");return Task.CompletedTask;}),Text(text));}))});
+        {var catalog=await _client.RequestAsync<CatalogDocument>("Coverage");var text=string.Join("\n",catalog.Activities.Select(a=>$"{a.Name}: {a.Encounters.Count(e=>e.Rule is "death_all" or "death_any")} death rules · {a.Encounters.Count(e=>e.Rule=="hp_zero_exit")} inferred rules · {a.Encounters.Count(e=>e.Rule=="unsupported")} unconfirmed endings"));_body.Content=Stack(Action("Back to settings","coverage-back",()=>{Navigate("Settings");return Task.CompletedTask;}),Text(text));}))});
         _body.Content=panel;
+    }
+    private async Task InstallUpdate(ReleaseUpdate release,string path)
+    {
+        if(_preview||!OperatingSystem.IsWindows())throw new InvalidOperationException("Install updates in the Windows application.");
+        if(new WindowsGameProcesses().Discover().Count>0)throw new InvalidOperationException("Close SWTOR before installing an update.");
+        var helper=await Task.Run(()=>OperatingSystem.IsWindows()?UpdateInstaller.StageHelper(path):throw new PlatformNotSupportedException());
+        var backup=await _client.RequestAsync<MutationResult>("PrepareUpdate");
+        using var parent=Process.GetCurrentProcess();
+        var root=_snapshot!.DataDirectory!;
+        var plan=new UpdateInstallPlan(release,Versions.App,path,UpdateInstaller.InstallDirectory,Environment.ProcessPath!,parent.Id,parent.StartTime.ToUniversalTime().Ticks,backup.Path!,root,!root.Equals(DataPaths.Production(),StringComparison.OrdinalIgnoreCase));
+        var planPath=Path.Combine(Path.GetDirectoryName(path)!,"install-plan.json");UpdateInstaller.StartHelper(helper,planPath,plan);
+        for(var i=0;i<40&&!File.Exists(planPath+".ready");i++)await Task.Delay(250);
+        if(!File.Exists(planPath+".ready"))throw new IOException("The update helper did not start. Try again.");
+        try{await _client.RequestAsync<MutationResult>("Quit");}catch(IOException){}
+        Close();
     }
     private async Task ExportRecap(RecapSnapshot recap)
     {

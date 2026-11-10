@@ -199,7 +199,7 @@ public sealed partial class CombatReducer(Catalog catalog, string reportingZone)
             if (life.CombatStart is null) { life.CombatStart = time.Utc; life.CombatOffset = r.Start; life.ClockEpoch = time.Epoch; }
             foreach (var a in s.Attempts.Values.Where(a => a.BoundaryUncertain && a.Result != "won").ToArray())
             {
-                a.Result = "interrupted"; a.Qualified = false; b.Attempts[a.Id] = Json.Clone(a);
+                if(a.Result!="unconfirmed"){a.Result = "interrupted"; a.Qualified = false;} b.Attempts[a.Id] = Json.Clone(a);
                 s.Attempts.Remove(a.EncounterId);
             }
         }
@@ -247,7 +247,7 @@ public sealed partial class CombatReducer(Catalog catalog, string reportingZone)
     }
     public static void Interrupt(ReducerState s, BatchProjection b, string reason)
     {
-        foreach (var a in s.Attempts.Values.Where(a => a.Result != "won")) { a.Result = "interrupted"; b.Attempts[a.Id] = Json.Clone(a); }
+        foreach (var a in s.Attempts.Values.Where(a => a.Result != "won")) { if(a.Result!="unconfirmed")a.Result = "interrupted"; b.Attempts[a.Id] = Json.Clone(a); }
         foreach (var run in s.Runs.Values.Where(r => !r.Terminal)) { run.Gap = true; b.Runs[run.Id] = Json.Clone(run); }
         s.Attempts.Clear(); s.Runs.Clear(); s.Gap = true;
         s.Npcs.Clear(); s.NpcCombatActive = false;
@@ -273,10 +273,10 @@ public sealed partial class CombatReducer(Catalog catalog, string reportingZone)
             if (found is not { } match) continue;
             var (activity, definition, role) = match;
             if (activity.Type == "training") continue;
-            if (!role.Required) continue; // Adds/phase entities do not define a new boss attempt.
+            if (!role.Required && definition.Rule != "unsupported") continue;
             if (!s.Attempts.TryGetValue(definition.Id, out var attempt))
             {
-                if (e.Kind == EventKind.Death || actor.Hp == 0) continue; // No prior encounter/participation context.
+                if (e.Kind is not (EventKind.Damage or EventKind.Heal) || actor.Hp == 0) continue;
                 attempt = NewAttempt(s, b, source, r, activity, definition);
             }
             if (attempt.Entities.TryGetValue(role.Id, out var prior) && prior != actor.Key && (actor.Hp > 0 || e.Kind is EventKind.Damage or EventKind.Heal))
@@ -330,6 +330,8 @@ public sealed partial class CombatReducer(Catalog catalog, string reportingZone)
             }
             if (e.Kind == EventKind.ExitCombat && e.Source.Key == s.Owner)
             {
+                if(definition.Rule=="unsupported")
+                {attempt.Result="unconfirmed";attempt.Qualified=s.Owner is not null&&attempt.Participants.Contains(s.Owner);attempt.Date=time.ReportingDate;}
                 if (definition.Rule == "hp_zero_exit" && attempt.Result == "outcome_pending" && definition.Roles.Where(x => x.Required).All(x => attempt.Terminal.Contains(x.Id)))
                 {
                     attempt.Evidence.Add(AddFact(b, source, r, time, "closing_exit", e.Source.Key, new { attemptId = attempt.Id }));
@@ -355,7 +357,10 @@ public sealed partial class CombatReducer(Catalog catalog, string reportingZone)
     }
     private static void Win(ReducerState s, BatchProjection b, AttemptState attempt, ActivityDefinition activity, EncounterDefinition definition, ResolvedTime time, string basis)
     {
-        if (definition.Status is not ("terminal-tested" or "full-run-tested" or "logic-tested")) { attempt.Result = "unsupported_outcome"; return; }
+        // Explicit deaths of the catalog's required targets use one shared rule.
+        // Inferred/scripted endings still require a separately validated rule.
+        if (!(basis=="observed" && definition.Rule is "death_all" or "death_any") && definition.Status is not ("terminal-tested" or "full-run-tested" or "logic-tested"))
+        { attempt.Result = "unconfirmed"; return; }
         attempt.Result = "won"; attempt.Basis = basis; attempt.Owner = s.Owner;
         attempt.Date = time.ReportingDate; attempt.EndUtc = time.Utc?.ToString("O", CultureInfo.InvariantCulture);
         attempt.Qualified = s.Owner is not null && attempt.Participants.Contains(s.Owner);

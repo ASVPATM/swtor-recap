@@ -41,6 +41,7 @@ internal static class Program
             {
                 if(!OperatingSystem.IsWindows())throw new PlatformNotSupportedException("Use --preview with PROJECT_FLOW_DATA on macOS.");
                 WindowsAppIdentity.Apply();
+                if(UpdateInstaller.IsRunning()){WindowsAppIdentity.ShowError("An update is being installed. SWTOR Recap will reopen when it finishes.");return 0;}
                 if(Argument("--data-dir") is null)_installerMutex=new Mutex(false,@"Local\SwtorRecap.Desktop");
                 var root=Argument("--data-dir") is { } test?DataPaths.Isolated(test):DataPaths.Production();Directory.CreateDirectory(root);
                 try{_desktopGuard=new FileStream(Path.Combine(root,"desktop.lock"),FileMode.OpenOrCreate,FileAccess.ReadWrite,FileShare.None);}

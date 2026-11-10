@@ -56,17 +56,24 @@ REPLACE AN OLDER VERSION
 4. Open the new SwtorRecap.exe (or SWTOR Recap in the Start menu if installed).
    It uses the existing history in %LOCALAPPDATA%\\SwtorRecap.
 5. With SWTOR closed and the original logs available, use Settings >
-   Reprocess saved history > Reprocess saved logs. This adds NPC kills to old
-   recordings and corrects the older full-run counting bug.
+   Reprocess saved history > Reprocess saved logs. This applies the new
+   counting rules to older recordings.
 6. Re-enable Start with Windows if wanted. Do not mix old and new DLLs.
+
+UPDATES
+Settings > Check for updates > Download, install and reopen. Updates come from
+the public stable GitHub release, with SHA-256 verification and a history backup.
+Private previews use the supplied installer. Updating a portable copy creates
+a managed installation; use the Start menu afterwards.
 
 COUNTS
 Damage and healing: your character's raw logged amounts. Effective amounts
 appear in recording details. Companion and party output is excluded.
 NPC kills: a recorded death after your character deals MORE than half of
 that target's logged maximum health in effective damage. Exactly half does
-not qualify. Someone else can land the final blow. Known bosses, players,
-companions, training dummies, unknown health and unobserved deaths are excluded.
+not qualify. Someone else can land the final blow, even after you die. Boss
+targets count individually; encounter wins are separate. Players, companions,
+training dummies, unknown health and unobserved deaths are excluded.
 Boss wins: supported encounters with your participation and victory evidence.
 Clears: a supported final-boss defeat. Quest turn-in is separate.
 Full runs: all required supported encounters observed without a recording gap.
