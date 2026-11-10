@@ -75,6 +75,7 @@ try {
     for($i=0;$i -lt 40 -and !(Test-Path ($planPath+'.ready'));$i++){Start-Sleep -Milliseconds 250}
     Require (Test-Path ($planPath+'.ready')) 'Update helper did not start'
     Stop-Tracker
+    $desktop.Refresh()
     Require ($desktop.CloseMainWindow()) 'Dashboard did not close for update';Require ($desktop.WaitForExit(10000)) 'Dashboard remained open'
     Require ($helper.WaitForExit(120000)) 'Installer helper did not finish'
     $result=Get-Content (Join-Path $work 'result.json') -Raw|ConvertFrom-Json;Require $result.success $result.error
