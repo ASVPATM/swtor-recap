@@ -2,7 +2,8 @@
 $ErrorActionPreference = 'Stop'
 if ($env:GITHUB_ACTIONS -ne 'true' -or !$IsWindows) { throw 'Use a disposable Windows GitHub Actions runner.' }
 $package = (Resolve-Path 'artifacts/SwtorRecap-win-x64').Path
-$setup = (Resolve-Path 'artifacts/SwtorRecap-0.3.0-Setup.exe').Path
+$version = (Get-Content (Join-Path $package "release-manifest.json") -Raw | ConvertFrom-Json).applicationVersion
+$setup = (Resolve-Path "artifacts/SwtorRecap-$version-Setup.exe").Path
 $baseline = (Resolve-Path '.artifacts/update-baseline/SwtorRecap-0.2.0-Setup.exe').Path
 if ((Get-FileHash $baseline -Algorithm SHA256).Hash -ne 'EB152A23A3CE4CE425F3254C951097466E1E14EB74165F9E519DD9272A6EBFD1') { throw 'Baseline checksum mismatch' }
 $root = Join-Path ([IO.Path]::GetTempPath()) ('swtor-update-' + [guid]::NewGuid().ToString('N'))
@@ -63,13 +64,13 @@ try {
     }
     Require ($button -and $button.Current.Name -eq 'Restart matching tracker') 'Mixed versions were not blocked'
     $button.GetCurrentPattern([Windows.Automation.InvokePattern]::Pattern).Invoke()
-    $snapshot=Wait-Snapshot '0.3.0';$report.mixedVersionRecovery=$true
+    $snapshot=Wait-Snapshot $version;$report.mixedVersionRecovery=$true
     $before=Request 'Recap' $null @{year=2026}
     $backup=Request 'PrepareUpdate' $snapshot.revision.historyEpoch
     Require (Test-Path $backup.payload.path) 'Verified recovery backup missing'
     Copy-Item (Join-Path $package 'agent') (Join-Path $work 'helper') -Recurse
-    $installerPath=Join-Path $work 'SwtorRecap-0.3.0-Setup.exe';Copy-Item $setup $installerPath
-    $plan=@{release=@{version='0.3.0';url='https://github.com/ASVPATM/swtor-recap/releases/download/v0.3.0/SwtorRecap-0.3.0-Setup.exe';sha256=(Get-FileHash $installerPath -Algorithm SHA256).Hash;size=(Get-Item $installerPath).Length};currentVersion='0.2.0';installerPath=$installerPath;installDirectory=$installed;previousExecutable=(Join-Path $installed 'SwtorRecap.exe');parentPid=$desktop.Id;parentStartedTicks=$desktop.StartTime.ToUniversalTime().Ticks;backupPath=$backup.payload.path;dataRoot=$dataRoot;isolated=$true}
+    $installerPath=Join-Path $work "SwtorRecap-$version-Setup.exe";Copy-Item $setup $installerPath
+    $plan=@{release=@{version=$version;url="https://github.com/ASVPATM/swtor-recap/releases/download/v$version/SwtorRecap-$version-Setup.exe";sha256=(Get-FileHash $installerPath -Algorithm SHA256).Hash;size=(Get-Item $installerPath).Length};currentVersion='0.2.0';installerPath=$installerPath;installDirectory=$installed;previousExecutable=(Join-Path $installed 'SwtorRecap.exe');parentPid=$desktop.Id;parentStartedTicks=$desktop.StartTime.ToUniversalTime().Ticks;backupPath=$backup.payload.path;dataRoot=$dataRoot;isolated=$true}
     $planPath=Join-Path $work 'install-plan.json';$plan|ConvertTo-Json -Depth 8|Set-Content $planPath
     $helper=Start-Process (Join-Path $work 'helper/SwtorRecap.Agent.exe') -ArgumentList @('--apply-update',('"'+$planPath+'"')) -PassThru
     for($i=0;$i -lt 40 -and !(Test-Path ($planPath+'.ready'));$i++){Start-Sleep -Milliseconds 250}
@@ -80,7 +81,7 @@ try {
     Require ($helper.WaitForExit(120000)) 'Installer helper did not finish'
     $result=Get-Content (Join-Path $work 'result.json') -Raw|ConvertFrom-Json;Require $result.success $result.error
     $report.installedUpgrade=$true
-    $null=Wait-Snapshot '0.3.0';$after=Request 'Recap' $null @{year=2026}
+    $null=Wait-Snapshot $version;$after=Request 'Recap' $null @{year=2026}
     Require (($before.payload.totals|ConvertTo-Json -Depth 8 -Compress) -eq ($after.payload.totals|ConvertTo-Json -Depth 8 -Compress)) 'Upgrade changed recorded totals'
     $report.historyPreserved=$true;$report.backupVerified=$true;$report.reopened=$true
     $desktop=Get-Process SwtorRecap | Where-Object Path -eq (Join-Path $installed 'SwtorRecap.exe') | Select-Object -First 1
@@ -90,7 +91,7 @@ try {
     $plan.parentPid=2147483647;$plan.parentStartedTicks=0;$plan|ConvertTo-Json -Depth 8|Set-Content $planPath
     $helper=Start-Process (Join-Path $work 'helper/SwtorRecap.Agent.exe') -ArgumentList @('--apply-update',('"'+$planPath+'"')) -PassThru -Wait
     $rejected=Get-Content (Join-Path $work 'result.json') -Raw|ConvertFrom-Json;Require (!$rejected.success -and $rejected.error -like '*verification failed*') 'Corrupt update was not rejected by checksum verification'
-    $null=Wait-Snapshot '0.3.0';$report.corruptionRejected=$true
+    $null=Wait-Snapshot $version;$report.corruptionRejected=$true
     $desktop=Get-Process SwtorRecap|Where-Object Path -eq (Join-Path $installed 'SwtorRecap.exe')|Select-Object -First 1
     $null=$desktop.CloseMainWindow();$null=$desktop.WaitForExit(10000);Stop-Tracker
     $uninstall=Start-Process (Join-Path $installed 'unins000.exe') -ArgumentList @('/VERYSILENT','/NORESTART') -Wait -PassThru
