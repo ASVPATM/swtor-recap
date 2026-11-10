@@ -53,7 +53,7 @@ public static class MetricDefinitions
         ["combatTime"] = "Union of supported local-owner combat intervals. Interrupted boundaries remain partial.",
         ["bosses"] = "Participated, supported encounter occurrences won, not individual NPC deaths or final-blow credit.",
         ["deaths"] = "Recorded deaths of your identified character.",
-        ["kills"] = "NPC deaths after your character dealt more than 50% of the target's logged maximum health in effective damage. Includes individual boss targets, separately from encounter wins. Excludes companions, players and training dummies. Requires known health and a recorded death; you may be dead and another player may land the final blow.",
+        ["kills"] = "NPC deaths after your character dealt more than 50% of the target's logged maximum health in effective damage. Includes individual boss targets, separately from encounter wins. Excludes companions, players and known training dummies. Requires known health and a recorded death; you may be dead and another player may land the final blow.",
         ["clears"] = "Supported final encounter wins. Does not establish mission turn-in, rewards, or a full run.",
         ["fullRuns"] = "All required encounter/objective groups observed with continuity under a complete catalog definition.",
         ["sessions"] = "Distinct observed SWTOR process instances. Imported captures are counted separately."

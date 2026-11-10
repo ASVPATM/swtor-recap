@@ -33,6 +33,11 @@ public sealed class NpcKillTests
             foreach(var template in activity.Encounters.SelectMany(e=>e.Roles.SelectMany(r=>r.TemplateIds)).Distinct())
                 Assert.Equal(catalog.IsTraining(template)?0:1,Kills(Reduce(Hit(60,60,$"Boss {{{template}}}:1"),Die($"Boss {{{template}}}:1"))).Length);
     }
+    [Fact]public void KnownTrainingDummyDeathKeepsDamageButDoesNotCountAsAKill()
+    {
+        var b=Reduce(Hit(100,100,"Dummy {2857785339412480}:1"),Die("Dummy {2857785339412480}:1"));
+        Assert.Empty(Kills(b));Assert.Equal(100,b.Buckets.Values.Sum(v=>v.Amounts.Damage));Assert.Empty(b.Attempts);
+    }
     [Fact]public void DyingBeforeGroupFinishesPreservesIndividualKillContribution()
     {
         Assert.Single(Kills(Reduce(Hit(60,60),E(Other,Local,EffectIds.Death),E(Local,"",EffectIds.Exit),Die())));

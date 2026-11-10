@@ -1,6 +1,6 @@
 {
   "version": "2026.11.09.2",
-  "activities": 54,
+  "activities": 55,
   "coverage": [
     {
       "activity": "a_traitor_among_the_chiss",
@@ -3996,6 +3996,26 @@
           ],
           "countsExplicitDeaths": true,
           "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
+        }
+      ]
+    },
+    {
+      "activity": "training_dummy",
+      "type": "training",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "training_dummy",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2857785339412480"
+          ],
+          "countsExplicitDeaths": false,
+          "reason": "Identifiers only; terminal evidence not validated."
         }
       ]
     }

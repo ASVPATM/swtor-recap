@@ -37,6 +37,8 @@ def build(snapshot):
         activities.append(dict(id=activity_id, name=area.get("name", activity_id), type=kind, areaIds=[str(area_id)], encounters=encounters,
             requiredGroups=[[v] for v in rosters.get(activity_id, [])], completeObjectives=activity_id in rosters,
             provenance=f"https://github.com/baras-app/baras/blob/{COMMIT}/{path.relative_to(snapshot)}", commit=COMMIT, license="MIT"))
+    # Stable dummy ID from the same licensed snapshot; practice deaths are not kills.
+    activities.append({'id': 'training_dummy', 'name': 'Training dummy', 'type': 'training', 'areaIds': [], 'encounters': [{'id': 'training_dummy', 'name': 'Training dummy', 'roles': [{'id': 'dummy', 'name': 'Training dummy', 'templateIds': ['2857785339412480'], 'required': False}], 'rule': 'unsupported', 'victoryId': None, 'final': False, 'optional': True, 'status': 'candidate', 'positiveFixtures': [], 'negativeFixtures': []}], 'requiredGroups': [], 'completeObjectives': False, 'provenance': 'https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/src/game_data/world_bosses.rs', 'commit': COMMIT, 'license': 'MIT'})
     return dict(version="2026.11.09.1", activities=activities)
 
 

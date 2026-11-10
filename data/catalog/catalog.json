@@ -7015,6 +7015,40 @@
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/other/orbital_core.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
+    },
+    {
+      "id": "training_dummy",
+      "name": "Training dummy",
+      "type": "training",
+      "areaIds": [],
+      "encounters": [
+        {
+          "id": "training_dummy",
+          "name": "Training dummy",
+          "roles": [
+            {
+              "id": "dummy",
+              "name": "Training dummy",
+              "templateIds": [
+                "2857785339412480"
+              ],
+              "required": false
+            }
+          ],
+          "rule": "unsupported",
+          "victoryId": null,
+          "final": false,
+          "optional": true,
+          "status": "candidate",
+          "positiveFixtures": [],
+          "negativeFixtures": []
+        }
+      ],
+      "requiredGroups": [],
+      "completeObjectives": false,
+      "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/src/game_data/world_bosses.rs",
+      "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
+      "license": "MIT"
     }
   ]
 }

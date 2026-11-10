@@ -34,7 +34,7 @@ Windows x64. The .NET runtime is included. No administrator access is needed. Th
 | Activity clears | A supported final-boss defeat. |
 | Full runs | All required supported encounters observed without a recording gap. |
 
-Companion and party damage/healing are excluded from your totals. NPC kills exclude players, companions and training dummies. Missing health or death evidence does not establish a kill. Individual boss kills and boss encounter wins are separate totals. Quest conversations, rewards, XP, loot, and official game kill credit are not tracked.
+Companion and party damage/healing are excluded from your totals. NPC kills exclude players, companions and known training dummies. Missing health or death evidence does not establish a kill. Individual boss kills and boss encounter wins are separate totals. Quest conversations, rewards, XP, loot, and official game kill credit are not tracked.
 
 Known bosses with explicit death targets use shared counting rules across the catalog. Scripted endings without a verified rule appear as unconfirmed. Full-run coverage is narrower than final-boss clear coverage. [Supported rules and limits](docs/GUIDE.md#encounter-coverage)
 
