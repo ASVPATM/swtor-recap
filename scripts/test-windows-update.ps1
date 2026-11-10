@@ -64,7 +64,7 @@ try {
     }
     Require ($button -and $button.Current.Name -eq 'Restart matching tracker') 'Mixed versions were not blocked'
     $button.GetCurrentPattern([Windows.Automation.InvokePattern]::Pattern).Invoke()
-    $snapshot=Wait-Snapshot $version;$report.mixedVersionRecovery=$true
+    $snapshot=Wait-Snapshot $version;$report.mixedVersionRecovery=$true;Write-Host 'Mixed-version recovery passed'
     $before=Request 'Recap' $null @{year=2026}
     $backup=Request 'PrepareUpdate' $snapshot.revision.historyEpoch
     Require (Test-Path $backup.payload.path) 'Verified recovery backup missing'
@@ -83,13 +83,14 @@ try {
     $report.installedUpgrade=$true
     $null=Wait-Snapshot $version;$after=Request 'Recap' $null @{year=2026}
     Require (($before.payload.totals|ConvertTo-Json -Depth 8 -Compress) -eq ($after.payload.totals|ConvertTo-Json -Depth 8 -Compress)) 'Upgrade changed recorded totals'
-    $report.historyPreserved=$true;$report.backupVerified=$true;$report.reopened=$true
+    $report.historyPreserved=$true;$report.backupVerified=$true;$report.reopened=$true;Write-Host 'Upgrade, backup, preserved history and reopen passed'
     $desktop=Get-Process SwtorRecap | Where-Object Path -eq (Join-Path $installed 'SwtorRecap.exe') | Select-Object -First 1
     Require ($null -ne $desktop) 'Updated dashboard not found';$null=$desktop.CloseMainWindow();$null=$desktop.WaitForExit(10000);Stop-Tracker
     # A modified download must never reach the installer; the old app is reopened.
     [IO.File]::WriteAllText($installerPath,'corrupt')
     $plan.parentPid=2147483647;$plan.parentStartedTicks=0;$plan|ConvertTo-Json -Depth 8|Set-Content $planPath
-    $helper=Start-Process (Join-Path $work 'helper/SwtorRecap.Agent.exe') -ArgumentList @('--apply-update',('"'+$planPath+'"')) -PassThru -Wait
+    $helper=Start-Process (Join-Path $work 'helper/SwtorRecap.Agent.exe') -ArgumentList @('--apply-update',('"'+$planPath+'"')) -PassThru
+    Require ($helper.WaitForExit(30000)) 'Corrupt-update recovery did not finish'
     $rejected=Get-Content (Join-Path $work 'result.json') -Raw|ConvertFrom-Json;Require (!$rejected.success -and $rejected.error -like '*verification failed*') 'Corrupt update was not rejected by checksum verification'
     $null=Wait-Snapshot $version;$report.corruptionRejected=$true
     $desktop=Get-Process SwtorRecap|Where-Object Path -eq (Join-Path $installed 'SwtorRecap.exe')|Select-Object -First 1
