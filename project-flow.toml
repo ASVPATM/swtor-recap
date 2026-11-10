@@ -1,0 +1,17 @@
+# Review before running: commands have your OS privileges, not a VM sandbox.
+[project]
+include = ["src", "tests", "scripts", "data", "assets", "installer", "docs", "LICENSE", "SwtorRecap.slnx", "global.json", "Directory.Build.props", "Directory.Packages.props", "README.md", "THIRD_PARTY_NOTICES.txt"]
+exclude = ["**/bin/**", "**/obj/**"]
+max_file_bytes = 8388608
+max_total_bytes = 33554432
+checks = [["python3", "scripts/check.py", "--quick"]]
+preview_kind = "command"
+preview = [["bash", "scripts/preview.sh"]]
+preview_mutations = true # Only isolated PROJECT_FLOW_DATA and copied source/build outputs.
+scenarios = ["default"]
+supports_seed = false
+capture_narrow = false
+
+[model]
+# LocalDev uses its existing worker/resident profiles; no model endpoint here.
+organizer_timeout = 20

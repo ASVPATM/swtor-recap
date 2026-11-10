@@ -1,0 +1,64 @@
+name: Build and test
+on:
+  push:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: Build and test both Windows downloads
+        type: boolean
+        default: true
+permissions:
+  contents: read
+jobs:
+  verify:
+    if: github.event.repository.private
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-15, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5
+        with:
+          global-json-file: global.json
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.13'
+      - name: Build, tests and replay
+        run: python scripts/check.py
+      - name: Build Windows downloads
+        if: runner.os == 'Windows' && github.event_name == 'workflow_dispatch' && inputs.package
+        shell: pwsh
+        run: |
+          $env:SWTOR_SOURCE_COMMIT = (Get-Content source-commit.txt).Trim()
+          python scripts/publish.py --installer
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python scripts/verify_package.py
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+      - name: Install, launch and uninstall
+        if: runner.os == 'Windows' && github.event_name == 'workflow_dispatch' && inputs.package
+        shell: pwsh
+        run: ./scripts/test-windows-package.ps1
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: private-validation-${{ matrix.os }}
+          path: |
+            .artifacts/latest-validation.json
+            .artifacts/package-smoke/
+            .artifacts/ui-qa/
+          retention-days: 14
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: runner.os == 'Windows' && github.event_name == 'workflow_dispatch' && inputs.package
+        with:
+          name: Windows-downloads
+          path: |
+            artifacts/SwtorRecap-win-x64.zip
+            artifacts/SwtorRecap-*-Setup.exe
+            artifacts/SHA256SUMS.txt
+          if-no-files-found: error
+          retention-days: 14

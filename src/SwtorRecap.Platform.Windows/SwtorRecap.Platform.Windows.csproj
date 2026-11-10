@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><ItemGroup><ProjectReference Include="../SwtorRecap.Core/SwtorRecap.Core.csproj" /><ProjectReference Include="../SwtorRecap.Engine/SwtorRecap.Engine.csproj" /></ItemGroup></Project>

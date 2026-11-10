@@ -1,0 +1,1 @@
+<Project Sdk="Microsoft.NET.Sdk"><PropertyGroup><OutputType>WinExe</OutputType><ApplicationIcon>../../assets/app.ico</ApplicationIcon></PropertyGroup><ItemGroup><ProjectReference Include="../SwtorRecap.Engine/SwtorRecap.Engine.csproj" /><ProjectReference Include="../SwtorRecap.Platform.Windows/SwtorRecap.Platform.Windows.csproj" /></ItemGroup></Project>

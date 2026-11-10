@@ -1,0 +1,17 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SwtorRecap.Agent/SwtorRecap.Agent.csproj" />
+    <Project Path="src/SwtorRecap.Core/SwtorRecap.Core.csproj" />
+    <Project Path="src/SwtorRecap.Desktop/SwtorRecap.Desktop.csproj" />
+    <Project Path="src/SwtorRecap.Engine/SwtorRecap.Engine.csproj" />
+    <Project Path="src/SwtorRecap.Platform.Windows/SwtorRecap.Platform.Windows.csproj" />
+    <Project Path="src/SwtorRecap.Storage/SwtorRecap.Storage.csproj" />
+    <Project Path="src/SwtorRecap.Tools/SwtorRecap.Tools.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SwtorRecap.Core.Tests/SwtorRecap.Core.Tests.csproj" />
+    <Project Path="tests/SwtorRecap.Desktop.Tests/SwtorRecap.Desktop.Tests.csproj" />
+    <Project Path="tests/SwtorRecap.Integration.Tests/SwtorRecap.Integration.Tests.csproj" />
+    <Project Path="tests/SwtorRecap.Windows.Tests/SwtorRecap.Windows.Tests.csproj" />
+  </Folder>
+</Solution>

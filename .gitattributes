@@ -1,0 +1,5 @@
+* text=auto eol=lf
+# Replay expectations depend on exact bytes, encodings, and CRLF boundaries.
+tests/Fixtures/logs/* -text -diff
+*.png binary
+*.ico binary

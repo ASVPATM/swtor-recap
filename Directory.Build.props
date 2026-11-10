@@ -1,0 +1,13 @@
+<Project>
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <RuntimeIdentifiers>win-x64;osx-arm64</RuntimeIdentifiers>
+    <Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings>
+    <CheckForOverflowUnderflow>true</CheckForOverflowUnderflow>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <ServerGarbageCollection>false</ServerGarbageCollection>
+    <Deterministic>true</Deterministic><Version>0.2.0</Version>
+    <Product>SWTOR Recap</Product><Copyright>Copyright 2026 ASVPATM and SWTOR Recap contributors</Copyright>
+  </PropertyGroup>
+</Project>

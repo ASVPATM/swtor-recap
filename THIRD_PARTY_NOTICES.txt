@@ -1,0 +1,25 @@
+SWTOR Recap third-party notices
+
+Catalog identifiers and anonymized public Bestia fixture derived from BARAS, pinned at b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d.
+https://github.com/baras-app/baras
+
+Copyright (c) 2025 The BARAS Authors
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+.NET and Microsoft.Data.Sqlite: MIT, https://github.com/dotnet
+Avalonia: MIT, https://github.com/AvaloniaUI/Avalonia
+SQLitePCLRaw: Apache-2.0, https://github.com/ericsink/SQLitePCL.raw
+SQLite: public domain, https://sqlite.org/copyright.html
+Resolved dependency identities are recorded in packages.lock.json files.
+
+The Windows package's licenses/ directory contains the pinned Avalonia and
+SQLitePCLRaw license texts, available native Skia/HarfBuzz/ANGLE/SQLite license
+and notice files, and dependency license/copyright/source metadata. The bundled
+.NET runtime includes its own LICENSE and THIRD-PARTY-NOTICES files.
+Avalonia 12.1.5 source: 5825bf8c66fba0c11e67c980d8ece6444576bffa
+SQLitePCLRaw 3.0.5 source: ed046114d5a30534e13294d94d78eb73de896ad4

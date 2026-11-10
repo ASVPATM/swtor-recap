@@ -1,0 +1,3738 @@
+{
+  "version": "2026.11.09.1",
+  "activities": 54,
+  "coverage": [
+    {
+      "activity": "a_traitor_among_the_chiss",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "guardian_droid",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4128382694457344"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "syndic_zenta",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4135314771673088"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "valss",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4132209510318080"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "strike_team_walker",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4137311931465728"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "temple_cat",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4129460731248640"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "assault_on_tython",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "major_travik",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3331296893861888"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "lieutenant_kreshin",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3465690715521024",
+            "3328904597078016"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "lord_goh",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3465699305455616",
+            "3325872350167040"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "republic_commander",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3485688083251200",
+            "3493169916280832"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "major_imos",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3465471672188928",
+            "3327405653491712"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "master_liam_dentiri",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3465536096698368",
+            "3325902414938112"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "master_oric_traless",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3465579046371328",
+            "3327796495515648"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "imperial_commander",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3485696673185792",
+            "3493174211248128"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "athiss",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "leyarsha",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "1172496007036928",
+            "3158072272879616"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "vodal_beast",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2263129937412096",
+            "3158119517519872"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "vodal_prophet",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "1172951273570304",
+            "3158123812487168"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "ancient_abomination",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3247459132243968"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "battle_of_ilum",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "gark_the_indomitable",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2511477831368704",
+            "1675608476090368"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "drinda_velasu",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2511473536401408",
+            "770938039697408",
+            "770942334664704",
+            "2511490716270592"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "crystal_droids",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "1675690080468992",
+            "2511460651499520",
+            "1675672900599808",
+            "2511456356532224"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "krel_thak",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "770946629632000",
+            "2511486421303296"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "commander_folex",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2511439176663040",
+            "1675861879160832"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "darth_serevin",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "770925154795520",
+            "2511469241434112",
+            "2075646025007104",
+            "2511464946466816"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "guid_patriarch",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "1618558425497600",
+            "2511482126336000"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "battle_of_rishi",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "rarrook_marko",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3369139850706944",
+            "3533559788732416",
+            "3369144145674240",
+            "3533564083699712"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "obai_vodd",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3369148440641536",
+            "3533581263568896",
+            "3369152735608832",
+            "3533585558536192"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "shield_walker",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3369157030576128",
+            "3533594148470784"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "mokan",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3417131815272448"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "black_talon",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "gxr_5_sabotage_droid",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2509699714908160",
+            "430896888938496"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "sergeant_boran",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2509772729352192",
+            "425970561449984"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "commander_ghulil",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2509686830006272",
+            "364857471795200"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "yadira_ban",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "365755119960064",
+            "2509777024319488"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "gxr_7_command_droid",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "1426904099848192",
+            "2509755549483008"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "blood_hunt",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "kyramla",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3400982738239488",
+            "3507004005941248"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "valk_jos",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3507034070712320",
+            "3384198006046720",
+            "3507029775745024",
+            "3384193711079424"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "shae",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3507051250581504",
+            "3407807441272832"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "boarding_party",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "hxi_54_juggernaut",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "745340034613248",
+            "2514497193377792"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "major_alvena",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "1004464001515520",
+            "2514505783312384"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "sakan_donair",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2514522963181568",
+            "739816706670592"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "lieutenant_menerus",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "1005417484255232",
+            "2514501488345088"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "storm_squad",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "957850721452032",
+            "2514535848083456",
+            "2514531553116160",
+            "739825296605184",
+            "2514527258148864",
+            "957597318381568"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "chief_engineer_kels",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "1004111814197248",
+            "2514488603443200"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "cademimu",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "officer_xander_en4c",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3210672737353728",
+            "2504232221540352",
+            "3210668442386432",
+            "2504236516507648"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "captain_grimyk",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2503961638600704",
+            "3210677032321024"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "general_ortol",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2506547208912896",
+            "3210659852451840"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "garold_the_dark_one",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3247463427211264"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "colicoid_war_game",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "annihilator_6k_a2",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2530019205185536",
+            "1209574459703296"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "crisis_on_umbara",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "technician_canni_elli_vaa",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4111507767951360",
+            "4111512062918656"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "vixian_mauler",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4112173487882240"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "umbaran_spider_tank",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4112779078270976"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "alpha_slybex",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4121025415479296"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "czerka_core",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "vrblther",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3247278743617536",
+            "3279289134874624"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "duneclaw",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3247274448650240",
+            "3279293429841920"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "vigilant",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3279310609711104",
+            "3247240088911872"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "czerka_labs",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "eradicator_droid",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3247278743617536",
+            "3245981663494144",
+            "3279297724809216"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "zokar",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3245985958461440",
+            "3279302019776512"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "rasmus",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3247210024140800",
+            "3279306314743808"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "directive_seven",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "detector",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2512014702280704",
+            "1626340906237952"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "assassin_droids",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2511958867705856",
+            "746748783886336",
+            "2511954572738560",
+            "746753078853632",
+            "2511963162673152",
+            "746757373820928"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "interrogator",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2512053356986368",
+            "1627981583745024"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "bulwark",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2511984637509632",
+            "751348693860352"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "assembler",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2511976047575040",
+            "1628604354002944"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "mentor",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2512100601626624",
+            "743540443316224",
+            "2144842243112960",
+            "892073297313792",
+            "2512083421757440"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "replicator",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "1629334498443264",
+            "2512109191561216"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "esseles",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "lieutenant_isric",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2510773456732160",
+            "649467774631936"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "ironfist",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "649484954501120",
+            "2510769161764864"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "iss_7_guardian_battledroid",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "653359015002112",
+            "2510777751699456"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "vokk",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "649472069599232",
+            "2510790636601344"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "iss_994_power_droid",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "1461006140178432"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "false_emperor",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "tregg_the_destroyer",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "1690314444111872",
+            "2511761299210240"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "jindo_krey",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2511709759602688",
+            "770959514533888"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "prototypes_a14_b16",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "1790202498514944",
+            "2511718349537280",
+            "1790206793482240",
+            "2511726939471872"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "hk_47",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "770955219566592",
+            "2511701169668096"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "chondrus_berani",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2511675399864320",
+            "1690331623981056"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "darth_malgus",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "770963809501184",
+            "2511688284766208"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "sith_entity",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2511744119341056"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "foundry",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "foundry_guardian",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "747710856560640",
+            "2514742006513664"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "hk_47",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2514754891415552",
+            "739833886539776"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "n4_10_exterminator",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2514729121611776",
+            "1169322026205184"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "mysterious_jedi",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2514780661219328",
+            "739846771441664"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "burrower_matriarch",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "1148233736781824",
+            "2514724826644480"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "hammer_station",
+      "type": "flashpoint",
+      "completeObjectives": true,
+      "encounters": [
+        {
+          "id": "dn_314_tunneler",
+          "status": "logic-tested",
+          "rule": "death_all",
+          "final": false,
+          "positive": [
+            "hammer-repeat"
+          ],
+          "negative": [
+            "paired-wipe-retry"
+          ],
+          "recognizedIds": [
+            "3152170987814912",
+            "2276525940408320"
+          ],
+          "reason": "Synthetic invariant coverage; real encounter validation pending."
+        },
+        {
+          "id": "vorgan_the_volcano",
+          "status": "logic-tested",
+          "rule": "death_all",
+          "final": false,
+          "positive": [
+            "hammer-repeat"
+          ],
+          "negative": [
+            "paired-wipe-retry"
+          ],
+          "recognizedIds": [
+            "3152166692847616",
+            "2286223976562688",
+            "3152162397880320",
+            "2286228271529984",
+            "3152158102913024",
+            "2286241156431872"
+          ],
+          "reason": "Synthetic invariant coverage; real encounter validation pending."
+        },
+        {
+          "id": "battlelord_kreshan",
+          "status": "logic-tested",
+          "rule": "death_all",
+          "final": true,
+          "positive": [
+            "hammer-repeat"
+          ],
+          "negative": [
+            "paired-wipe-retry"
+          ],
+          "recognizedIds": [
+            "3172554902601728",
+            "3184361767698432"
+          ],
+          "reason": "Synthetic invariant coverage; real encounter validation pending."
+        },
+        {
+          "id": "asteroid_beast",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3251019660132352"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "kaon_under_siege",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "rakghoul_behemoth",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2765357643202560",
+            "2741129732685824"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "rakghoul_super_soldiers",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2762260971782144",
+            "2762127827795968",
+            "2762269561716736",
+            "2762269561716736",
+            "2762265266749440",
+            "2762123532828672"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "kr_82_expulser",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2765349053267968",
+            "2765353348235264"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "midnight_rakghoul",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3341029289754624"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "korriban_incursion",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "lord_renning",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3333474442280960",
+            "3468899056091136"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "i5_t1",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3468894761123840",
+            "3334535299203072"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "darth_soverus",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3468911940993024",
+            "3331378498240512"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "korriban_imperial_commander",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3484816204890112",
+            "3493187096150016"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "master_riilna",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3468753027203072",
+            "3333461557379072"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "r_9xr",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3468748732235776",
+            "3329905324457984"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "commander_jensyn",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3468757322170368",
+            "3331339843534848"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "korriban_republic_commander",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3484803319988224",
+            "3493182801182720"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "kuat_drive_yards",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "lieutenant_krupp",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3316187198914560"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "major_benes",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3316170019045376"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "lord_modo",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3316174314012672"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "master_khoris",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3316200083816448"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "station_guardian_one",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3316182903947264"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "legacy_rakata",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "arena",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3372962371600384",
+            "3491894310993920",
+            "3491898605961216",
+            "3370608729522176"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "rand",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3373078335717376",
+            "3491885721059328"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "darok_arkous",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3491881426092032",
+            "3370617319456768",
+            "3370613024489472",
+            "3491890016026624"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "infinite_army_prototype",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3493419024384000"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "lost_island",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "putrid_shaclaw",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2838853123571712",
+            "2898153737027584"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "lr_5_sentinel_droid",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2815832098865152",
+            "2808620848775168"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "project_sav_rak",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2802144038092800",
+            "2819585900281856"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "doctor_lorrick",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2794163988856832",
+            "2838582540632064",
+            "2809320928444416",
+            "2819959562436608"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "transgenic_sample_eleven",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2835799401824256",
+            "2802509110312960"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "maelstrom_prison",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "colonel_daksh",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2513608135147520"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "lord_kancras",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2513668264689664"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "lord_vanithrast",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2513672559656960"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "grand_moff_kilran",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2536938397499392"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "ancient_maelstrom_flayer",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2513784228806656"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "manaan",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "sairisi",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3505251659284480",
+            "3350332188917760"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "ortuno",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3350327893950464",
+            "3505260249219072"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "stivastin",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3362925033029632",
+            "3505268839153664"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "bonus_droid",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3506922401562624",
+            "3506896631758848"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "mandalorian_raiders",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "braxx_the_bloodhound",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3158428755165184",
+            "2438167034593280",
+            "3158424460197888",
+            "2438158444658688"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "imperial_boarding_party",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2442462001889280",
+            "3158407280328704",
+            "3158415870263296",
+            "2442457706921984",
+            "2442470591823872",
+            "3158265546407936",
+            "3158394395426816",
+            "2442466296856576"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "republic_boarding_party",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3158398690394112",
+            "2442483476725760",
+            "2442479181758464",
+            "3158402985361408",
+            "2442487771693056",
+            "3158420165230592",
+            "2442474886791168",
+            "3158411575296000"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "mavrix_varad",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3172567787503616",
+            "1276069143379968"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "gil",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3250538623795200"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "nathema",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "voreclaw",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4157176155209728"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "guardian_droid",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4152640669745152"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "gemini",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4158834012585984"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "vin_zil",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4158872667291648",
+            "4159276394217472"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "hands_zildrog",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4172294440091648",
+            "4172298735058944"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "objective_meridian",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "vulture_squad",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4257498001309696",
+            "4275957770747904",
+            "4275957770747904"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "commander_aster",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4258021987319808",
+            "4363188556529664"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "darth_malgus",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4257502296276992"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "feng_yun",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4363179966595072",
+            "4257506591244288",
+            "4276941318258688"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "r10-x6",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4363141311889408",
+            "4257467936538624"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "jakir_and_seldin",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4257442166734848",
+            "4363167081693184",
+            "4257455051636736",
+            "4363171376660480"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "tau_idair",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4257463641571328",
+            "4363175671627776"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "rasha",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4258185196077056"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "red_reaper",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "lord_kherus",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2482594176303104"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "sv_3_eradicator",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2482692960550912"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "darth_ikoral",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "1478800189685760"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "ruins_of_nul",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "apex_ranphyx",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4468097427701760"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "regnant",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4469132514820096"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "nul_darth_malgus",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4468509744562176"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "warden_units",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4563939622912000",
+            "4563943917879296",
+            "4563948212846592"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "secrets_of_the_enclave",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "graul",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4445312626196480"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "rep_imperial_squad",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4445278266458112",
+            "4445295446327296",
+            "4445299741294592"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "rep_colonel_barden_golah",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4445304036261888"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "imp_republic_squad",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4445291151360000",
+            "4445282561425408",
+            "4445286856392704"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "imp_leeha_narezz",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4445308331229184"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "monstrous_terentatek",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4445316921163776"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "shrine_of_silence",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "corrupted_vorantikus",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4702752965918720",
+            "4702735786049536",
+            "4702748670951424"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "voss_mystics",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4705604824203264",
+            "4705600529235968",
+            "4705596234268672",
+            "4705570464464896",
+            "4705574759432192",
+            "4705591939301376"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "temu_tfb",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4705566169497600",
+            "4705557579563008",
+            "4705561874530304"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "kirba",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4702761555853312",
+            "4702765850820608",
+            "4702770145787904"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "spirit_of_vengeance",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "gorga_brak",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4419697441243136"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "bask_sunn",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4419710326145024"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "troya_ajak",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4419714621112320"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "heta_kol",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4419718916079616",
+            "4437744893820928"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "goldie",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4434373344493568"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "taral_v",
+      "type": "flashpoint",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "captain_shivanek",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2513870128152576",
+            "2513865833185280"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "pd_44",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2513861538217984"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "general_edikar",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2531994890141696"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "lord_hasper",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2513857243250688"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "handler_gattan_vine_cats",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2513887308021760",
+            "2513840063381504"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "doctor_zharen",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2513805703643136"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "children_of_nul",
+      "type": "operation",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "nul_acolyte",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4922389003501568"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "force_beast",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4932512241418240"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "last_daughter",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4946380690817024"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "dxun",
+      "type": "operation",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "red",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4330233272467456",
+            "4246176467517440",
+            "4382185196879872"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "holding_pens",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4389417921806336",
+            "4245686841245696"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "breach",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4338552624119808"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "trandos",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4245970309087232",
+            "4245978899021824",
+            "4245983193989120",
+            "4245987488956416",
+            "4381150109761536"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "huntmaster",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4265104388390912",
+            "4281661487316992",
+            "4330237567434752"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "apex_vanguard",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4282872668094464",
+            "4350020186800128"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "eternity_vault",
+      "type": "operation",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "xrr3",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2017165750304768",
+            "1779997656219648",
+            "2034611907461120",
+            "2034573252755456"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "gharj",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2034534598049792",
+            "1783772932472832",
+            "2034526008115200",
+            "3725089560330240",
+            "2016946706972672"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "pylons",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "infernal_council",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2290145281703936",
+            "2098327747297280",
+            "2289690015170560",
+            "2289887583666176"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "soa",
+          "status": "logic-tested",
+          "rule": "death_all",
+          "final": true,
+          "positive": [
+            "soa-terminal"
+          ],
+          "negative": [
+            "paired-wipe-retry"
+          ],
+          "recognizedIds": [
+            "2017170045272064",
+            "1783790112342016",
+            "2289823159156736",
+            "2290085152161792"
+          ],
+          "reason": "Synthetic invariant coverage; real encounter validation pending."
+        }
+      ]
+    },
+    {
+      "activity": "explosive_conflict",
+      "type": "operation",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "zorn_toth",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2810922951245824",
+            "2855809654456320",
+            "2855813949423616",
+            "2855818244390912",
+            "2788331423268864",
+            "2857544821243904",
+            "2860770341683200",
+            "2861388816973824",
+            "2788335718236160",
+            "2857549116211200",
+            "2860766046715904",
+            "2861384522006528"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "firebrand_stormcaller",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2876434087411712",
+            "2876459857215488",
+            "2876481332051968",
+            "2808827007205376",
+            "2876438382379008",
+            "2876464152182784",
+            "2876485627019264",
+            "2808831302172672"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "colonel_vorgath",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2854224811524096",
+            "2854117437341696",
+            "2854229106491392",
+            "2848692893646848"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "warlord_kephess",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2876550051528704",
+            "2876528576692224",
+            "2876588706234368",
+            "2800357331697664",
+            "2876562936430592",
+            "2794185463693312",
+            "2876532871659520",
+            "2876593001201664"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "gods_from_the_machine",
+      "type": "operation",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "TYTT_K",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4078423634870272",
+            "4078427929837568",
+            "4078419339902976",
+            "4078415044935680"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "a\u0026e_k",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4088525397950464",
+            "4101564918661120",
+            "4088538282852352"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "nahut_k",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4108011664572416",
+            "4122949560827904",
+            "4122953855795200",
+            "4122958150762496"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "SCYVA_K",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4108140513591296",
+            "4126527268585472"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "IZAX_K",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4108097563918336",
+            "4163128979881984",
+            "4163124684914688",
+            "4163133274849280",
+            "4163137569816576"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "hive_of_the_mountain_queen",
+      "type": "lair",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "mutated_geonosian_queen",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4204768687816704",
+            "4197299739688960",
+            "4204772982784000",
+            "4204764392849408"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "karaggas_palace",
+      "type": "operation",
+      "completeObjectives": true,
+      "encounters": [
+        {
+          "id": "bonethrasher",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2624491305828352",
+            "2271801476382720",
+            "2624508485697536",
+            "2624474125959168"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "jarg_sorno",
+          "status": "logic-tested",
+          "rule": "death_all",
+          "final": false,
+          "positive": [
+            "paired-wipe-retry"
+          ],
+          "negative": [
+            "paired-wipe-retry"
+          ],
+          "recognizedIds": [
+            "2760500035190784",
+            "2739437515571200",
+            "2760517215059968",
+            "2760482855321600",
+            "2760504330158080",
+            "2739441810538496",
+            "2760521510027264",
+            "2760487150288896"
+          ],
+          "reason": "Synthetic invariant coverage; real encounter validation pending."
+        },
+        {
+          "id": "foreman_crusher",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2739888487137280",
+            "2739875602235392",
+            "2760693308719104",
+            "2760637474144256"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "g4b3",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2760371186171904",
+            "2747344550363136",
+            "2760375481139200",
+            "2748401112317952"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "karagga",
+          "status": "logic-tested",
+          "rule": "death_all",
+          "final": true,
+          "positive": [
+            "karagga-terminal"
+          ],
+          "negative": [
+            "paired-wipe-retry"
+          ],
+          "recognizedIds": [
+            "2761200114860032",
+            "2740043105959936",
+            "2761208704794624",
+            "2761191524925440"
+          ],
+          "reason": "Synthetic invariant coverage; real encounter validation pending."
+        }
+      ]
+    },
+    {
+      "activity": "monolith",
+      "type": "lair",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "monolith",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3541140406009856",
+            "3570951774011392",
+            "3570947479044096",
+            "3570956068978688"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "propagator_core",
+      "type": "lair",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "propagator_core_xr53",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4831241207545856",
+            "4831722243883008",
+            "4831533265321984",
+            "4824927605620736",
+            "4847325860069376"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "r4_anomaly",
+      "type": "operation",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "ip_cpt",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4494653210492928",
+            "4467247024177152"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "watchdog",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4466177577320448",
+            "4494700455133184"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "kanoth",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4494876548792320",
+            "4466190462222336"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "hallway",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "dominique",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4608014577303552",
+            "4466199052156928",
+            "4488524292161536"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "scum_and_villainy",
+      "type": "operation",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "dashroode",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3153571147153408",
+            "3058837053505536",
+            "3153575442120704",
+            "3153558262251520"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "titan6",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3152463045591040",
+            "3016450021261312",
+            "3152467340558336",
+            "3152458750623744"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "hateful_entity",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3264737785675776"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "thrasher",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3154567579566080",
+            "3045819007631360",
+            "3154571874533376",
+            "3154563284598784"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "operations_chief",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3157552581836800",
+            "3141940375715840",
+            "3157556876804096",
+            "3157548286869504"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "olok",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3154674953748480",
+            "3016445726294016",
+            "3154679248715776",
+            "3154662068846592"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "cartel_warlords",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3054400352288768",
+            "3032770896986112",
+            "3032753717116928",
+            "3054408942223360",
+            "3156899746807808",
+            "3156904041775104",
+            "3032779486920704",
+            "3156895451840512",
+            "3054413237190656",
+            "3054404647256064",
+            "3032766602018816"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "Styrak_k",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3067057620910080",
+            "3066945951760384",
+            "3152407211016192",
+            "3152441570754560",
+            "3152445865721856",
+            "3147154466013184",
+            "3225679353085952"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "temple_of_sacrifice",
+      "type": "operation",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "malaphar",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3469281308180480",
+            "3431245077807104",
+            "3469285603147776",
+            "3469277013213184"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "sword_squadron",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3468765912104960",
+            "3468774502039552",
+            "3468770207072256",
+            "3447784996864000",
+            "3447789291831296"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "underlurker",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3411402328899584",
+            "3462267626586112",
+            "3462263331618816",
+            "3462271921553408"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "revanite_commanders",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3456894622498816",
+            "3456890327531520",
+            "3456898917466112"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "revan",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3431605855059968",
+            "3444310368321536",
+            "3447583133401088"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "terror_from_beyond",
+      "type": "operation",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "writhing_horror",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3010428477112320",
+            "3010432772079616",
+            "2938874321960960",
+            "3010424182145024"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "dread_guard",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3013374824677376",
+            "3013327580037120",
+            "3013409184415744",
+            "2831414240215040",
+            "2938002443599872",
+            "3013387709579264",
+            "3013336169971712",
+            "3013417774350336",
+            "2831422830149632",
+            "2938011033534464",
+            "3013379119644672",
+            "3013331875004416",
+            "3013413479383040",
+            "2831418535182336",
+            "2938006738567168"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "op_ix",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2942606648541184",
+            "2836319092867072",
+            "2836314797899776",
+            "2994859220664320",
+            "2994837745827840",
+            "3725128215035904",
+            "2994850630729728",
+            "2994876400533504",
+            "2940596603846656",
+            "2994867810598912",
+            "2994872105566208"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "kephess_the_undying",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2937620191510528",
+            "3013121421606912",
+            "3013138601476096",
+            "3013134306508800",
+            "2831409945247744"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "the_terror_from_beyond",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "2938887206862848",
+            "3025224639447040",
+            "3025220344479744",
+            "3025228934414336",
+            "3025233229381632",
+            "2978340776443904",
+            "302523752434898",
+            "3025241819316224",
+            "3025289063956480",
+            "2988545618739200",
+            "3025293358923776",
+            "3025284768989184",
+            "3025267589120000",
+            "3025280474021888",
+            "3025263294152704",
+            "3025276179054592",
+            "3025271884087296",
+            "3025258999185408",
+            "2938895796797440",
+            "2938891501830144"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "dreadful",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3057806261354496"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "the_dread_fortress",
+      "type": "operation",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "nefra",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3266533082005504",
+            "3303036009054208",
+            "3303031714086912",
+            "3303040304021504"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "draxus",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3273924720721920",
+            "3303401081274368",
+            "3303392491339776",
+            "3303405376241664"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "grobthok",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3302567857618944",
+            "3302559267684352",
+            "3273929015689216",
+            "3302563562651648"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "corruptor_zero",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3273933310656512",
+            "3303542815195136",
+            "3303534225260544",
+            "3303551405129728"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "brontes",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3273937605623808",
+            "3303538520227840",
+            "3303529930293248",
+            "3303547110162432",
+            "3275625527771136",
+            "3277721471811584"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "the_dread_palace",
+      "type": "operation",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "bestia",
+          "status": "terminal-tested",
+          "rule": "hp_zero_exit",
+          "final": false,
+          "positive": [
+            "bestia-real"
+          ],
+          "negative": [
+            "bestia-reset-negative"
+          ],
+          "recognizedIds": [
+            "3273941900591104",
+            "3291675820556288"
+          ],
+          "reason": "Fixture-backed scoped rule."
+        },
+        {
+          "id": "tyrans",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3273954785492992",
+            "3303409671208960",
+            "3303413966176256",
+            "3303418261143552"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "calphayus",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3284949901770752",
+            "3273946195558400",
+            "3284954196738048"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "raptus",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3303555700097024",
+            "3273950490525696",
+            "3303559995064320",
+            "3302902865068032"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "dread_council",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3273984850264064",
+            "3273997735165952",
+            "3273989145231360",
+            "3273993440198656",
+            "3274019210002432"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "bestia_unverified",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3303581469900800",
+            "3303585764868096",
+            "3303590059835392"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "the_eyeless",
+      "type": "lair",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "eyeless",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3328380611067904",
+            "3328372021133312",
+            "3319090596806656",
+            "3328376316100608"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "the_ravagers",
+      "type": "operation",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "sparky",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3458114393210880",
+            "3367555007774720",
+            "3458122983145472",
+            "3458110098243584"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "bulo",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3468701487595520",
+            "3371446248144896",
+            "3468697192628224",
+            "3468705782562816"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "torque",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3468714372497408",
+            "3397005598523392",
+            "3468718667464704",
+            "3468710077530112"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "master_blaster",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": false,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3725149689872384",
+            "3391095723524096",
+            "3462181727240192",
+            "3462186022207488",
+            "3458148752949248",
+            "3391100018491392"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        },
+        {
+          "id": "coratanni",
+          "status": "candidate",
+          "rule": "unsupported",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3619433364848640",
+            "3371437658210304",
+            "3371441953177600",
+            "3397039958261760",
+            "3374109127868416"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "toborros_courtyard",
+      "type": "lair",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "golden_fury",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3210174521147392",
+            "3232735984353280",
+            "3232800408862720",
+            "3232817588731904"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "xenoanalyst",
+      "type": "lair",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "xenoanalyst",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "3213924027596800",
+            "3213928322564096",
+            "3213919732629504",
+            "3153545377349632"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    },
+    {
+      "activity": "orbital_core",
+      "type": "other",
+      "completeObjectives": false,
+      "encounters": [
+        {
+          "id": "orbital_core",
+          "status": "candidate",
+          "rule": "death_all",
+          "final": true,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "4906905646399488",
+            "4906549164113920"
+          ],
+          "reason": "Identifiers only; terminal evidence not validated."
+        }
+      ]
+    }
+  ]
+}
