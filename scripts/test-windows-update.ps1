@@ -42,6 +42,28 @@ function Stop-Tracker {
     }
     throw 'Tracker did not stop'
 }
+function Stop-Desktop($proc) {
+    if (!$proc) { return }
+    for($i=0;$i -lt 60;$i++){
+        $proc.Refresh()
+        if($proc.HasExited){ break }
+        if($proc.MainWindowHandle -ne 0 -and $proc.CloseMainWindow()){ break }
+        Start-Sleep -Milliseconds 250
+    }
+    if(!$proc.WaitForExit(10000)){
+        Stop-Process -Id $proc.Id -Force
+        Start-Sleep -Milliseconds 500
+    }
+    for($i=0;$i -lt 40;$i++){
+        try{
+            $f=[IO.File]::Open((Join-Path $dataRoot 'desktop.lock'),'OpenOrCreate','ReadWrite','None')
+            $f.Dispose()
+            break
+        }catch{
+            Start-Sleep -Milliseconds 250
+        }
+    }
+}
 $desktop=$null;$helper=$null;$report=@{ok=$false}
 try {
     $old=Start-Process $baseline -ArgumentList @('/VERYSILENT','/NORESTART','/SP-',('/DIR="'+$installed+'"')) -Wait -PassThru
@@ -85,7 +107,7 @@ try {
     Require (($before.payload.totals|ConvertTo-Json -Depth 8 -Compress) -eq ($after.payload.totals|ConvertTo-Json -Depth 8 -Compress)) 'Upgrade changed recorded totals'
     $report.historyPreserved=$true;$report.backupVerified=$true;$report.reopened=$true;Write-Host 'Upgrade, backup, preserved history and reopen passed'
     $desktop=Get-Process SwtorRecap | Where-Object Path -eq (Join-Path $installed 'SwtorRecap.exe') | Select-Object -First 1
-    Require ($null -ne $desktop) 'Updated dashboard not found';$null=$desktop.CloseMainWindow();$null=$desktop.WaitForExit(10000);Stop-Tracker
+    Require ($null -ne $desktop) 'Updated dashboard not found';Stop-Desktop $desktop;Stop-Tracker
     # A modified download must never reach the installer; the old app is reopened.
     [IO.File]::WriteAllText($installerPath,'corrupt')
     $plan.parentPid=2147483647;$plan.parentStartedTicks=0;$plan|ConvertTo-Json -Depth 8|Set-Content $planPath
@@ -94,11 +116,12 @@ try {
     $rejected=Get-Content (Join-Path $work 'result.json') -Raw|ConvertFrom-Json;Require (!$rejected.success -and $rejected.error -like '*verification failed*') 'Corrupt update was not rejected by checksum verification'
     $null=Wait-Snapshot $version;$report.corruptionRejected=$true
     $desktop=Get-Process SwtorRecap|Where-Object Path -eq (Join-Path $installed 'SwtorRecap.exe')|Select-Object -First 1
-    $null=$desktop.CloseMainWindow();$null=$desktop.WaitForExit(10000);Stop-Tracker
+    Stop-Desktop $desktop;Stop-Tracker
     $uninstall=Start-Process (Join-Path $installed 'unins000.exe') -ArgumentList @('/VERYSILENT','/NORESTART') -Wait -PassThru
     Require ($uninstall.ExitCode -eq 0) 'Cleanup uninstall failed';$report.ok=$true
 } finally {
     if($desktop -and !$desktop.HasExited){Stop-Process -Id $desktop.Id -Force}
+    Get-Process SwtorRecap -ErrorAction SilentlyContinue | Where-Object Path -eq (Join-Path $installed 'SwtorRecap.exe') | Stop-Process -Force
     if($helper -and !$helper.HasExited){Stop-Process -Id $helper.Id -Force}
     $report|ConvertTo-Json|Set-Content (Join-Path $evidence 'result.json')
     if(Test-Path (Join-Path $work 'install.log')){Copy-Item (Join-Path $work 'install.log') $evidence}
