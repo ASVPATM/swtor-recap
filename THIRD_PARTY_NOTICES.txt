@@ -23,3 +23,14 @@ and notice files, and dependency license/copyright/source metadata. The bundled
 .NET runtime includes its own LICENSE and THIRD-PARTY-NOTICES files.
 Avalonia 12.1.5 source: 5825bf8c66fba0c11e67c980d8ece6444576bffa
 SQLitePCLRaw 3.0.5 source: ed046114d5a30534e13294d94d78eb73de896ad4
+
+Additional encounter data references:
+Infernal Council NPC identifiers were cross-checked against StarParse's published
+EternityVault.java and recorded combat-log deaths. No StarParse implementation
+code is included.
+https://github.com/Ixale/StarParse/blob/master/starparse-client/src/main/java/com/ixale/starparse/domain/ops/EternityVault.java
+X-37 Oppressor and Doctor Lorrick form identifiers: Jedipedia extracted NPC data.
+https://swtor.jedipedia.net/en/npc/x-37-oppressor-droid
+https://swtor.jedipedia.net/en/npc/doctor-lorrick-7
+Boss rosters: the individual activity guides linked from
+https://swtorista.com/flashpoints and https://www.merlynswtor.com/operations

@@ -7,7 +7,11 @@ public sealed class NpcDamageState
     public bool Uncertain { get; set; }
     public bool Dead { get; set; }
     public long? LastHp { get; set; }
+    public NpcPendingHeal? PendingHeal { get; set; }
 }
+
+// Persisted across reads so a snapshot and its following heal can be in separate batches.
+public sealed record NpcPendingHeal(long Damage, long MissingHp, TimeOnly Time, int ClockEpoch);
 
 public sealed partial class CombatReducer
 {
@@ -32,10 +36,32 @@ public sealed partial class CombatReducer
             s.Npcs[target.Key] = npc = new();
         }
         if (npc.Dead) return;
-        // A target returning to full health without a logged heal may have evaded.
-        // Start the contribution again instead of combining separate pulls.
+        if (npc.PendingHeal is { } pending)
+        {
+            var elapsed = (e.Time - pending.Time).TotalMilliseconds;
+            if (elapsed < 0) elapsed += TimeSpan.FromDays(1).TotalMilliseconds;
+            // Once health drops again, a subsequent heal may belong to a new damage cycle.
+            // Damage records can themselves carry the already-full snapshot before the heal.
+            if (time.Epoch != pending.ClockEpoch || elapsed > 1000 || target.MaxHp != npc.MaxHp
+                || target.Hp != npc.MaxHp)
+                npc.PendingHeal = null;
+            else if (e.Kind == EventKind.Heal)
+            {
+                // Health snapshots can precede their heal event. Require effective healing that
+                // explains the refill, allowing the log's observed one-point rounding difference.
+                if (target.Hp == npc.MaxHp && e.Effective is > 0 && e.Effective >= pending.MissingHp - 1)
+                    npc.Damage = checked(npc.Damage + pending.Damage);
+                npc.PendingHeal = null;
+            }
+        }
+        // An unexplained return to full health may be an evade/reset. Exclude the old damage
+        // immediately; restore it only if the following records actually explain the refill.
         if (e.Kind != EventKind.Heal && target.Hp == target.MaxHp && target.MaxHp > 0 && npc.LastHp < target.MaxHp)
+        {
+            npc.PendingHeal = npc.Damage > 0 && target.MaxHp == npc.MaxHp && e.Kind != EventKind.Death
+                ? new(npc.Damage, npc.MaxHp - npc.LastHp!.Value, e.Time, time.Epoch) : null;
             npc.Damage = 0;
+        }
         if (target.MaxHp is > 0 && target.Hp <= target.MaxHp)
         {
             if (npc.MaxHp != 0 && npc.MaxHp != target.MaxHp) npc.Uncertain = true;
@@ -50,13 +76,14 @@ public sealed partial class CombatReducer
         }
         if (e.Kind != EventKind.Death) return;
         npc.Dead = true;
+        npc.PendingHeal = null;
         // Use division to avoid overflowing when comparing to twice the damage.
         // Integer division also gives the correct strict majority for odd max HP.
         if (!npc.Uncertain && npc.MaxHp > 0 && npc.Damage > npc.MaxHp / 2)
             AddFact(b, source, r, time, "npc_kill", target.Key, new
             {
                 owner = s.Owner, target.Name, target.TemplateId, target.SpawnId,
-                damage = npc.Damage, maximumHealth = npc.MaxHp, rule = "personal_effective_over_half_v1"
+                damage = npc.Damage, maximumHealth = npc.MaxHp, rule = "personal_effective_over_half_v2"
             });
     }
 }

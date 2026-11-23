@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 import tomllib
+from catalog_overrides import apply
 
 COMMIT = "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d"
 LAIRS = {"hive_of_the_mountain_queen", "monolith", "propagator_core", "the_eyeless", "toborros_courtyard", "xenoanalyst"}
@@ -39,7 +40,7 @@ def build(snapshot):
             provenance=f"https://github.com/baras-app/baras/blob/{COMMIT}/{path.relative_to(snapshot)}", commit=COMMIT, license="MIT"))
     # Stable dummy ID from the same licensed snapshot; practice deaths are not kills.
     activities.append({'id': 'training_dummy', 'name': 'Training dummy', 'type': 'training', 'areaIds': [], 'encounters': [{'id': 'training_dummy', 'name': 'Training dummy', 'roles': [{'id': 'dummy', 'name': 'Training dummy', 'templateIds': ['2857785339412480'], 'required': False}], 'rule': 'unsupported', 'victoryId': None, 'final': False, 'optional': True, 'status': 'candidate', 'positiveFixtures': [], 'negativeFixtures': []}], 'requiredGroups': [], 'completeObjectives': False, 'provenance': 'https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/src/game_data/world_bosses.rs', 'commit': COMMIT, 'license': 'MIT'})
-    return dict(version="2026.11.09.1", activities=activities)
+    return apply(dict(version="2026.11.09.1", activities=activities))
 
 
 if __name__ == "__main__":

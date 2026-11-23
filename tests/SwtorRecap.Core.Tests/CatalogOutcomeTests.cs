@@ -2,6 +2,19 @@ using SwtorRecap.Core;
 namespace SwtorRecap.Core.Tests;
 public sealed class CatalogOutcomeTests
 {
+    [Fact]public void ExistingCatalogRolesKeepSingleTargetDefaults()
+    {
+        var role=Json.Read<EntityRole>("{\"id\":\"boss\",\"name\":\"Boss\",\"templateIds\":[\"123\"],\"required\":true}");
+        Assert.Equal(1,role.Count);Assert.Equal("boss",Assert.Single(role.SlotIds()));Assert.True(role.IsRequired(null));
+        Assert.True(role.IsRequired("836045448953657"));
+    }
+    [Theory][InlineData(0)][InlineData(33)]
+    public void InvalidTargetMultiplicityIsRejected(int count)
+    {
+        var document=Json.Clone(Catalog.LoadDefault().Document);var encounter=document.Activities[0].Encounters[0];
+        encounter.Roles[0]=encounter.Roles[0] with{Count=count};
+        Assert.Throws<FormatException>(()=>new Catalog(document));
+    }
     public static IEnumerable<object[]> DeathEncounters()=>Catalog.LoadDefault().Document.Activities
         .Where(a=>a.Type!="training").SelectMany(a=>a.Encounters.Where(e=>e.Rule=="death_all").Select(e=>new object[]{a.Id,e.Id}));
     private static SourceRecord[] Records(IEnumerable<string> lines)
@@ -13,7 +26,7 @@ public sealed class CatalogOutcomeTests
     {
         var catalog=Catalog.LoadDefault();var a=catalog.Document.Activities.Single(a=>a.Id==activityId);var e=a.Encounters.Single(e=>e.Id==encounterId);
         var lines=new List<string>{E("@Local#101","",a.AreaIds[0],EffectIds.Area,"(test) <v7.0.0b>"),E("@Local#101","",EffectIds.Enter)};
-        var roles=e.Roles.Where(r=>r.Required).ToArray();Assert.NotEmpty(roles);
+        var roles=e.Roles.Where(r=>r.IsRequired(null)).SelectMany(r=>Enumerable.Repeat(r,r.Count)).ToArray();Assert.NotEmpty(roles);
         for(var i=0;i<roles.Length;i++)
         {
             var target=$"Boss {{{roles[i].TemplateIds[0]}}}:{i+1}";

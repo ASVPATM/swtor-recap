@@ -4,7 +4,7 @@
 
 Download either file from [Releases](https://github.com/ASVPATM/swtor-recap/releases):
 
-- **Installer:** run `SwtorRecap-0.3.0-Setup.exe`. It installs for your Windows account and adds **SWTOR Recap** to the Start menu. A desktop shortcut is optional. Uninstall through Windows Settings → Apps.
+- **Installer:** run `SwtorRecap-0.4.0-Setup.exe`. It installs for your Windows account and adds **SWTOR Recap** to the Start menu. A desktop shortcut is optional. Uninstall through Windows Settings → Apps.
 - **Portable ZIP:** extract the complete `SwtorRecap-win-x64.zip` into a permanent folder, then open `SwtorRecap.exe`. Keep all files and the `agent` folder together. To remove it, disable startup, quit the tracker, and delete its application folder.
 
 Both options contain the same application and .NET runtime. No administrator access, Java, Python, Git, or separate .NET installation is needed to run them. A loading window appears while the tracker opens your history, then the dashboard opens. No command file is needed.
@@ -73,15 +73,32 @@ Session totals combine your characters. The current-character label follows logi
 
 ## Encounter coverage
 
-The catalog currently contains 175 encounter definitions with explicit death-target rules. These use the same tested counting logic: match the area and NPC IDs, establish local participation, and observe the required targets die in the same attempt. Another player can land every final blow. A recorded death after your own death still counts. Knowing an encounter's name alone does not prove its ending.
+The catalog currently contains 226 encounter definitions with explicit death-target rules. These use the same tested counting logic: match the area and NPC IDs, establish local participation, and observe the required targets die in the same attempt. Another player can land every final blow. A recorded death after your own death still counts. Knowing an encounter's name alone does not prove its ending.
 
 Multi-target encounters count once after their required targets are defeated. Individual kills are separate: dealing over 50% of two targets' maximum health in a three-target boss can produce **2 NPC kills and 1 boss encounter win**. Exactly 50% does not qualify. Participation below 50% can still earn the encounter win and clear.
 
+Braxx requires his death and both hound deaths, even though the hounds share an NPC template. Kaon's final encounter requires all three Rakghoul Super Soldiers. Cademimu's first encounter requires Xander's death in confirmed Veteran mode; Master mode or an unknown difficulty requires both Xander and EN-4C. Deaths from separate pulls are not combined.
+
+Enemy healing does not erase your kill contribution. When a full-health snapshot arrives before its heal record, Recap preserves the earlier contribution only if a matching effective heal follows within one second, with no intervening health drop or recording boundary. An unexplained refill is treated as a reset. Use **Settings → Reprocess saved history** to apply corrected rules to older recordings.
+
 Hammer Station requires its three main encounters for a full run. Boarding Party groups Massey, Alon and Jorland as one final encounter; its full-run roster also includes HXI-54, Major Alvena, Sakan Do'nair and Lieutenant Menerus. A final clear can count even when an earlier boss is skipped or unobserved. The optional Chief Engineer Kels does not block that full-run roster.
 
-One Bestia variant has a fixture-backed HP-zero plus combat-exit rule. Other scripted endings without a verified rule remain **unconfirmed**. Combat exit, disappearance, a timer, or a missing health bar alone is not victory evidence. Unknown NPCs can count as individual kills but cannot establish a named boss encounter or activity clear. Eternity Vault full-run claims remain disabled because puzzle evidence is incomplete.
+Scripted endings use rules for specific encounters:
 
-Shared-rule tests exercise every death-based catalog definition, including missing final targets and lack of local participation. These tests are not a claim that every difficulty has been tested in the live game. See `data/catalog/coverage.json` or **Settings → Catalog support and diagnostics** for rule coverage.
+- **Foundry Revan:** health at or below 5%, the recorded Allow Vacuum ability, and a participating survivor leaving combat within 60 seconds.
+- **Meridian Malgus/Tau and Ruins of Nul Malgus:** health at or below 2%, logged immunity to damage, and a participating survivor leaving combat within 60 seconds.
+- **Coratanni:** Pearl must die; Ruugar must reach 10% or less and use his terminal ability, followed by a surviving participant's combat exit. The break between arenas is not a win.
+- **Terror From Beyond:** the final-phase actor reaches 4% or less, uses the configured ending ability, and a surviving participant leaves combat.
+- **Dxun holding pens and Trandoshan encounter:** configured completion effects or loot-object IDs plus a surviving participant's combat exit. Huntmaster requires Shelleigh's death.
+- **Infernal Council:** all 8 or 16 required NPC deaths, using the recorded group size. Unknown group size requires 16. Losing a duel debuff alone does not prove victory.
+
+One Bestia variant also has a fixture-backed HP-zero plus combat-exit rule. Low health, combat exit, disappearance, or a timer alone does not establish a scripted victory. A later health reset retracts a pending or inferred threshold result. A scripted win does not invent an individual NPC kill without a death record.
+
+Full-run rosters are configured for 45 activities. They allow the applicable faction route and exclude bonus bosses. Battle of Ilum requires both Folex and Krel Thak; they are separate fights. A clear can count without a full run, including when an ordinary main boss was skipped. Quest dialogue is not part of these rosters.
+
+Full-run claims remain disabled for Eternity Vault, Kuat Drive Yards, Colicoid War Game, Kaon Under Siege, Crisis on Umbara, Directive 7, Dxun, and Children of Nul because mandatory objective or encounter evidence is incomplete. Unknown NPCs can still count as individual kills, but cannot establish a named boss encounter. Unsupported endings remain **unconfirmed**.
+
+Shared-rule tests exercise every death-based catalog definition. Scripted-ending tests cover missing signals, wipes, resets, gaps, group completion after local death, and checkpoint recovery. These tests are not a claim that every encounter and difficulty has been tested in the live game. See `data/catalog/coverage.json` or **Settings → Catalog support and diagnostics** for rule coverage.
 
 ## Files and backups
 
@@ -123,6 +140,48 @@ On Windows use `py` in place of `python3`. Install [Inno Setup 6](https://jrsoft
 Build runs and logs are kept in a separate private repository. The workflow template is `scripts/ci/verify.yml`. Release downloads include SHA-256 checksums, file manifests and dependency notices. Local checks can be run without GitHub.
 
 ## Replay and preview
+
+### Batch log review for a person or model
+
+From this project checkout, run:
+
+```sh
+python3 scripts/analyze_logs.py "combatlogging examples"
+```
+
+On Windows, use `py` instead of `python3`. This default mode uses only Python's standard library. It makes no AI calls, uploads nothing, and reads the original files without editing them. Pass several files/folders or a quoted glob; add `--recursive` to include subfolders. Folders select `combat_*.txt`; pass other `.txt` filenames explicitly. Analyze finished logs with SWTOR closed.
+
+The command prints the location of a new report under `.artifacts/log-analysis/`. Start with **MODEL_BRIEF.md** when asking a model to review the data. The brief is capped at 12,000 characters by default; `--brief-chars 6000` makes it shorter. Add `--print-brief` to display it in the terminal too. This is a character limit, not an exact token count. The full evidence stays in separate files:
+
+- `index.json`: file IDs, input/analyzer/source/catalog hashes, versions, limitations and report locations.
+- `F001.json`, etc.: personal totals, pseudonymous characters, area visits, encounter evidence and findings.
+- `F001.evidence.json`, etc.: NPC instances, ability totals, semantic event counts and contribution candidates.
+- `local/`: original file paths, duplicate mapping and optional build logs. Keep this folder private.
+
+Player names and player IDs are replaced with pseudonyms in the reports. Dates, NPC names, NPC IDs and source line references remain useful evidence; inspect a report before sharing it. Identical copies with the same date context are skipped. Identical bytes with different established dates remain separate. Potential overlaps between nonidentical captures are flagged, not silently merged. Every run gets a fresh output folder.
+
+For the current application's actual counters as well, install the SDK in `global.json` and add:
+
+```sh
+python3 scripts/analyze_logs.py "combatlogging examples" --compare-app --source-zone America/Los_Angeles
+```
+
+This builds the Tools project and replays the logs into temporary, isolated history. It verifies the database, checks repeated reads, compares independent amount/death/time totals, and flags differences in NPC contribution counts. Temporary history is deleted after the comparison. `app.json` contains the app's results without player names or input paths. The comparison defaults to UTC; use the logs' source timezone for meaningful time comparisons. It requires the SDK and normal project dependencies, but no model service. A failed comparison exits with an error and still saves the independent report; check `local/build.log` or `local/app.log`.
+
+Models can request small sections instead of loading every report or raw log. Replace `REPORT_DIR` with the printed run directory:
+
+```sh
+python3 scripts/analyze_logs.py show REPORT_DIR F003 --section findings
+python3 scripts/analyze_logs.py show REPORT_DIR F003 --section encounters --visit 6
+python3 scripts/analyze_logs.py show REPORT_DIR F003 --section npcs --visit 6 --limit 10
+python3 scripts/analyze_logs.py excerpt REPORT_DIR F003 48150:48165
+```
+
+`show` supports paging with `--offset` and `--limit`. `excerpt` checks that the original file's checksum still matches, replaces player identities, and returns at most 100 lines. Excerpt pseudonyms are separate from report character pseudonyms. It requires the original file to remain at the recorded location.
+
+The analyzer flags missing catalog IDs, multiple NPCs assigned to one role, healing/reset ambiguity, missing encounter evidence, parsing problems and excessive interrupted-attempt counts. It respects configured group sizes and lists scripted endings separately: a missing death is not automatically a problem for those rules. Flags are leads to investigate, not automatic bug confirmations. A name match cannot establish identity; deaths across an area visit can span separate pulls. Contribution candidates retain damage across healing, so a genuine unlogged reset may invalidate a candidate. Unknown or unsupported endings remain unknown. Evidence is aggregated, with example line lists capped at five; it is not a lossless transcript. The scanner uses the app's Windows-1252 or UTF-8-with-BOM format and flags unsupported log profiles. The tool cannot reconstruct unlogged actions, mission turn-ins, rewards, process sessions or game-open time. Its purpose is to compress the evidence for review.
+
+### Deterministic fixture replay
 
 Use an empty, isolated data directory for each replay:
 

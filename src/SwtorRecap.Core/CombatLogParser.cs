@@ -80,7 +80,8 @@ public sealed partial class CombatLogParser
             var size = Size().Match(semantic);
             var e = new LogEvent(time, source, target, kind, type, effect, abilityId, raw, effective, critical,
                 kind == EventKind.AreaEntered ? effect : null, kind == EventKind.AreaEntered && ids.Length > 2 ? ids[2] : null,
-                size.Success ? int.Parse(size.Groups[1].Value, CultureInfo.InvariantCulture) : null, server, format);
+                size.Success ? int.Parse(size.Groups[1].Value, CultureInfo.InvariantCulture) : null, server, format,
+                kind == EventKind.Damage && effective == 0 && Ids().Matches(tail).Any(m => m.Groups[1].Value == "836045448945506"));
             return new(kind != EventKind.Other ? ParseStatus.Accepted : type is EffectIds.Apply or EffectIds.Remove or EffectIds.Event ? ParseStatus.Irrelevant : ParseStatus.UnknownSemantic, e);
         }
         catch (Exception ex) when (ex is FormatException or OverflowException or ArgumentException) { return Bad("actor_or_identifier"); }

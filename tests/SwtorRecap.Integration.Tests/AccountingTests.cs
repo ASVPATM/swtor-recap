@@ -89,6 +89,92 @@ public sealed class AccountingTests : IDisposable
         Assert.True(s.Totals(new(),_catalog).KillsNeedReprocess);
         new HistoryMaintenance(s,_catalog).Rebuild();Assert.False(s.Totals(new(),_catalog).KillsNeedReprocess);
     }
+    [Fact]public void ReprocessingRepairsSavedKillAndKaonCountsWithoutDuplicatingRecaps()
+    {
+        static string Event(string source,string target,string effect,string tail="",string type=EffectIds.Event)
+            =>$"[20:00:01.000] [{source}] [{target}] [] [X {{{type}}}: Y {{{effect}}}] {tail}";
+        const string player="@Local#101",guard="Guard {999}:1";
+        var lines=new List<string>{Enter,
+            Event(player,guard+"|(40/100)",EffectIds.Damage,"(60)",EffectIds.Apply),
+            Event(guard+"|(100/100)","=","1"),
+            Event(guard+"|(100/100)","=",EffectIds.Heal,"(60)",EffectIds.Apply),
+            Event("@Other#202",guard+"|(0/100)",EffectIds.Death),
+            Event(player,"","833571547775674",type:EffectIds.Area)};
+        foreach(var template in new[]{"2762127827795968","2762140712697856","2762123532828672"})
+        {
+            lines.Add(Event(player,$"Boss {{{template}}}:1|(99/100)",EffectIds.Damage,"(1)",EffectIds.Apply));
+            lines.Add(Event("@Other#202",$"Boss {{{template}}}:1|(0/100)",EffectIds.Death));
+        }
+        var(s,e,id,container,path)=Setup(string.Join('\n',lines)+"\n",true);e.ReadAll(id);
+        var original=File.ReadAllBytes(path);var damage=s.Totals(new(),_catalog).Amounts!.Damage;
+        // Represent the saved results from the previous rules, with the original evidence retained.
+        using(var connection=new SqliteConnection(new SqliteConnectionStringBuilder{DataSource=s.DatabasePath,Pooling=false}.ToString()))
+        {
+            connection.Open();using var command=connection.CreateCommand();
+            command.CommandText="UPDATE projection_sets SET metric_version='1.2.0'; DELETE FROM encounter_evidence WHERE kind='npc_kill'; UPDATE encounter_attempts SET result='outcome_pending',qualified=0; UPDATE activity_runs SET terminal=0,full=0";
+            command.ExecuteNonQuery();
+        }
+        s=new RecapStore(s.Root);var before=s.Totals(new(),_catalog);
+        Assert.True(before.KillsNeedReprocess);Assert.Equal(0,before.Kills);Assert.Equal(0,before.Bosses);Assert.Equal(0,before.Flashpoints);
+        for(var i=0;i<2;i++)
+        {
+            new HistoryMaintenance(s,_catalog).Rebuild();
+            var totals=s.Recap(new(Year:2026,Month:11),_catalog).Totals;
+            Assert.Equal(1,totals.Kills);Assert.Equal(1,totals.Bosses);Assert.Equal(1,totals.Flashpoints);
+            Assert.Equal(damage,totals.Amounts!.Damage);Assert.False(totals.KillsNeedReprocess);
+            Assert.Equal(1,s.Detail(container,_catalog).Item.Totals.Bosses);
+            Assert.Equal(0,s.Totals(new(CharacterId:"other"),_catalog).Kills);s.Verify();
+        }
+        Assert.Equal(original,File.ReadAllBytes(path));
+    }
+    [Fact]public void PendingHealSurvivesTrackerRestartBetweenRecords()
+    {
+        const string target="Guard {999}:1";
+        var hit=Damage.Replace("Boss {999}:1",target+"|(60/100)").Replace("100 ~80","40 ~40");
+        var full=$"[20:00:01.100] [{target}|(100/100)] [=] [] [Event {{836045448945472}}: AbilityActivate {{836045448945479}}]";
+        var(s,e,id,_,path)=Setup(Enter+"\n"+hit+"\n"+full+"\n");e.ReadAll(id);
+        Assert.NotNull(Assert.Single(s.LoadSource(id).State.Npcs).Value.PendingHeal);
+        File.AppendAllText(path,$"[20:00:01.200] [{target}|(100/100)] [=] [] [ApplyEffect {{836045448945477}}: Heal {{836045448945500}}] (999 ~40)\n"+
+            hit.Replace("20:00:01.000","20:00:02.000").Replace("40 ~40","20 ~20")+"\n"+
+            $"[20:00:03.000] [@Other#202] [{target}|(0/100)] [] [Event {{836045448945472}}: Death {{836045448945493}}]\n");
+        s=new RecapStore(s.Root);e=new IngestionEngine(s,_catalog);e.ReadAll(id);e.ReadAll(id);
+        Assert.Equal(1,s.Totals(new(),_catalog).Kills);s.Verify();
+    }
+    [Fact]public void ReprocessingOldHistoryRestoresScriptedClearAndFullRosterWithoutDuplicates()
+    {
+        var activity=_catalog.Document.Activities.Single(a=>a.Id=="foundry");
+        static string Event(string source,string target,string effect,string type=EffectIds.Event,string tail="",string ability="")
+            =>$"[20:00:01.000] [{source}] [{target}] [{ability}] [X {{{type}}}: Y {{{effect}}}] {tail}";
+        var lines=new List<string>{Event("@Local#101","",activity.AreaIds[0],EffectIds.Area).Replace("20:00:01.000","20:00:00.000"),Enter};
+        foreach(var group in activity.RequiredGroups)
+        {
+            var encounter=activity.Encounters.Single(e=>e.Id==group[0]);var role=encounter.Roles.First(r=>r.Required);
+            var npc=$"Boss {{{role.TemplateIds[0]}}}:1";
+            lines.Add(Event("@Local#101",npc+"|(90/100)",EffectIds.Damage,EffectIds.Apply,"(10)"));
+            if(encounter.Ending is not null)
+            {
+                lines.Add(Event("@Local#101",npc+"|(5/100)",EffectIds.Damage,EffectIds.Apply,"(85)"));
+                lines.Add(Event(npc+"|(5/100)","=","836045448945479",ability:$"Ending {{{encounter.Ending.AbilityIds![0]}}}"));
+            }
+            else lines.Add(Event("@Other#202",npc+"|(0/100)",EffectIds.Death));
+        }
+        lines.Add(Event("@Local#101","",EffectIds.Exit));
+        var(s,e,id,container,path)=Setup(string.Join('\n',lines)+"\n",true);e.ReadAll(id);
+        var original=File.ReadAllBytes(path);var damage=s.Totals(new(),_catalog).Amounts!.Damage;
+        using(var connection=new SqliteConnection(new SqliteConnectionStringBuilder{DataSource=s.DatabasePath,Pooling=false}.ToString()))
+        {
+            connection.Open();using var command=connection.CreateCommand();
+            command.CommandText="UPDATE projection_sets SET metric_version='1.3.0'; UPDATE encounter_attempts SET result='unconfirmed',qualified=0; UPDATE activity_runs SET terminal=0,full=0";command.ExecuteNonQuery();
+        }
+        s=new RecapStore(s.Root);Assert.Equal(0,s.Totals(new(),_catalog).Flashpoints);
+        for(var i=0;i<2;i++)
+        {
+            new HistoryMaintenance(s,_catalog).Rebuild();var totals=s.Detail(container,_catalog).Item.Totals;
+            Assert.Equal(4,totals.Bosses);Assert.Equal(1,totals.Flashpoints);Assert.Equal(1,totals.FullRuns);
+            Assert.Equal(0,totals.Kills);Assert.Equal(damage,totals.Amounts!.Damage);s.Verify();
+        }
+        Assert.Equal(original,File.ReadAllBytes(path));
+    }
     [Fact]public void StaleStagingActivationLeavesHistoryUntouched()
     {var(s,e,id,_,_)=Setup();e.ReadAll(id);var backup=Path.Combine(_root,"stage.db");s.Backup(backup);var expected=s.Revision;s.UpdateSettings(expected.SettingsRevision,s.Settings with{Paused=true});Assert.Throws<InvalidOperationException>(()=>s.ActivateStaging(backup,expected,true));Assert.True(s.Settings.Paused);Assert.Equal(100,s.Totals(new(),_catalog).Amounts!.Damage);}
     [Theory][InlineData("activation_begin")][InlineData("activation_source_segments")][InlineData("activation_before_commit")]

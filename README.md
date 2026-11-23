@@ -10,7 +10,7 @@ Windows app for SWTOR combat stats, session history, and monthly or yearly recap
 
 | Download | Setup |
 | --- | --- |
-| `SwtorRecap-0.3.0-Setup.exe` | Run the installer, then open **SWTOR Recap** from the Start menu. |
+| `SwtorRecap-0.4.0-Setup.exe` | Run the installer, then open **SWTOR Recap** from the Start menu. |
 | `SwtorRecap-win-x64.zip` | Extract the entire ZIP and open **SwtorRecap.exe**. Keep the files together. |
 
 Windows x64. The .NET runtime is included. No administrator access is needed. The test build is unsigned, so Windows may show a publisher or reputation warning.
@@ -51,6 +51,8 @@ SWTOR writes `combat_*.txt`; Recap only reads them. Recap history, backups, and 
 ## Build
 
 Install the .NET SDK specified in `global.json` and Python 3, then run `python3 scripts/check.py` (`py scripts/check.py` on Windows). [Build and package commands](docs/GUIDE.md#build-from-source)
+
+To summarize a batch of combat logs for review, run `python3 scripts/analyze_logs.py "path/to/logs"`. It uses Python's standard library and writes a short model brief plus detailed evidence files. Add `--compare-app` to compare against the current application's counters using the .NET SDK. [Batch review commands](docs/GUIDE.md#batch-log-review-for-a-person-or-model)
 
 ## License
 

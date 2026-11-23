@@ -1,5 +1,5 @@
 {
-  "version": "2026.11.09.2",
+  "version": "2026.11.23.1",
   "activities": [
     {
       "id": "a_traitor_among_the_chiss",
@@ -88,7 +88,7 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
@@ -109,14 +109,24 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "guardian_droid"
+        ],
+        [
+          "syndic_zenta"
+        ],
+        [
+          "valss"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/a_traitor_among_the_chiss.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -211,7 +221,7 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
@@ -293,20 +303,33 @@
                 "3485696673185792",
                 "3493174211248128"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
-          "status": "candidate",
+          "optional": true,
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "major_travik",
+          "major_imos"
+        ],
+        [
+          "lieutenant_kreshin",
+          "master_liam_dentiri"
+        ],
+        [
+          "lord_goh",
+          "master_oric_traless"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/assault_on_tython.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -401,14 +424,24 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "leyarsha"
+        ],
+        [
+          "vodal_beast"
+        ],
+        [
+          "vodal_prophet"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/athiss.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -485,7 +518,7 @@
                 "1675690080468992",
                 "2511460651499520"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-1",
@@ -494,14 +527,14 @@
                 "1675672900599808",
                 "2511456356532224"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -538,14 +571,14 @@
                 "2511439176663040",
                 "1675861879160832"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -597,14 +630,33 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "gark_the_indomitable"
+        ],
+        [
+          "drinda_velasu"
+        ],
+        [
+          "crystal_droids"
+        ],
+        [
+          "krel_thak"
+        ],
+        [
+          "commander_folex"
+        ],
+        [
+          "darth_serevin"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/battle_of_ilum.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -717,14 +769,24 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "rarrook_marko"
+        ],
+        [
+          "obai_vodd"
+        ],
+        [
+          "shield_walker"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/battle_of_rishi.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -842,14 +904,25 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "gxr_5_sabotage_droid",
+          "sergeant_boran"
+        ],
+        [
+          "commander_ghulil"
+        ],
+        [
+          "yadira_ban"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/black_talon.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -938,8 +1011,18 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "kyramla"
+        ],
+        [
+          "valk_jos"
+        ],
+        [
+          "shae"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/blood_hunt.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -1177,7 +1260,10 @@
                 "3210668442386432",
                 "2504236516507648"
               ],
-              "required": true
+              "required": true,
+              "notRequiredDifficulties": [
+                "836045448953657"
+              ]
             }
           ],
           "rule": "death_all",
@@ -1248,14 +1334,24 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "officer_xander_en4c"
+        ],
+        [
+          "captain_grimyk"
+        ],
+        [
+          "general_ortol"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/cademimu.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -1279,19 +1375,23 @@
                 "2530019205185536",
                 "1209574459703296"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": true,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
+      "requiredGroups": [
+        [
+          "annihilator_6k_a2"
+        ]
+      ],
       "completeObjectives": false,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/colicoid_war_game.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
@@ -1392,13 +1492,23 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
+      "requiredGroups": [
+        [
+          "technician_canni_elli_vaa"
+        ],
+        [
+          "vixian_mauler"
+        ],
+        [
+          "umbaran_spider_tank"
+        ]
+      ],
       "completeObjectives": false,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/crisis_on_umbara.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
@@ -1479,8 +1589,18 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "vrblther"
+        ],
+        [
+          "duneclaw"
+        ],
+        [
+          "vigilant"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/czerka_core.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -1561,8 +1681,18 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "eradicator_droid"
+        ],
+        [
+          "zokar"
+        ],
+        [
+          "rasmus"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/czerka_labs.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -1692,14 +1822,14 @@
                 "2511976047575040",
                 "1628604354002944"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -1746,19 +1876,38 @@
                 "1629334498443264",
                 "2512109191561216"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
-          "status": "candidate",
+          "optional": true,
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
+      "requiredGroups": [
+        [
+          "detector"
+        ],
+        [
+          "assassin_droids"
+        ],
+        [
+          "interrogator"
+        ],
+        [
+          "bulwark"
+        ],
+        [
+          "assembler"
+        ],
+        [
+          "mentor"
+        ]
+      ],
       "completeObjectives": false,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/directive_seven.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
@@ -1876,14 +2025,27 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "lieutenant_isric"
+        ],
+        [
+          "ironfist"
+        ],
+        [
+          "iss_7_guardian_battledroid"
+        ],
+        [
+          "vokk"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/esseles.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -1907,14 +2069,14 @@
                 "1690314444111872",
                 "2511761299210240"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -1951,7 +2113,7 @@
                 "1790202498514944",
                 "2511718349537280"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-1",
@@ -1960,14 +2122,14 @@
                 "1790206793482240",
                 "2511726939471872"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -2004,14 +2166,14 @@
                 "2511675399864320",
                 "1690331623981056"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -2053,14 +2215,33 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "tregg_the_destroyer"
+        ],
+        [
+          "jindo_krey"
+        ],
+        [
+          "prototypes_a14_b16"
+        ],
+        [
+          "hk_47"
+        ],
+        [
+          "chondrus_berani"
+        ],
+        [
+          "darth_malgus"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/false_emperor.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -2128,14 +2309,14 @@
                 "2514729121611776",
                 "1169322026205184"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -2150,16 +2331,25 @@
                 "2514780661219328",
                 "739846771441664"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "hp_threshold_exit",
           "victoryId": null,
           "final": true,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
-          "negativeFixtures": []
+          "negativeFixtures": [],
+          "ending": {
+            "roleId": "role-0",
+            "healthPercent": 5,
+            "abilityIds": [
+              "2270006180052992"
+            ],
+            "requireImmune": false,
+            "windowSeconds": 60
+          }
         },
         {
           "id": "burrower_matriarch",
@@ -2178,14 +2368,27 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "foundry_guardian"
+        ],
+        [
+          "hk_47"
+        ],
+        [
+          "n4_10_exterminator"
+        ],
+        [
+          "mysterious_jedi"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/foundry.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -2380,7 +2583,7 @@
               "name": "Chak'aghakh",
               "templateIds": [
                 "2762269561716736",
-                "2762269561716736"
+                "2762140712697856"
               ],
               "required": true
             },
@@ -2419,7 +2622,7 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
@@ -2440,13 +2643,20 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
+      "requiredGroups": [
+        [
+          "rakghoul_behemoth"
+        ],
+        [
+          "rakghoul_super_soldiers"
+        ]
+      ],
       "completeObjectives": false,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/kaon_under_siege.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
@@ -2537,14 +2747,14 @@
                 "3484816204890112",
                 "3493187096150016"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
-          "status": "candidate",
+          "optional": true,
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -2625,20 +2835,33 @@
                 "3484803319988224",
                 "3493182801182720"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
-          "status": "candidate",
+          "optional": true,
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "lord_renning",
+          "master_riilna"
+        ],
+        [
+          "i5_t1",
+          "r_9xr"
+        ],
+        [
+          "darth_soverus",
+          "commander_jensyn"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/korriban_incursion.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -2661,14 +2884,14 @@
               "templateIds": [
                 "3316187198914560"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
-          "final": false,
+          "final": true,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -2682,14 +2905,14 @@
               "templateIds": [
                 "3316170019045376"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
-          "final": false,
+          "final": true,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -2703,14 +2926,14 @@
               "templateIds": [
                 "3316174314012672"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
-          "final": false,
+          "final": true,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -2724,14 +2947,14 @@
               "templateIds": [
                 "3316200083816448"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
-          "final": false,
+          "final": true,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -2745,19 +2968,27 @@
               "templateIds": [
                 "3316182903947264"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": true,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
+      "requiredGroups": [
+        [
+          "lieutenant_krupp",
+          "major_benes",
+          "lord_modo",
+          "master_khoris",
+          "station_guardian_one"
+        ]
+      ],
       "completeObjectives": false,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/kuat_drive_yards.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
@@ -2871,14 +3102,24 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "arena"
+        ],
+        [
+          "rand"
+        ],
+        [
+          "darok_arkous"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/legacy_rakata.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -2963,21 +3204,28 @@
           "roles": [
             {
               "id": "role-0",
-              "name": "Doctor Lorrick",
+              "name": "Doctor Lorrick (human)",
               "templateIds": [
                 "2794163988856832",
-                "2838582540632064",
+                "2838582540632064"
+              ],
+              "required": false
+            },
+            {
+              "id": "rakghoul",
+              "name": "Doctor Lorrick (rakghoul)",
+              "templateIds": [
                 "2809320928444416",
                 "2819959562436608"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": true,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -2998,14 +3246,27 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "putrid_shaclaw"
+        ],
+        [
+          "lr_5_sentinel_droid"
+        ],
+        [
+          "project_sav_rak"
+        ],
+        [
+          "doctor_lorrick"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/lost_island.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -3018,6 +3279,28 @@
         "833571547775676"
       ],
       "encounters": [
+        {
+          "id": "x37_oppressor",
+          "name": "X-37 Oppressor Droid",
+          "roles": [
+            {
+              "id": "droid",
+              "name": "X-37 Oppressor Droid",
+              "templateIds": [
+                "1006405326733312",
+                "2513685444558848"
+              ],
+              "required": true
+            }
+          ],
+          "rule": "death_all",
+          "victoryId": null,
+          "final": false,
+          "optional": false,
+          "status": "logic-tested",
+          "positiveFixtures": [],
+          "negativeFixtures": []
+        },
         {
           "id": "colonel_daksh",
           "name": "Colonel Daksh",
@@ -3049,14 +3332,14 @@
               "templateIds": [
                 "2513668264689664"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -3070,14 +3353,14 @@
               "templateIds": [
                 "2513672559656960"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -3118,14 +3401,30 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "x37_oppressor"
+        ],
+        [
+          "colonel_daksh"
+        ],
+        [
+          "lord_kancras"
+        ],
+        [
+          "lord_vanithrast"
+        ],
+        [
+          "grand_moff_kilran"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/maelstrom_prison.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -3221,14 +3520,24 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "sairisi"
+        ],
+        [
+          "ortuno"
+        ],
+        [
+          "stivastin"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/manaan.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -3261,7 +3570,8 @@
                 "3158424460197888",
                 "2438158444658688"
               ],
-              "required": true
+              "required": true,
+              "count": 2
             }
           ],
           "rule": "death_all",
@@ -3283,7 +3593,7 @@
                 "2442462001889280",
                 "3158407280328704"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-1",
@@ -3292,7 +3602,7 @@
                 "3158415870263296",
                 "2442457706921984"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-2",
@@ -3301,7 +3611,7 @@
                 "2442470591823872",
                 "3158265546407936"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-3",
@@ -3310,14 +3620,14 @@
                 "3158394395426816",
                 "2442466296856576"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -3332,7 +3642,7 @@
                 "3158398690394112",
                 "2442483476725760"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-1",
@@ -3341,7 +3651,7 @@
                 "2442479181758464",
                 "3158402985361408"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-2",
@@ -3350,7 +3660,7 @@
                 "2442487771693056",
                 "3158420165230592"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-3",
@@ -3359,14 +3669,14 @@
                 "2442474886791168",
                 "3158411575296000"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -3402,20 +3712,31 @@
               "templateIds": [
                 "3250538623795200"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
-          "status": "candidate",
+          "optional": true,
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "braxx_the_bloodhound"
+        ],
+        [
+          "imperial_boarding_party",
+          "republic_boarding_party"
+        ],
+        [
+          "mavrix_varad"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/mandalorian_raiders.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -3530,7 +3851,7 @@
               "templateIds": [
                 "4172294440091648"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-1",
@@ -3538,20 +3859,33 @@
               "templateIds": [
                 "4172298735058944"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
-          "status": "candidate",
+          "optional": true,
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "voreclaw"
+        ],
+        [
+          "guardian_droid"
+        ],
+        [
+          "gemini"
+        ],
+        [
+          "vin_zil"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/nathema.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -3574,7 +3908,7 @@
               "templateIds": [
                 "4257498001309696"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-1",
@@ -3583,14 +3917,14 @@
                 "4275957770747904",
                 "4275957770747904"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -3626,16 +3960,23 @@
               "templateIds": [
                 "4257502296276992"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "hp_threshold_exit",
           "victoryId": null,
           "final": true,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
-          "negativeFixtures": []
+          "negativeFixtures": [],
+          "ending": {
+            "roleId": "role-0",
+            "healthPercent": 2,
+            "abilityIds": [],
+            "requireImmune": true,
+            "windowSeconds": 60
+          }
         },
         {
           "id": "feng_yun",
@@ -3648,7 +3989,7 @@
                 "4363179966595072",
                 "4257506591244288"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-1",
@@ -3656,14 +3997,14 @@
               "templateIds": [
                 "4276941318258688"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
-          "status": "candidate",
+          "optional": true,
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -3678,14 +4019,14 @@
                 "4363141311889408",
                 "4257467936538624"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -3700,7 +4041,7 @@
                 "4257442166734848",
                 "4363167081693184"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-1",
@@ -3709,14 +4050,14 @@
                 "4257455051636736",
                 "4363171376660480"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -3731,16 +4072,23 @@
                 "4257463641571328",
                 "4363175671627776"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "hp_threshold_exit",
           "victoryId": null,
           "final": true,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
-          "negativeFixtures": []
+          "negativeFixtures": [],
+          "ending": {
+            "roleId": "role-0",
+            "healthPercent": 2,
+            "abilityIds": [],
+            "requireImmune": true,
+            "windowSeconds": 60
+          }
         },
         {
           "id": "rasha",
@@ -3758,14 +4106,27 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "vulture_squad",
+          "r10-x6"
+        ],
+        [
+          "commander_aster",
+          "jakir_and_seldin"
+        ],
+        [
+          "darth_malgus",
+          "tau_idair"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/objective_meridian.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -3842,8 +4203,18 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "lord_kherus"
+        ],
+        [
+          "sv_3_eradicator"
+        ],
+        [
+          "darth_ikoral"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/red_reaper.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -3908,16 +4279,23 @@
               "templateIds": [
                 "4468509744562176"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "hp_threshold_exit",
           "victoryId": null,
           "final": true,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
-          "negativeFixtures": []
+          "negativeFixtures": [],
+          "ending": {
+            "roleId": "role-0",
+            "healthPercent": 2,
+            "abilityIds": [],
+            "requireImmune": true,
+            "windowSeconds": 60
+          }
         },
         {
           "id": "warden_units",
@@ -3929,7 +4307,7 @@
               "templateIds": [
                 "4563939622912000"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-1",
@@ -3937,7 +4315,7 @@
               "templateIds": [
                 "4563943917879296"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-2",
@@ -3945,20 +4323,30 @@
               "templateIds": [
                 "4563948212846592"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
-          "status": "candidate",
+          "optional": true,
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "apex_ranphyx"
+        ],
+        [
+          "regnant"
+        ],
+        [
+          "nul_darth_malgus"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/ruins_of_nul.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -3981,14 +4369,14 @@
               "templateIds": [
                 "4445312626196480"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -4002,7 +4390,7 @@
               "templateIds": [
                 "4445278266458112"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-1",
@@ -4010,7 +4398,7 @@
               "templateIds": [
                 "4445295446327296"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-2",
@@ -4018,14 +4406,14 @@
               "templateIds": [
                 "4445299741294592"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -4039,14 +4427,14 @@
               "templateIds": [
                 "4445304036261888"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": true,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -4060,7 +4448,7 @@
               "templateIds": [
                 "4445291151360000"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-1",
@@ -4068,7 +4456,7 @@
               "templateIds": [
                 "4445282561425408"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-2",
@@ -4076,14 +4464,14 @@
               "templateIds": [
                 "4445286856392704"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -4097,14 +4485,14 @@
               "templateIds": [
                 "4445308331229184"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": true,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -4118,20 +4506,32 @@
               "templateIds": [
                 "4445316921163776"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
-          "status": "candidate",
+          "optional": true,
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "graul"
+        ],
+        [
+          "rep_imperial_squad",
+          "imp_republic_squad"
+        ],
+        [
+          "rep_colonel_barden_golah",
+          "imp_leeha_narezz"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/secrets_of_the_enclave.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -4156,14 +4556,14 @@
                 "4702735786049536",
                 "4702748670951424"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -4179,7 +4579,7 @@
                 "4705600529235968",
                 "4705596234268672"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-1",
@@ -4189,14 +4589,14 @@
                 "4705574759432192",
                 "4705591939301376"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -4212,14 +4612,14 @@
                 "4705557579563008",
                 "4705561874530304"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": true,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -4235,20 +4635,30 @@
                 "4702765850820608",
                 "4702770145787904"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
-          "status": "candidate",
+          "optional": true,
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "corrupted_vorantikus"
+        ],
+        [
+          "voss_mystics"
+        ],
+        [
+          "temu_tfb"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/shrine_of_silence.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -4271,14 +4681,14 @@
               "templateIds": [
                 "4419697441243136"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -4292,14 +4702,14 @@
               "templateIds": [
                 "4419710326145024"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -4313,14 +4723,14 @@
               "templateIds": [
                 "4419714621112320"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -4363,20 +4773,33 @@
               "templateIds": [
                 "4434373344493568"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
-          "status": "candidate",
+          "optional": true,
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "gorga_brak"
+        ],
+        [
+          "bask_sunn"
+        ],
+        [
+          "troya_ajak"
+        ],
+        [
+          "heta_kol"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/spirit_of_vengeance.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -4399,7 +4822,7 @@
               "templateIds": [
                 "2513870128152576"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-1",
@@ -4407,14 +4830,14 @@
               "templateIds": [
                 "2513865833185280"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -4428,14 +4851,14 @@
               "templateIds": [
                 "2513861538217984"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -4470,14 +4893,14 @@
               "templateIds": [
                 "2513857243250688"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
-          "status": "candidate",
+          "optional": true,
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -4491,7 +4914,7 @@
               "templateIds": [
                 "2513887308021760"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-1",
@@ -4499,14 +4922,15 @@
               "templateIds": [
                 "2513840063381504"
               ],
-              "required": false
+              "required": true,
+              "count": 2
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -4520,20 +4944,36 @@
               "templateIds": [
                 "2513805703643136"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "handler_gattan_vine_cats"
+        ],
+        [
+          "captain_shivanek"
+        ],
+        [
+          "doctor_zharen"
+        ],
+        [
+          "pd_44"
+        ],
+        [
+          "general_edikar"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/flashpoints/taral_v.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -4610,7 +5050,17 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
+      "requiredGroups": [
+        [
+          "nul_acolyte"
+        ],
+        [
+          "force_beast"
+        ],
+        [
+          "last_daughter"
+        ]
+      ],
       "completeObjectives": false,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/children_of_nul.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
@@ -4668,13 +5118,23 @@
               "required": false
             }
           ],
-          "rule": "unsupported",
+          "rule": "signal_exit",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
-          "negativeFixtures": []
+          "negativeFixtures": [],
+          "victorySignals": [
+            {
+              "kind": "damage",
+              "id": "4258554563264512"
+            },
+            {
+              "kind": "loot",
+              "id": "4340614208421888"
+            }
+          ]
         },
         {
           "id": "breach",
@@ -4742,13 +5202,32 @@
               "required": false
             }
           ],
-          "rule": "unsupported",
+          "rule": "signal_exit",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
-          "negativeFixtures": []
+          "negativeFixtures": [],
+          "victorySignals": [
+            {
+              "kind": "remove",
+              "id": "4381085685252434",
+              "roleId": "role-4"
+            },
+            {
+              "kind": "loot",
+              "id": "4330074358677504"
+            },
+            {
+              "kind": "loot",
+              "id": "4408929958232064"
+            },
+            {
+              "kind": "loot",
+              "id": "4333471677808640"
+            }
+          ]
         },
         {
           "id": "huntmaster",
@@ -4769,14 +5248,14 @@
                 "4281661487316992",
                 "4330237567434752"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -4803,7 +5282,26 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
+      "requiredGroups": [
+        [
+          "red"
+        ],
+        [
+          "holding_pens"
+        ],
+        [
+          "breach"
+        ],
+        [
+          "trandos"
+        ],
+        [
+          "huntmaster"
+        ],
+        [
+          "apex_vanguard"
+        ]
+      ],
       "completeObjectives": false,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/dxun.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
@@ -4886,19 +5384,68 @@
               "id": "role-0",
               "name": "Infernal Council",
               "templateIds": [
-                "2290145281703936",
+                "1977669231050752",
+                "2098319157362688",
+                "2098323452329984",
+                "1977660641116160",
+                "2098306272460800",
+                "1977664936083456",
                 "2098327747297280",
+                "2098332042264576",
+                "2017230174814208",
+                "2289642770530304",
+                "2289647065497600",
+                "2017238764748800",
+                "2289681425235968",
+                "2017243059716096",
                 "2289690015170560",
-                "2289887583666176"
+                "2289694310137856",
+                "2512152141234176",
+                "2512165026136064",
+                "2512169321103360",
+                "2512190795939840",
+                "2512195090907136",
+                "2512238040580096",
+                "2512242335547392",
+                "2512246630514688",
+                "2289840339025920",
+                "2289844633993216",
+                "2289848928960512",
+                "2289853223927808",
+                "2289861813862400",
+                "2289878993731584",
+                "2289887583666176",
+                "2289891878633472",
+                "2290106626998272",
+                "2290110921965568",
+                "2290123806867456",
+                "2290132396802048",
+                "2290136691769344",
+                "2290140986736640",
+                "2290145281703936",
+                "2290149576671232",
+                "2512263810383872",
+                "2512268105351168",
+                "2512272400318464",
+                "2512276695285760",
+                "2512280990253056",
+                "2512285285220352",
+                "2512298170122240",
+                "2512306760056832"
               ],
-              "required": false
+              "required": true,
+              "count": 16,
+              "countsByGroupSize": {
+                "8": 8,
+                "16": 16
+              }
             }
           ],
-          "rule": "unsupported",
+          "rule": "death_all",
           "victoryId": null,
           "final": false,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
           "negativeFixtures": []
         },
@@ -4931,7 +5478,23 @@
           ]
         }
       ],
-      "requiredGroups": [],
+      "requiredGroups": [
+        [
+          "xrr3"
+        ],
+        [
+          "gharj"
+        ],
+        [
+          "pylons"
+        ],
+        [
+          "infernal_council"
+        ],
+        [
+          "soa"
+        ]
+      ],
       "completeObjectives": false,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/eternity_vault.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
@@ -5086,8 +5649,21 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "zorn_toth"
+        ],
+        [
+          "firebrand_stormcaller"
+        ],
+        [
+          "colonel_vorgath"
+        ],
+        [
+          "warlord_kephess"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/explosive_conflict.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -5247,8 +5823,24 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "TYTT_K"
+        ],
+        [
+          "a&e_k"
+        ],
+        [
+          "nahut_k"
+        ],
+        [
+          "SCYVA_K"
+        ],
+        [
+          "IZAX_K"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/gods_from_the_machine.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -5286,8 +5878,12 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "mutated_geonosian_queen"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/hive_of_the_mountain_queen.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -5488,15 +6084,19 @@
           ],
           "rule": "death_all",
           "victoryId": null,
-          "final": false,
+          "final": true,
           "optional": false,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "monolith"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/monolith.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -5556,8 +6156,12 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "propagator_core_xr53"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/propagator_core.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -5643,7 +6247,7 @@
           "rule": "unsupported",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
@@ -5679,8 +6283,21 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "ip_cpt"
+        ],
+        [
+          "watchdog"
+        ],
+        [
+          "kanoth"
+        ],
+        [
+          "dominique"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/r4_anomaly.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -5757,7 +6374,7 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
@@ -5935,8 +6552,30 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "dashroode"
+        ],
+        [
+          "titan6"
+        ],
+        [
+          "thrasher"
+        ],
+        [
+          "operations_chief"
+        ],
+        [
+          "olok"
+        ],
+        [
+          "cartel_warlords"
+        ],
+        [
+          "Styrak_k"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/scum_and_villainy.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -6104,8 +6743,24 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "malaphar"
+        ],
+        [
+          "sword_squadron"
+        ],
+        [
+          "underlurker"
+        ],
+        [
+          "revanite_commanders"
+        ],
+        [
+          "revan"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/temple_of_sacrifice.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -6278,7 +6933,7 @@
                 "302523752434898",
                 "3025241819316224"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-2",
@@ -6307,13 +6962,22 @@
               "required": false
             }
           ],
-          "rule": "unsupported",
+          "rule": "hp_threshold_exit",
           "victoryId": null,
           "final": true,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
-          "negativeFixtures": []
+          "negativeFixtures": [],
+          "ending": {
+            "roleId": "role-1",
+            "healthPercent": 4,
+            "abilityIds": [
+              "3019211685232640"
+            ],
+            "requireImmune": false,
+            "windowSeconds": 60
+          }
         },
         {
           "id": "dreadful",
@@ -6331,14 +6995,30 @@
           "rule": "death_all",
           "victoryId": null,
           "final": false,
-          "optional": false,
+          "optional": true,
           "status": "candidate",
           "positiveFixtures": [],
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "writhing_horror"
+        ],
+        [
+          "dread_guard"
+        ],
+        [
+          "op_ix"
+        ],
+        [
+          "kephess_the_undying"
+        ],
+        [
+          "the_terror_from_beyond"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/terror_from_beyond.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -6488,8 +7168,24 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "nefra"
+        ],
+        [
+          "draxus"
+        ],
+        [
+          "grobthok"
+        ],
+        [
+          "corruptor_zero"
+        ],
+        [
+          "brontes"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/the_dread_fortress.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -6697,8 +7393,25 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "bestia",
+          "bestia_unverified"
+        ],
+        [
+          "tyrans"
+        ],
+        [
+          "calphayus"
+        ],
+        [
+          "raptus"
+        ],
+        [
+          "dread_council"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/the_dread_palace.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -6736,8 +7449,12 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "eyeless"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/the_eyeless.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -6875,7 +7592,7 @@
                 "3371441953177600",
                 "3397039958261760"
               ],
-              "required": false
+              "required": true
             },
             {
               "id": "role-2",
@@ -6883,20 +7600,48 @@
               "templateIds": [
                 "3374109127868416"
               ],
-              "required": false
+              "required": true
             }
           ],
-          "rule": "unsupported",
+          "rule": "hp_threshold_exit",
           "victoryId": null,
           "final": true,
           "optional": false,
-          "status": "candidate",
+          "status": "logic-tested",
           "positiveFixtures": [],
-          "negativeFixtures": []
+          "negativeFixtures": [],
+          "ending": {
+            "roleId": "role-1",
+            "healthPercent": 10,
+            "abilityIds": [
+              "3502391211065344"
+            ],
+            "requireImmune": false,
+            "windowSeconds": 60
+          },
+          "continueAfterRoles": [
+            "role-2"
+          ]
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "sparky"
+        ],
+        [
+          "bulo"
+        ],
+        [
+          "torque"
+        ],
+        [
+          "master_blaster"
+        ],
+        [
+          "coratanni"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/the_ravagers.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -6934,8 +7679,12 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "golden_fury"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/toborros_courtyard.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"
@@ -6973,8 +7722,12 @@
           "negativeFixtures": []
         }
       ],
-      "requiredGroups": [],
-      "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "xenoanalyst"
+        ]
+      ],
+      "completeObjectives": true,
       "provenance": "https://github.com/baras-app/baras/blob/b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d/core/definitions/encounters/operations/xenoanalyst.toml",
       "commit": "b8e7ff3b08dc0d0a1fa40a2409628fc62841d36d",
       "license": "MIT"

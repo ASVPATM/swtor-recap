@@ -8,6 +8,7 @@ import subprocess
 import platform
 import xml.etree.ElementTree as ET
 import time
+import sys
 
 ROOT=Path(__file__).resolve().parents[1]
 parser=argparse.ArgumentParser()
@@ -17,11 +18,12 @@ os.chdir(ROOT)
 for key,value in {'DOTNET_CLI_TELEMETRY_OPTOUT':'1','DOTNET_GENERATE_ASPNET_CERTIFICATE':'false','DOTNET_CLI_HOME':str(ROOT/'.artifacts/dotnet-home'),'NUGET_PACKAGES':str(ROOT/'.artifacts/nuget')}.items():os.environ.setdefault(key,value)
 artifact=ROOT/'.artifacts'/f'check-{time.time_ns()}'
 artifact.mkdir(parents=True)
+subprocess.run([sys.executable,'-m','unittest','discover','-s','tests/python','-v'],check=True)
 dotnet=['dotnet'] if os.name=='nt' else ['bash',str(ROOT/'scripts/dotnet.sh')]
 def run(*arguments):
     subprocess.run(dotnet+list(arguments),check=True)
 
-run('restore','SwtorRecap.slnx','--locked-mode','--disable-parallel')
+run('restore','SwtorRecap.slnx','--locked-mode','--disable-parallel','--disable-build-servers','-m:1')
 run('build','SwtorRecap.slnx','-c','Release','--no-restore','--disable-build-servers','-m:1','-p:UseSharedCompilation=false')
 for suite in ['Core','Integration']+([] if args.quick else ['Desktop','Windows']):
     run('test',f'tests/SwtorRecap.{suite}.Tests','-c','Release','--no-build','--no-restore','--logger',f'trx;LogFileName={suite}.trx','--results-directory',str(artifact/'tests'))
@@ -41,7 +43,7 @@ for path in sorted((artifact/'tests').glob('*.trx')):
     counts=tree.find('.//{http://microsoft.com/schemas/VisualStudio/TeamTest/2010}Counters')
     suites[path.stem]={key:int(counts.attrib[key]) for key in ['total','executed','passed','failed','notExecuted']}
     suites[path.stem]['skipped']=sum(r.get('outcome')=='NotExecuted' for r in tree.findall('.//{http://microsoft.com/schemas/VisualStudio/TeamTest/2010}UnitTestResult'))
-validation={'ok':True,'platform':platform.platform(),'quick':args.quick,'tests':suites}
+validation={'ok':True,'platform':platform.platform(),'quick':args.quick,'pythonTests':'passed','tests':suites}
 if not args.quick:validation['replay']={'ok':report['ok'],'fixtures':len(report['results']),'sqliteVersion':report['sqliteVersion'],'elapsedSeconds':report['elapsedSeconds'],'recapP95Milliseconds':report['recapP95Milliseconds']}
 (artifact/'validation.json').write_text(json.dumps(validation,indent=2)+'\n')
 (ROOT/'.artifacts/latest-validation.json').write_text(json.dumps(validation,indent=2)+'\n')

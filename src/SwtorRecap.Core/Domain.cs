@@ -31,7 +31,7 @@ public static class Json
 public static class Versions
 {
     public const int Schema = 1, Reducer = 1, Protocol = 1;
-    public const string Parser = "1.1.0", Metrics = "1.2.0", Catalog = "2026.11.09.2";
+    public const string Parser = "1.2.0", Metrics = "1.4.0", Catalog = "2026.11.23.1";
     public static string App => typeof(Versions).Assembly.GetName().Version!.ToString(3);
 }
 
@@ -70,7 +70,8 @@ public enum EventKind { Other, Damage, Heal, EnterCombat, ExitCombat, Death, Rev
 public enum ParseStatus { Accepted, Irrelevant, UnknownSemantic, Malformed, Unsupported }
 public sealed record LogEvent(TimeOnly Time, Actor Source, Actor Target, EventKind Kind,
     string TypeId, string? EffectId, string? AbilityId, long? Raw = null, long? Effective = null, bool Critical = false,
-    string? AreaId = null, string? DifficultyId = null, int? GroupSize = null, string? Server = null, string? Format = null);
+    string? AreaId = null, string? DifficultyId = null, int? GroupSize = null, string? Server = null, string? Format = null,
+    bool Immune = false);
 public sealed record ParseResult(ParseStatus Status, LogEvent? Event, string? Reason = null);
 public sealed record SourceRecord(long Start, long End, string? Text, string? Rejection = null);
 public sealed record ResolvedTime(DateTime? Local, DateTimeOffset? Utc, string? ReportingDate, string Quality, int Epoch);

@@ -139,6 +139,7 @@ for activity in catalog["activities"]:
         activity["requiredGroups"]=[[v] for v in ["hxi_54_juggernaut","major_alvena","sakan_donair","lieutenant_menerus","storm_squad"]]
         activity["completeObjectives"]=True
     activity["encounters"].extend(variants)
-catalog["version"]="2026.11.09.2"
+from catalog_overrides import apply
+apply(catalog)
 catalog_path.write_text(json.dumps(catalog,indent=2)+"\n")
 print(json.dumps(totals))

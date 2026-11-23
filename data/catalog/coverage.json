@@ -1,17 +1,30 @@
 {
-  "version": "2026.11.09.2",
+  "version": "2026.11.23.1",
   "activities": 55,
   "coverage": [
     {
       "activity": "a_traitor_among_the_chiss",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "guardian_droid"
+        ],
+        [
+          "syndic_zenta"
+        ],
+        [
+          "valss"
+        ]
+      ],
       "encounters": [
         {
           "id": "guardian_droid",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -25,6 +38,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -38,6 +53,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -51,6 +68,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -64,6 +83,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -77,13 +98,29 @@
     {
       "activity": "assault_on_tython",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "major_travik",
+          "major_imos"
+        ],
+        [
+          "lieutenant_kreshin",
+          "master_liam_dentiri"
+        ],
+        [
+          "lord_goh",
+          "master_oric_traless"
+        ]
+      ],
       "encounters": [
         {
           "id": "major_travik",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -97,6 +134,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -111,6 +150,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -125,6 +166,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -139,6 +182,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -153,6 +198,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -167,6 +214,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -178,30 +227,45 @@
         },
         {
           "id": "imperial_commander",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "3485696673185792",
             "3493174211248128"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
     {
       "activity": "athiss",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "leyarsha"
+        ],
+        [
+          "vodal_beast"
+        ],
+        [
+          "vodal_prophet"
+        ]
+      ],
       "encounters": [
         {
           "id": "leyarsha",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -216,6 +280,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -230,6 +296,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -244,6 +312,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -257,13 +327,35 @@
     {
       "activity": "battle_of_ilum",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "gark_the_indomitable"
+        ],
+        [
+          "drinda_velasu"
+        ],
+        [
+          "crystal_droids"
+        ],
+        [
+          "krel_thak"
+        ],
+        [
+          "commander_folex"
+        ],
+        [
+          "darth_serevin"
+        ]
+      ],
       "encounters": [
         {
           "id": "gark_the_indomitable",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -278,6 +370,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -291,9 +385,11 @@
         },
         {
           "id": "crystal_droids",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -302,14 +398,16 @@
             "1675672900599808",
             "2511456356532224"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "krel_thak",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -321,23 +419,27 @@
         },
         {
           "id": "commander_folex",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "2511439176663040",
             "1675861879160832"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "darth_serevin",
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -354,6 +456,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -368,13 +472,26 @@
     {
       "activity": "battle_of_rishi",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "rarrook_marko"
+        ],
+        [
+          "obai_vodd"
+        ],
+        [
+          "shield_walker"
+        ]
+      ],
       "encounters": [
         {
           "id": "rarrook_marko",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -391,6 +508,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -407,6 +526,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -421,6 +542,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -434,13 +557,27 @@
     {
       "activity": "black_talon",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "gxr_5_sabotage_droid",
+          "sergeant_boran"
+        ],
+        [
+          "commander_ghulil"
+        ],
+        [
+          "yadira_ban"
+        ]
+      ],
       "encounters": [
         {
           "id": "gxr_5_sabotage_droid",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -455,6 +592,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -469,6 +608,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -483,6 +624,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -497,6 +640,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -511,13 +656,26 @@
     {
       "activity": "blood_hunt",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "kyramla"
+        ],
+        [
+          "valk_jos"
+        ],
+        [
+          "shae"
+        ]
+      ],
       "encounters": [
         {
           "id": "kyramla",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -532,6 +690,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -548,6 +708,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -563,12 +725,31 @@
       "activity": "boarding_party",
       "type": "flashpoint",
       "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "hxi_54_juggernaut"
+        ],
+        [
+          "major_alvena"
+        ],
+        [
+          "sakan_donair"
+        ],
+        [
+          "lieutenant_menerus"
+        ],
+        [
+          "storm_squad"
+        ]
+      ],
       "encounters": [
         {
           "id": "hxi_54_juggernaut",
           "status": "logic-tested",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [
             "boarding-group"
           ],
@@ -587,6 +768,8 @@
           "status": "logic-tested",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [
             "boarding-group"
           ],
@@ -605,6 +788,8 @@
           "status": "logic-tested",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [
             "boarding-group"
           ],
@@ -623,6 +808,8 @@
           "status": "logic-tested",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [
             "boarding-group"
           ],
@@ -641,6 +828,8 @@
           "status": "logic-tested",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [
             "boarding-group"
           ],
@@ -663,6 +852,8 @@
           "status": "logic-tested",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [
             "boarding-group"
           ],
@@ -681,13 +872,26 @@
     {
       "activity": "cademimu",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "officer_xander_en4c"
+        ],
+        [
+          "captain_grimyk"
+        ],
+        [
+          "general_ortol"
+        ]
+      ],
       "encounters": [
         {
           "id": "officer_xander_en4c",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -704,6 +908,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -718,6 +924,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -732,6 +940,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -746,20 +956,27 @@
       "activity": "colicoid_war_game",
       "type": "flashpoint",
       "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "annihilator_6k_a2"
+        ]
+      ],
       "encounters": [
         {
           "id": "annihilator_6k_a2",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "2530019205185536",
             "1209574459703296"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -767,12 +984,25 @@
       "activity": "crisis_on_umbara",
       "type": "flashpoint",
       "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "technician_canni_elli_vaa"
+        ],
+        [
+          "vixian_mauler"
+        ],
+        [
+          "umbaran_spider_tank"
+        ]
+      ],
       "encounters": [
         {
           "id": "technician_canni_elli_vaa",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -787,6 +1017,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -800,6 +1032,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -813,6 +1047,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -826,13 +1062,26 @@
     {
       "activity": "czerka_core",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "vrblther"
+        ],
+        [
+          "duneclaw"
+        ],
+        [
+          "vigilant"
+        ]
+      ],
       "encounters": [
         {
           "id": "vrblther",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -847,6 +1096,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -861,6 +1112,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -875,13 +1128,26 @@
     {
       "activity": "czerka_labs",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "eradicator_droid"
+        ],
+        [
+          "zokar"
+        ],
+        [
+          "rasmus"
+        ]
+      ],
       "encounters": [
         {
           "id": "eradicator_droid",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -897,6 +1163,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -911,6 +1179,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -926,12 +1196,34 @@
       "activity": "directive_seven",
       "type": "flashpoint",
       "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "detector"
+        ],
+        [
+          "assassin_droids"
+        ],
+        [
+          "interrogator"
+        ],
+        [
+          "bulwark"
+        ],
+        [
+          "assembler"
+        ],
+        [
+          "mentor"
+        ]
+      ],
       "encounters": [
         {
           "id": "detector",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -946,6 +1238,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -964,6 +1258,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -978,6 +1274,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -989,23 +1287,27 @@
         },
         {
           "id": "assembler",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "2511976047575040",
             "1628604354002944"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "mentor",
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1020,30 +1322,48 @@
         },
         {
           "id": "replicator",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "1629334498443264",
             "2512109191561216"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
     {
       "activity": "esseles",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "lieutenant_isric"
+        ],
+        [
+          "ironfist"
+        ],
+        [
+          "iss_7_guardian_battledroid"
+        ],
+        [
+          "vokk"
+        ]
+      ],
       "encounters": [
         {
           "id": "lieutenant_isric",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1058,6 +1378,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1072,6 +1394,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1086,6 +1410,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1100,6 +1426,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1113,27 +1441,51 @@
     {
       "activity": "false_emperor",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "tregg_the_destroyer"
+        ],
+        [
+          "jindo_krey"
+        ],
+        [
+          "prototypes_a14_b16"
+        ],
+        [
+          "hk_47"
+        ],
+        [
+          "chondrus_berani"
+        ],
+        [
+          "darth_malgus"
+        ]
+      ],
       "encounters": [
         {
           "id": "tregg_the_destroyer",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "1690314444111872",
             "2511761299210240"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "jindo_krey",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1145,9 +1497,11 @@
         },
         {
           "id": "prototypes_a14_b16",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1156,14 +1510,16 @@
             "1790206793482240",
             "2511726939471872"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "hk_47",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1175,23 +1531,27 @@
         },
         {
           "id": "chondrus_berani",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "2511675399864320",
             "1690331623981056"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "darth_malgus",
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1206,6 +1566,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1219,13 +1581,29 @@
     {
       "activity": "foundry",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "foundry_guardian"
+        ],
+        [
+          "hk_47"
+        ],
+        [
+          "n4_10_exterminator"
+        ],
+        [
+          "mysterious_jedi"
+        ]
+      ],
       "encounters": [
         {
           "id": "foundry_guardian",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1240,6 +1618,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1251,37 +1631,51 @@
         },
         {
           "id": "n4_10_exterminator",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "2514729121611776",
             "1169322026205184"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "mysterious_jedi",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "hp_threshold_exit",
           "final": true,
+          "ending": {
+            "roleId": "role-0",
+            "healthPercent": 5,
+            "abilityIds": [
+              "2270006180052992"
+            ],
+            "requireImmune": false,
+            "windowSeconds": 60
+          },
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "2514780661219328",
             "739846771441664"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Synthetic invariant coverage; real encounter validation pending."
         },
         {
           "id": "burrower_matriarch",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1297,12 +1691,25 @@
       "activity": "hammer_station",
       "type": "flashpoint",
       "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "dn_314_tunneler"
+        ],
+        [
+          "vorgan_the_volcano"
+        ],
+        [
+          "battlelord_kreshan"
+        ]
+      ],
       "encounters": [
         {
           "id": "dn_314_tunneler",
           "status": "logic-tested",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [
             "hammer-repeat"
           ],
@@ -1321,6 +1728,8 @@
           "status": "logic-tested",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [
             "hammer-repeat"
           ],
@@ -1343,6 +1752,8 @@
           "status": "logic-tested",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [
             "hammer-repeat"
           ],
@@ -1361,6 +1772,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1375,12 +1788,22 @@
       "activity": "kaon_under_siege",
       "type": "flashpoint",
       "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "rakghoul_behemoth"
+        ],
+        [
+          "rakghoul_super_soldiers"
+        ]
+      ],
       "encounters": [
         {
           "id": "rakghoul_behemoth",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1395,13 +1818,15 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "2762260971782144",
             "2762127827795968",
             "2762269561716736",
-            "2762269561716736",
+            "2762140712697856",
             "2762265266749440",
             "2762123532828672"
           ],
@@ -1413,6 +1838,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1427,6 +1854,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1440,13 +1869,29 @@
     {
       "activity": "korriban_incursion",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "lord_renning",
+          "master_riilna"
+        ],
+        [
+          "i5_t1",
+          "r_9xr"
+        ],
+        [
+          "darth_soverus",
+          "commander_jensyn"
+        ]
+      ],
       "encounters": [
         {
           "id": "lord_renning",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1461,6 +1906,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1475,6 +1922,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1486,23 +1935,27 @@
         },
         {
           "id": "korriban_imperial_commander",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "3484816204890112",
             "3493187096150016"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "master_riilna",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1517,6 +1970,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1531,6 +1986,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1542,17 +1999,19 @@
         },
         {
           "id": "korriban_republic_commander",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "3484803319988224",
             "3493182801182720"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -1560,84 +2019,116 @@
       "activity": "kuat_drive_yards",
       "type": "flashpoint",
       "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "lieutenant_krupp",
+          "major_benes",
+          "lord_modo",
+          "master_khoris",
+          "station_guardian_one"
+        ]
+      ],
       "encounters": [
         {
           "id": "lieutenant_krupp",
-          "status": "candidate",
-          "rule": "unsupported",
-          "final": false,
+          "status": "logic-tested",
+          "rule": "death_all",
+          "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "3316187198914560"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "major_benes",
-          "status": "candidate",
-          "rule": "unsupported",
-          "final": false,
+          "status": "logic-tested",
+          "rule": "death_all",
+          "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "3316170019045376"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "lord_modo",
-          "status": "candidate",
-          "rule": "unsupported",
-          "final": false,
+          "status": "logic-tested",
+          "rule": "death_all",
+          "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "3316174314012672"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "master_khoris",
-          "status": "candidate",
-          "rule": "unsupported",
-          "final": false,
+          "status": "logic-tested",
+          "rule": "death_all",
+          "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "3316200083816448"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "station_guardian_one",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "3316182903947264"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
     {
       "activity": "legacy_rakata",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "arena"
+        ],
+        [
+          "rand"
+        ],
+        [
+          "darok_arkous"
+        ]
+      ],
       "encounters": [
         {
           "id": "arena",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1654,6 +2145,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1668,6 +2161,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1684,6 +2179,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1697,13 +2194,29 @@
     {
       "activity": "lost_island",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "putrid_shaclaw"
+        ],
+        [
+          "lr_5_sentinel_droid"
+        ],
+        [
+          "project_sav_rak"
+        ],
+        [
+          "doctor_lorrick"
+        ]
+      ],
       "encounters": [
         {
           "id": "putrid_shaclaw",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1718,6 +2231,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1732,6 +2247,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1743,9 +2260,11 @@
         },
         {
           "id": "doctor_lorrick",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1754,14 +2273,16 @@
             "2809320928444416",
             "2819959562436608"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "transgenic_sample_eleven",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1776,13 +2297,48 @@
     {
       "activity": "maelstrom_prison",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "x37_oppressor"
+        ],
+        [
+          "colonel_daksh"
+        ],
+        [
+          "lord_kancras"
+        ],
+        [
+          "lord_vanithrast"
+        ],
+        [
+          "grand_moff_kilran"
+        ]
+      ],
       "encounters": [
+        {
+          "id": "x37_oppressor",
+          "status": "logic-tested",
+          "rule": "death_all",
+          "final": false,
+          "ending": null,
+          "victorySignals": null,
+          "positive": [],
+          "negative": [],
+          "recognizedIds": [
+            "1006405326733312",
+            "2513685444558848"
+          ],
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
+        },
         {
           "id": "colonel_daksh",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1793,35 +2349,41 @@
         },
         {
           "id": "lord_kancras",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "2513668264689664"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "lord_vanithrast",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "2513672559656960"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "grand_moff_kilran",
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1835,6 +2397,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1848,13 +2412,26 @@
     {
       "activity": "manaan",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "sairisi"
+        ],
+        [
+          "ortuno"
+        ],
+        [
+          "stivastin"
+        ]
+      ],
       "encounters": [
         {
           "id": "sairisi",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1869,6 +2446,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1883,6 +2462,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1897,6 +2478,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1911,13 +2494,27 @@
     {
       "activity": "mandalorian_raiders",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "braxx_the_bloodhound"
+        ],
+        [
+          "imperial_boarding_party",
+          "republic_boarding_party"
+        ],
+        [
+          "mavrix_varad"
+        ]
+      ],
       "encounters": [
         {
           "id": "braxx_the_bloodhound",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1931,9 +2528,11 @@
         },
         {
           "id": "imperial_boarding_party",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1946,14 +2545,16 @@
             "3158394395426816",
             "2442466296856576"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "republic_boarding_party",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1966,14 +2567,16 @@
             "2442474886791168",
             "3158411575296000"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "mavrix_varad",
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -1985,29 +2588,47 @@
         },
         {
           "id": "gil",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "3250538623795200"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
     {
       "activity": "nathema",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "voreclaw"
+        ],
+        [
+          "guardian_droid"
+        ],
+        [
+          "gemini"
+        ],
+        [
+          "vin_zil"
+        ]
+      ],
       "encounters": [
         {
           "id": "voreclaw",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2021,6 +2642,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2034,6 +2657,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2047,6 +2672,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2058,30 +2685,48 @@
         },
         {
           "id": "hands_zildrog",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "4172294440091648",
             "4172298735058944"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
     {
       "activity": "objective_meridian",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "vulture_squad",
+          "r10-x6"
+        ],
+        [
+          "commander_aster",
+          "jakir_and_seldin"
+        ],
+        [
+          "darth_malgus",
+          "tau_idair"
+        ]
+      ],
       "encounters": [
         {
           "id": "vulture_squad",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2089,14 +2734,16 @@
             "4275957770747904",
             "4275957770747904"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "commander_aster",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2108,22 +2755,32 @@
         },
         {
           "id": "darth_malgus",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "hp_threshold_exit",
           "final": true,
+          "ending": {
+            "roleId": "role-0",
+            "healthPercent": 2,
+            "abilityIds": [],
+            "requireImmune": true,
+            "windowSeconds": 60
+          },
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "4257502296276992"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Synthetic invariant coverage; real encounter validation pending."
         },
         {
           "id": "feng_yun",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2131,28 +2788,32 @@
             "4257506591244288",
             "4276941318258688"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "r10-x6",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "4363141311889408",
             "4257467936538624"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "jakir_and_seldin",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2161,28 +2822,38 @@
             "4257455051636736",
             "4363171376660480"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "tau_idair",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "hp_threshold_exit",
           "final": true,
+          "ending": {
+            "roleId": "role-0",
+            "healthPercent": 2,
+            "abilityIds": [],
+            "requireImmune": true,
+            "windowSeconds": 60
+          },
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "4257463641571328",
             "4363175671627776"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Synthetic invariant coverage; real encounter validation pending."
         },
         {
           "id": "rasha",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2196,13 +2867,26 @@
     {
       "activity": "red_reaper",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "lord_kherus"
+        ],
+        [
+          "sv_3_eradicator"
+        ],
+        [
+          "darth_ikoral"
+        ]
+      ],
       "encounters": [
         {
           "id": "lord_kherus",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2216,6 +2900,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2229,6 +2915,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2242,13 +2930,26 @@
     {
       "activity": "ruins_of_nul",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "apex_ranphyx"
+        ],
+        [
+          "regnant"
+        ],
+        [
+          "nul_darth_malgus"
+        ]
+      ],
       "encounters": [
         {
           "id": "apex_ranphyx",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2262,6 +2963,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2272,22 +2975,32 @@
         },
         {
           "id": "nul_darth_malgus",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "hp_threshold_exit",
           "final": true,
+          "ending": {
+            "roleId": "role-0",
+            "healthPercent": 2,
+            "abilityIds": [],
+            "requireImmune": true,
+            "windowSeconds": 60
+          },
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "4468509744562176"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Synthetic invariant coverage; real encounter validation pending."
         },
         {
           "id": "warden_units",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2295,34 +3008,51 @@
             "4563943917879296",
             "4563948212846592"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
     {
       "activity": "secrets_of_the_enclave",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "graul"
+        ],
+        [
+          "rep_imperial_squad",
+          "imp_republic_squad"
+        ],
+        [
+          "rep_colonel_barden_golah",
+          "imp_leeha_narezz"
+        ]
+      ],
       "encounters": [
         {
           "id": "graul",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "4445312626196480"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "rep_imperial_squad",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2330,27 +3060,31 @@
             "4445295446327296",
             "4445299741294592"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "rep_colonel_barden_golah",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "4445304036261888"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "imp_republic_squad",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2358,47 +3092,64 @@
             "4445282561425408",
             "4445286856392704"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "imp_leeha_narezz",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "4445308331229184"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "monstrous_terentatek",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "4445316921163776"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
     {
       "activity": "shrine_of_silence",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "corrupted_vorantikus"
+        ],
+        [
+          "voss_mystics"
+        ],
+        [
+          "temu_tfb"
+        ]
+      ],
       "encounters": [
         {
           "id": "corrupted_vorantikus",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2406,14 +3157,16 @@
             "4702735786049536",
             "4702748670951424"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "voss_mystics",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2424,14 +3177,16 @@
             "4705574759432192",
             "4705591939301376"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "temu_tfb",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2439,14 +3194,16 @@
             "4705557579563008",
             "4705561874530304"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "kirba",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2454,60 +3211,82 @@
             "4702765850820608",
             "4702770145787904"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
     {
       "activity": "spirit_of_vengeance",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "gorga_brak"
+        ],
+        [
+          "bask_sunn"
+        ],
+        [
+          "troya_ajak"
+        ],
+        [
+          "heta_kol"
+        ]
+      ],
       "encounters": [
         {
           "id": "gorga_brak",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "4419697441243136"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "bask_sunn",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "4419710326145024"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "troya_ajak",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "4419714621112320"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "heta_kol",
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2519,56 +3298,81 @@
         },
         {
           "id": "goldie",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "4434373344493568"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
     {
       "activity": "taral_v",
       "type": "flashpoint",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "handler_gattan_vine_cats"
+        ],
+        [
+          "captain_shivanek"
+        ],
+        [
+          "doctor_zharen"
+        ],
+        [
+          "pd_44"
+        ],
+        [
+          "general_edikar"
+        ]
+      ],
       "encounters": [
         {
           "id": "captain_shivanek",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "2513870128152576",
             "2513865833185280"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "pd_44",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "2513861538217984"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "general_edikar",
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2579,43 +3383,49 @@
         },
         {
           "id": "lord_hasper",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "2513857243250688"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "handler_gattan_vine_cats",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "2513887308021760",
             "2513840063381504"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "doctor_zharen",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
             "2513805703643136"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         }
       ]
     },
@@ -2623,12 +3433,25 @@
       "activity": "children_of_nul",
       "type": "operation",
       "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "nul_acolyte"
+        ],
+        [
+          "force_beast"
+        ],
+        [
+          "last_daughter"
+        ]
+      ],
       "encounters": [
         {
           "id": "nul_acolyte",
           "status": "candidate",
           "rule": "unsupported",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2642,6 +3465,8 @@
           "status": "candidate",
           "rule": "unsupported",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2655,6 +3480,8 @@
           "status": "candidate",
           "rule": "unsupported",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2669,12 +3496,34 @@
       "activity": "dxun",
       "type": "operation",
       "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "red"
+        ],
+        [
+          "holding_pens"
+        ],
+        [
+          "breach"
+        ],
+        [
+          "trandos"
+        ],
+        [
+          "huntmaster"
+        ],
+        [
+          "apex_vanguard"
+        ]
+      ],
       "encounters": [
         {
           "id": "red",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2687,9 +3536,22 @@
         },
         {
           "id": "holding_pens",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "signal_exit",
           "final": false,
+          "ending": null,
+          "victorySignals": [
+            {
+              "kind": "damage",
+              "id": "4258554563264512",
+              "roleId": null
+            },
+            {
+              "kind": "loot",
+              "id": "4340614208421888",
+              "roleId": null
+            }
+          ],
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2697,13 +3559,15 @@
             "4245686841245696"
           ],
           "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "reason": "Synthetic invariant coverage; real encounter validation pending."
         },
         {
           "id": "breach",
           "status": "candidate",
           "rule": "unsupported",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2714,9 +3578,32 @@
         },
         {
           "id": "trandos",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "signal_exit",
           "final": false,
+          "ending": null,
+          "victorySignals": [
+            {
+              "kind": "remove",
+              "id": "4381085685252434",
+              "roleId": "role-4"
+            },
+            {
+              "kind": "loot",
+              "id": "4330074358677504",
+              "roleId": null
+            },
+            {
+              "kind": "loot",
+              "id": "4408929958232064",
+              "roleId": null
+            },
+            {
+              "kind": "loot",
+              "id": "4333471677808640",
+              "roleId": null
+            }
+          ],
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2727,13 +3614,15 @@
             "4381150109761536"
           ],
           "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "reason": "Synthetic invariant coverage; real encounter validation pending."
         },
         {
           "id": "huntmaster",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2741,14 +3630,16 @@
             "4281661487316992",
             "4330237567434752"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "apex_vanguard",
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2764,12 +3655,31 @@
       "activity": "eternity_vault",
       "type": "operation",
       "completeObjectives": false,
+      "requiredGroups": [
+        [
+          "xrr3"
+        ],
+        [
+          "gharj"
+        ],
+        [
+          "pylons"
+        ],
+        [
+          "infernal_council"
+        ],
+        [
+          "soa"
+        ]
+      ],
       "encounters": [
         {
           "id": "xrr3",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2786,6 +3696,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2803,6 +3715,8 @@
           "status": "candidate",
           "rule": "unsupported",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [],
@@ -2811,25 +3725,73 @@
         },
         {
           "id": "infernal_council",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
-            "2290145281703936",
+            "1977669231050752",
+            "2098319157362688",
+            "2098323452329984",
+            "1977660641116160",
+            "2098306272460800",
+            "1977664936083456",
             "2098327747297280",
+            "2098332042264576",
+            "2017230174814208",
+            "2289642770530304",
+            "2289647065497600",
+            "2017238764748800",
+            "2289681425235968",
+            "2017243059716096",
             "2289690015170560",
-            "2289887583666176"
+            "2289694310137856",
+            "2512152141234176",
+            "2512165026136064",
+            "2512169321103360",
+            "2512190795939840",
+            "2512195090907136",
+            "2512238040580096",
+            "2512242335547392",
+            "2512246630514688",
+            "2289840339025920",
+            "2289844633993216",
+            "2289848928960512",
+            "2289853223927808",
+            "2289861813862400",
+            "2289878993731584",
+            "2289887583666176",
+            "2289891878633472",
+            "2290106626998272",
+            "2290110921965568",
+            "2290123806867456",
+            "2290132396802048",
+            "2290136691769344",
+            "2290140986736640",
+            "2290145281703936",
+            "2290149576671232",
+            "2512263810383872",
+            "2512268105351168",
+            "2512272400318464",
+            "2512276695285760",
+            "2512280990253056",
+            "2512285285220352",
+            "2512298170122240",
+            "2512306760056832"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified."
         },
         {
           "id": "soa",
           "status": "logic-tested",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [
             "soa-terminal"
           ],
@@ -2850,13 +3812,29 @@
     {
       "activity": "explosive_conflict",
       "type": "operation",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "zorn_toth"
+        ],
+        [
+          "firebrand_stormcaller"
+        ],
+        [
+          "colonel_vorgath"
+        ],
+        [
+          "warlord_kephess"
+        ]
+      ],
       "encounters": [
         {
           "id": "zorn_toth",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2881,6 +3859,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2901,6 +3881,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2917,6 +3899,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2937,13 +3921,32 @@
     {
       "activity": "gods_from_the_machine",
       "type": "operation",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "TYTT_K"
+        ],
+        [
+          "a\u0026e_k"
+        ],
+        [
+          "nahut_k"
+        ],
+        [
+          "SCYVA_K"
+        ],
+        [
+          "IZAX_K"
+        ]
+      ],
       "encounters": [
         {
           "id": "TYTT_K",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2960,6 +3963,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2975,6 +3980,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -2991,6 +3998,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3005,6 +4014,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3022,13 +4033,20 @@
     {
       "activity": "hive_of_the_mountain_queen",
       "type": "lair",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "mutated_geonosian_queen"
+        ]
+      ],
       "encounters": [
         {
           "id": "mutated_geonosian_queen",
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3046,12 +4064,31 @@
       "activity": "karaggas_palace",
       "type": "operation",
       "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "bonethrasher"
+        ],
+        [
+          "jarg_sorno"
+        ],
+        [
+          "foreman_crusher"
+        ],
+        [
+          "g4b3"
+        ],
+        [
+          "karagga"
+        ]
+      ],
       "encounters": [
         {
           "id": "bonethrasher",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3068,6 +4105,8 @@
           "status": "logic-tested",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [
             "paired-wipe-retry"
           ],
@@ -3092,6 +4131,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3108,6 +4149,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3124,6 +4167,8 @@
           "status": "logic-tested",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [
             "karagga-terminal"
           ],
@@ -3144,13 +4189,20 @@
     {
       "activity": "monolith",
       "type": "lair",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "monolith"
+        ]
+      ],
       "encounters": [
         {
           "id": "monolith",
           "status": "candidate",
           "rule": "death_all",
-          "final": false,
+          "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3167,13 +4219,20 @@
     {
       "activity": "propagator_core",
       "type": "lair",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "propagator_core_xr53"
+        ]
+      ],
       "encounters": [
         {
           "id": "propagator_core_xr53",
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3191,13 +4250,29 @@
     {
       "activity": "r4_anomaly",
       "type": "operation",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "ip_cpt"
+        ],
+        [
+          "watchdog"
+        ],
+        [
+          "kanoth"
+        ],
+        [
+          "dominique"
+        ]
+      ],
       "encounters": [
         {
           "id": "ip_cpt",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3212,6 +4287,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3226,6 +4303,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3240,6 +4319,8 @@
           "status": "candidate",
           "rule": "unsupported",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [],
@@ -3251,6 +4332,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3266,13 +4349,38 @@
     {
       "activity": "scum_and_villainy",
       "type": "operation",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "dashroode"
+        ],
+        [
+          "titan6"
+        ],
+        [
+          "thrasher"
+        ],
+        [
+          "operations_chief"
+        ],
+        [
+          "olok"
+        ],
+        [
+          "cartel_warlords"
+        ],
+        [
+          "Styrak_k"
+        ]
+      ],
       "encounters": [
         {
           "id": "dashroode",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3289,6 +4397,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3305,6 +4415,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3318,6 +4430,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3334,6 +4448,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3350,6 +4466,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3366,6 +4484,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3389,6 +4509,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3408,13 +4530,32 @@
     {
       "activity": "temple_of_sacrifice",
       "type": "operation",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "malaphar"
+        ],
+        [
+          "sword_squadron"
+        ],
+        [
+          "underlurker"
+        ],
+        [
+          "revanite_commanders"
+        ],
+        [
+          "revan"
+        ]
+      ],
       "encounters": [
         {
           "id": "malaphar",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3431,6 +4572,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3448,6 +4591,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3464,6 +4609,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3479,6 +4626,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3494,13 +4643,32 @@
     {
       "activity": "terror_from_beyond",
       "type": "operation",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "writhing_horror"
+        ],
+        [
+          "dread_guard"
+        ],
+        [
+          "op_ix"
+        ],
+        [
+          "kephess_the_undying"
+        ],
+        [
+          "the_terror_from_beyond"
+        ]
+      ],
       "encounters": [
         {
           "id": "writhing_horror",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3517,6 +4685,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3544,6 +4714,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3567,6 +4739,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3581,9 +4755,19 @@
         },
         {
           "id": "the_terror_from_beyond",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "hp_threshold_exit",
           "final": true,
+          "ending": {
+            "roleId": "role-1",
+            "healthPercent": 4,
+            "abilityIds": [
+              "3019211685232640"
+            ],
+            "requireImmune": false,
+            "windowSeconds": 60
+          },
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3608,14 +4792,16 @@
             "2938895796797440",
             "2938891501830144"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Synthetic invariant coverage; real encounter validation pending."
         },
         {
           "id": "dreadful",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3629,13 +4815,32 @@
     {
       "activity": "the_dread_fortress",
       "type": "operation",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "nefra"
+        ],
+        [
+          "draxus"
+        ],
+        [
+          "grobthok"
+        ],
+        [
+          "corruptor_zero"
+        ],
+        [
+          "brontes"
+        ]
+      ],
       "encounters": [
         {
           "id": "nefra",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3652,6 +4857,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3668,6 +4875,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3684,6 +4893,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3700,6 +4911,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3718,13 +4931,33 @@
     {
       "activity": "the_dread_palace",
       "type": "operation",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "bestia",
+          "bestia_unverified"
+        ],
+        [
+          "tyrans"
+        ],
+        [
+          "calphayus"
+        ],
+        [
+          "raptus"
+        ],
+        [
+          "dread_council"
+        ]
+      ],
       "encounters": [
         {
           "id": "bestia",
           "status": "terminal-tested",
           "rule": "hp_zero_exit",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [
             "bestia-real"
           ],
@@ -3743,6 +4976,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3759,6 +4994,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3774,6 +5011,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3790,6 +5029,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3807,6 +5048,8 @@
           "status": "candidate",
           "rule": "unsupported",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3822,13 +5065,20 @@
     {
       "activity": "the_eyeless",
       "type": "lair",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "eyeless"
+        ]
+      ],
       "encounters": [
         {
           "id": "eyeless",
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3845,13 +5095,32 @@
     {
       "activity": "the_ravagers",
       "type": "operation",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "sparky"
+        ],
+        [
+          "bulo"
+        ],
+        [
+          "torque"
+        ],
+        [
+          "master_blaster"
+        ],
+        [
+          "coratanni"
+        ]
+      ],
       "encounters": [
         {
           "id": "sparky",
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3868,6 +5137,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3884,6 +5155,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3900,6 +5173,8 @@
           "status": "candidate",
           "rule": "death_all",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3915,9 +5190,19 @@
         },
         {
           "id": "coratanni",
-          "status": "candidate",
-          "rule": "unsupported",
+          "status": "logic-tested",
+          "rule": "hp_threshold_exit",
           "final": true,
+          "ending": {
+            "roleId": "role-1",
+            "healthPercent": 10,
+            "abilityIds": [
+              "3502391211065344"
+            ],
+            "requireImmune": false,
+            "windowSeconds": 60
+          },
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3927,21 +5212,28 @@
             "3397039958261760",
             "3374109127868416"
           ],
-          "countsExplicitDeaths": false,
-          "reason": "Identifiers only; terminal evidence not validated."
+          "countsExplicitDeaths": true,
+          "reason": "Synthetic invariant coverage; real encounter validation pending."
         }
       ]
     },
     {
       "activity": "toborros_courtyard",
       "type": "lair",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "golden_fury"
+        ]
+      ],
       "encounters": [
         {
           "id": "golden_fury",
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3958,13 +5250,20 @@
     {
       "activity": "xenoanalyst",
       "type": "lair",
-      "completeObjectives": false,
+      "completeObjectives": true,
+      "requiredGroups": [
+        [
+          "xenoanalyst"
+        ]
+      ],
       "encounters": [
         {
           "id": "xenoanalyst",
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -3982,12 +5281,15 @@
       "activity": "orbital_core",
       "type": "other",
       "completeObjectives": false,
+      "requiredGroups": [],
       "encounters": [
         {
           "id": "orbital_core",
           "status": "candidate",
           "rule": "death_all",
           "final": true,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [
@@ -4003,12 +5305,15 @@
       "activity": "training_dummy",
       "type": "training",
       "completeObjectives": false,
+      "requiredGroups": [],
       "encounters": [
         {
           "id": "training_dummy",
           "status": "candidate",
           "rule": "unsupported",
           "final": false,
+          "ending": null,
+          "victorySignals": null,
           "positive": [],
           "negative": [],
           "recognizedIds": [

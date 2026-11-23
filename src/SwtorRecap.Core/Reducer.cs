@@ -30,6 +30,17 @@ public sealed class AttemptState
     public List<string> Evidence { get; set; } = [];
     public bool Qualified { get; set; }
     public bool BoundaryUncertain { get; set; }
+    public HashSet<string> DeadTargets { get; set; } = [];
+    public HashSet<string> DeadParticipants { get; set; } = [];
+    public TimeOnly? TerminalAt { get; set; }
+    public int TerminalEpoch { get; set; }
+    public TimeOnly? SignalAt { get; set; }
+    public int SignalEpoch { get; set; }
+    public TimeOnly? ClosingExitAt { get; set; }
+    public int ClosingExitEpoch { get; set; }
+    public bool ImmuneSeen { get; set; }
+    public bool InferenceBlocked { get; set; }
+    public long EndingMaxHp { get; set; }
 }
 public sealed class RunState
 {
@@ -199,6 +210,15 @@ public sealed partial class CombatReducer(Catalog catalog, string reportingZone)
             if (life.CombatStart is null) { life.CombatStart = time.Utc; life.CombatOffset = r.Start; life.ClockEpoch = time.Epoch; }
             foreach (var a in s.Attempts.Values.Where(a => a.BoundaryUncertain && a.Result != "won").ToArray())
             {
+                var definition = catalog.Document.Activities.Single(x => x.Id == a.ActivityId).Encounters.Single(x => x.Id == a.EncounterId);
+                // Coratanni/Pearl and Ruugar are two combat phases of one encounter.
+                if (definition.ContinueAfterRoles is { Length: > 0 } phaseRoles && definition.Ending is { } ending
+                    && phaseRoles.SelectMany(id => definition.Roles.Single(x => x.Id == id).SlotIds(s.GroupSize)).All(a.DeadTargets.Contains)
+                    && !a.Entities.ContainsKey(ending.RoleId))
+                { a.BoundaryUncertain = false; continue; }
+                // A loot object can cause EnterCombat immediately before its TargetSet record.
+                if (definition.Rule == "signal_exit" && Recent(a.ClosingExitAt, a.ClosingExitEpoch, e.Time, time.Epoch, 60)
+                    && !a.DeadParticipants.Contains(e.Source.Key) && !a.InferenceBlocked) continue;
                 if(a.Result!="unconfirmed"){a.Result = "interrupted"; a.Qualified = false;} b.Attempts[a.Id] = Json.Clone(a);
                 s.Attempts.Remove(a.EncounterId);
             }
@@ -257,6 +277,14 @@ public sealed partial class CombatReducer(Catalog catalog, string reportingZone)
     {
         b.Rejected++; b.Gaps.Add(new(source, r.Start, r.End, "parser", reason));
         b.State.Npcs.Clear(); // Missing records may hide a reset or a changed target.
+        b.State.Gap = true;
+        foreach (var run in b.State.Runs.Values.Where(run => !run.Terminal))
+        { run.Gap = true; b.Runs[run.Id] = Json.Clone(run); }
+        foreach (var attempt in b.State.Attempts.Values.Where(a => a.Result != "won").ToArray())
+        {
+            if (attempt.Result != "unconfirmed") { attempt.Result = "interrupted"; attempt.Qualified = false; }
+            b.Attempts[attempt.Id] = Json.Clone(attempt); b.State.Attempts.Remove(attempt.EncounterId);
+        }
     }
     private static string AddFact(BatchProjection b, string source, SourceRecord r, ResolvedTime time, string kind, string entity, object payload)
     {
@@ -273,20 +301,46 @@ public sealed partial class CombatReducer(Catalog catalog, string reportingZone)
             if (found is not { } match) continue;
             var (activity, definition, role) = match;
             if (activity.Type == "training") continue;
-            if (!role.Required && definition.Rule != "unsupported") continue;
             if (!s.Attempts.TryGetValue(definition.Id, out var attempt))
             {
                 if (e.Kind is not (EventKind.Damage or EventKind.Heal) || actor.Hp == 0) continue;
                 attempt = NewAttempt(s, b, source, r, activity, definition);
             }
-            if (attempt.Entities.TryGetValue(role.Id, out var prior) && prior != actor.Key && (actor.Hp > 0 || e.Kind is EventKind.Damage or EventKind.Heal))
+            if (definition.Rule == "signal_exit" && attempt.ClosingExitAt is not null && attempt.Result != "won"
+                && e.Kind is EventKind.Damage or EventKind.Heal)
             {
-                if (attempt.Result != "won") { attempt.Result = "interrupted"; attempt.Qualified = false; b.Attempts[attempt.Id] = Json.Clone(attempt); }
+                attempt.Result = "interrupted"; attempt.Qualified = false; b.Attempts[attempt.Id] = Json.Clone(attempt);
                 attempt = NewAttempt(s, b, source, r, activity, definition);
             }
-            if ((attempt.Result == "outcome_pending" || attempt.Result == "won" && attempt.Basis == "inferred") && actor.Hp > 0 && attempt.Terminal.Contains(role.Id))
+            // Several required NPCs can share a template (for example Braxx's two hounds).
+            // Bind each spawn to its own slot; switching targets is not a new pull.
+            var slots = role.SlotIds(s.GroupSize).ToArray();
+            var slot = slots.FirstOrDefault(id => attempt.Entities.GetValueOrDefault(id) == actor.Key)
+                ?? slots.FirstOrDefault(id => !attempt.Entities.ContainsKey(id));
+            if (slot is null && !role.Required) slot = slots[0]; // Adds may respawn within one fight.
+            if (slot is null)
+            {
+                // A late death from a previous pull cannot replace a live required target.
+                if (!(actor.Hp > 0 || e.Kind is EventKind.Damage or EventKind.Heal)) continue;
+                if (attempt.Result != "won") { attempt.Result = "interrupted"; attempt.Qualified = false; b.Attempts[attempt.Id] = Json.Clone(attempt); }
+                attempt = NewAttempt(s, b, source, r, activity, definition);
+                slot = slots[0];
+            }
+            var threshold = definition.Ending is { } ending && ending.RoleId == role.Id ? ending.HealthPercent : 0;
+            if (threshold > 0)
+            {
+                if (actor.MaxHp is > 0)
+                {
+                    if (attempt.EndingMaxHp > 0 && attempt.EndingMaxHp != actor.MaxHp) attempt.InferenceBlocked = true;
+                    attempt.EndingMaxHp = actor.MaxHp.Value;
+                }
+                else if (attempt.Terminal.Contains(slot)) attempt.InferenceBlocked = true;
+            }
+            var aboveTerminal = actor.Hp > 0 && (threshold == 0 || !BelowThreshold(actor, threshold));
+            if ((attempt.Result == "outcome_pending" || attempt.Result == "won" && attempt.Basis == "inferred") && aboveTerminal && attempt.Terminal.Contains(slot))
             {
                 attempt.Result = "unknown"; attempt.Qualified = false; attempt.Terminal.Clear();
+                attempt.TerminalAt = null; attempt.SignalAt = null; attempt.ClosingExitAt = null; attempt.ImmuneSeen = false;
                 if (s.Runs.TryGetValue(activity.Id, out var contradicted))
                 {
                     contradicted.Wins.Remove(definition.Id); contradicted.Terminal = false; contradicted.Full = false; contradicted.TerminalAttempt = null;
@@ -294,24 +348,38 @@ public sealed partial class CombatReducer(Catalog catalog, string reportingZone)
                 }
                 attempt.Evidence.Add(AddFact(b, source, r, time, "contradiction", actor.Key, new { actor.Hp }));
             }
-            attempt.Entities[role.Id] = actor.Key;
-            if (actor.Hp > 0 && attempt.Alive.Add(role.Id)) attempt.Evidence.Add(AddFact(b, source, r, time, "alive", actor.Key, new { actor.TemplateId, actor.Hp }));
+            attempt.Entities[slot] = actor.Key;
+            if (actor.Hp > 0 && attempt.Alive.Add(slot)) attempt.Evidence.Add(AddFact(b, source, r, time, "alive", actor.Key, new { actor.TemplateId, actor.Hp }));
             if (e.Kind is EventKind.Damage or EventKind.Heal)
             {
                 foreach (var participant in new[] { e.Source, e.Target }.Where(p => p.Kind == ActorKind.Player))
                     if (attempt.Participants.Add(participant.Key)) attempt.Evidence.Add(AddFact(b, source, r, time, "participation", participant.Key, new { attemptId = attempt.Id }));
             }
             var death = e.Kind == EventKind.Death && e.Target.Key == actor.Key;
-            var hpCandidate = definition.Rule == "hp_zero_exit" && actor.Hp == 0 && attempt.Alive.Contains(role.Id);
-            if ((death || hpCandidate) && role.Required && attempt.Terminal.Add(role.Id))
+            var required = role.IsRequired(s.Difficulty);
+            var hpCandidate = attempt.Alive.Contains(slot) && (definition.Rule == "hp_zero_exit" && actor.Hp == 0
+                || definition.Rule == "hp_threshold_exit" && threshold > 0 && BelowThreshold(actor, threshold));
+            if (death && required) attempt.DeadTargets.Add(slot);
+            if ((death || hpCandidate) && required && attempt.Terminal.Add(slot))
             {
                 attempt.Evidence.Add(AddFact(b, source, r, time, death ? "death" : "hp_zero", actor.Key, new { actor.TemplateId, actor.SpawnId, actor.Hp }));
                 attempt.Result = "outcome_pending";
                 attempt.Date = time.ReportingDate; attempt.EndUtc = time.Utc?.ToString("O", CultureInfo.InvariantCulture);
+                if (hpCandidate) { attempt.TerminalAt = e.Time; attempt.TerminalEpoch = time.Epoch; }
             }
-            var allDead = definition.Roles.Where(x => x.Required).All(x => attempt.Terminal.Contains(x.Id)) && definition.Roles.Any(x => x.Required);
-            if (death && (definition.Rule == "death_any" || definition.Rule == "death_all" && allDead)) Win(s, b, attempt, activity, definition, time, "observed");
-            if (definition.Rule == "scripted" && e.EffectId == definition.VictoryId && e.TypeId == EffectIds.Apply && e.Source.Key == actor.Key && attempt.Alive.Contains(role.Id))
+            if (hpCandidate && e.Target.Key == actor.Key && e.Immune) attempt.ImmuneSeen = true;
+            if (hpCandidate && definition.Ending?.AbilityIds?.Contains(e.AbilityId) == true
+                && e.Source.Key == actor.Key && e.TypeId == EffectIds.Event && e.EffectId == "836045448945479")
+            {
+                attempt.SignalAt = e.Time; attempt.SignalEpoch = time.Epoch;
+                attempt.Evidence.Add(AddFact(b, source, r, time, "terminal_ability", actor.Key, new { e.AbilityId }));
+            }
+            var allDead = AllRequiredTargetsDead(definition, attempt, s.Difficulty, s.GroupSize);
+            if (death && required && (definition.Rule == "death_any" || definition.Rule == "death_all" && allDead)) Win(s, b, attempt, activity, definition, time, "observed");
+            if (death && definition.Rule == "hp_threshold_exit" && allDead
+                && RequiredSlots(definition, s.Difficulty, s.GroupSize).All(attempt.DeadTargets.Contains))
+                Win(s, b, attempt, activity, definition, time, "observed");
+            if (definition.Rule == "scripted" && e.EffectId == definition.VictoryId && e.TypeId == EffectIds.Apply && e.Source.Key == actor.Key && attempt.Alive.Contains(slot))
             {
                 attempt.Evidence.Add(AddFact(b, source, r, time, "scripted_terminal", actor.Key, new { e.EffectId }));
                 Win(s, b, attempt, activity, definition, time, "inferred");
@@ -322,6 +390,7 @@ public sealed partial class CombatReducer(Catalog catalog, string reportingZone)
         {
             var activity = catalog.Document.Activities.Single(a => a.Id == attempt.ActivityId);
             var definition = activity.Encounters.Single(a => a.Id == attempt.EncounterId);
+            ProcessInferredEnding(s, b, source, r, e, time, activity, definition, attempt);
             if (e.Kind == EventKind.Heal && e.Source.Kind == ActorKind.Player && s.Lives.TryGetValue(e.Source.Key, out var life) && life.CombatStart is not null
                 && attempt.Participants.Contains(e.Target.Key) && attempt.Result != "won" && attempt.Participants.Add(e.Source.Key))
             {
@@ -332,7 +401,7 @@ public sealed partial class CombatReducer(Catalog catalog, string reportingZone)
             {
                 if(definition.Rule=="unsupported")
                 {attempt.Result="unconfirmed";attempt.Qualified=s.Owner is not null&&attempt.Participants.Contains(s.Owner);attempt.Date=time.ReportingDate;}
-                if (definition.Rule == "hp_zero_exit" && attempt.Result == "outcome_pending" && definition.Roles.Where(x => x.Required).All(x => attempt.Terminal.Contains(x.Id)))
+                if (definition.Rule == "hp_zero_exit" && attempt.Result == "outcome_pending" && AllRequiredTargetsDead(definition, attempt, s.Difficulty, s.GroupSize))
                 {
                     attempt.Evidence.Add(AddFact(b, source, r, time, "closing_exit", e.Source.Key, new { attemptId = attempt.Id }));
                     Win(s, b, attempt, activity, definition, time, "inferred");
@@ -341,6 +410,13 @@ public sealed partial class CombatReducer(Catalog catalog, string reportingZone)
                 b.Attempts[attempt.Id] = Json.Clone(attempt);
             }
         }
+    }
+    private static IEnumerable<string> RequiredSlots(EncounterDefinition definition, string? difficulty, int? groupSize)
+        => definition.Roles.Where(r => r.IsRequired(difficulty)).SelectMany(r => r.SlotIds(groupSize));
+    private static bool AllRequiredTargetsDead(EncounterDefinition definition, AttemptState attempt, string? difficulty, int? groupSize)
+    {
+        var required = RequiredSlots(definition, difficulty, groupSize).ToArray();
+        return required.Length > 0 && required.All(attempt.Terminal.Contains);
     }
     private AttemptState NewAttempt(ReducerState s, BatchProjection b, string source, SourceRecord r, ActivityDefinition activity, EncounterDefinition encounter)
     {
@@ -359,7 +435,8 @@ public sealed partial class CombatReducer(Catalog catalog, string reportingZone)
     {
         // Explicit deaths of the catalog's required targets use one shared rule.
         // Inferred/scripted endings still require a separately validated rule.
-        if (!(basis=="observed" && definition.Rule is "death_all" or "death_any") && definition.Status is not ("terminal-tested" or "full-run-tested" or "logic-tested"))
+        if (basis == "inferred" && attempt.InferenceBlocked) { attempt.Result = "unconfirmed"; return; }
+        if (!(basis=="observed" && definition.Rule is "death_all" or "death_any" or "hp_threshold_exit") && definition.Status is not ("terminal-tested" or "full-run-tested" or "logic-tested"))
         { attempt.Result = "unconfirmed"; return; }
         attempt.Result = "won"; attempt.Basis = basis; attempt.Owner = s.Owner;
         attempt.Date = time.ReportingDate; attempt.EndUtc = time.Utc?.ToString("O", CultureInfo.InvariantCulture);

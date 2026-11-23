@@ -19,9 +19,16 @@ internal static class Program
         {
             string? Option(string name){var i=Array.IndexOf(args,name);return i>=0&&i+1<args.Length?args[i+1]:null;}
             var catalog=Catalog.LoadDefault();
+            if(args.FirstOrDefault()=="analyze")
+            {
+                LogAnalysis.Run(Option("--manifest")??throw new ArgumentException("--manifest is required."),
+                    Option("--data-dir")??throw new ArgumentException("--data-dir is required."),
+                    Option("--output")??throw new ArgumentException("--output is required."),catalog);
+                return 0;
+            }
             if(args.Length>=2&&args[0]=="catalog"&&args[1]=="validate")
             {
-                catalog.Validate();var report=new{catalog.Document.Version,activities=catalog.Document.Activities.Length,coverage=catalog.Document.Activities.Select(a=>new{activity=a.Id,a.Type,a.CompleteObjectives,encounters=a.Encounters.Select(e=>new{e.Id,e.Status,e.Rule,e.Final,positive=e.PositiveFixtures,negative=e.NegativeFixtures,recognizedIds=e.Roles.SelectMany(r=>r.TemplateIds),countsExplicitDeaths=e.Rule is "death_all" or "death_any",reason=e.Rule is "death_all" or "death_any"?"Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified.":e.Status=="candidate"?"Identifiers only; terminal evidence not validated.":e.Status=="logic-tested"?"Synthetic invariant coverage; real encounter validation pending.":"Fixture-backed scoped rule."})})};
+                catalog.Validate();var report=new{catalog.Document.Version,activities=catalog.Document.Activities.Length,coverage=catalog.Document.Activities.Select(a=>new{activity=a.Id,a.Type,a.CompleteObjectives,a.RequiredGroups,encounters=a.Encounters.Select(e=>new{e.Id,e.Status,e.Rule,e.Final,e.Ending,e.VictorySignals,positive=e.PositiveFixtures,negative=e.NegativeFixtures,recognizedIds=e.Roles.SelectMany(r=>r.TemplateIds),countsExplicitDeaths=e.Rule is "death_all" or "death_any" or "hp_threshold_exit",reason=e.Rule is "death_all" or "death_any"?"Counts recorded deaths of required targets with local participation. Shared-rule tests; individual real-world variants may remain unverified.":e.Status=="candidate"?"Identifiers only; terminal evidence not validated.":e.Status=="logic-tested"?"Synthetic invariant coverage; real encounter validation pending.":"Fixture-backed scoped rule."})})};
                 var json=JsonSerializer.Serialize(report,new JsonSerializerOptions(Json.Options){WriteIndented=true,NewLine="\n"});Console.WriteLine(json);if(Option("--output") is { } output)File.WriteAllText(output,json+"\n");return 0;
             }
             var root=DataPaths.Isolated(Option("--data-dir"));using var guard=new WriterGuard(root);var store=new RecapStore(root,"UTC");
@@ -33,7 +40,7 @@ internal static class Program
                 var id=store.SourceIds().FirstOrDefault()??engine.Register(store.CreateContainer("import"),Path.GetFullPath(file),true,new DateOnly(2026,1,1),"UTC");
                 store.Failpoint=p=>{if(p==phase)Environment.Exit(77);};engine.ReadAll(id);return 0;
             }
-            if(args.FirstOrDefault() is not ("replay" or "benchmark"))throw new ArgumentException("Commands: replay --manifest PATH --data-dir DIR [--speed max|1] [--seed N] [--verify]; catalog validate; database verify --data-dir DIR; seed-preview --data-dir DIR; benchmark --manifest PATH --data-dir DIR.");
+            if(args.FirstOrDefault() is not ("replay" or "benchmark"))throw new ArgumentException("Commands: analyze --manifest PATH --data-dir DIR --output PATH; replay --manifest PATH --data-dir DIR [--speed max|1] [--seed N] [--verify]; catalog validate; database verify --data-dir DIR; seed-preview --data-dir DIR; benchmark --manifest PATH --data-dir DIR.");
             if(store.SourceIds().Length>0)throw new ArgumentException("Replay requires an empty isolated data root. Use a new directory to preserve previous evidence.");
             var manifestPath=Path.GetFullPath(Option("--manifest")??throw new ArgumentException("--manifest is required."));var manifest=Json.Read<FixtureManifest>(File.ReadAllText(manifestPath));
             var random=new Random(int.Parse(Option("--seed")??"7741",CultureInfo.InvariantCulture));var speed=Option("--speed")??"max";
